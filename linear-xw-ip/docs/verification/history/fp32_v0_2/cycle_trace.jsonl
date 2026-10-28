@@ -1,0 +1,113 @@
+{"cycle": 0, "state": "JOB_ACCEPT", "event": "JOB_ACCEPT", "job_id": 42, "m": 2, "n": 5, "k": 129}
+{"cycle": 1, "state": "LOAD_X", "event": "AXIS_IN_BEAT", "index": 0, "tlast": 0}
+{"cycle": 2, "state": "LOAD_X", "event": "AXIS_IN_BEAT", "index": 1, "tlast": 0}
+{"cycle": 3, "state": "LOAD_X", "event": "AXIS_IN_BEAT", "index": 2, "tlast": 0}
+{"cycle": 4, "state": "LOAD_X", "event": "AXIS_IN_BEAT", "index": 3, "tlast": 0}
+{"cycle": 5, "state": "LOAD_X", "event": "AXIS_IN_BEAT", "index": 4, "tlast": 1}
+{"cycle": 6, "state": "LOAD_X", "event": "AXIS_IN_BEAT", "index": 5, "tlast": 1}
+{"cycle": 7, "state": "LOAD_X", "event": "AXIS_IN_BEAT", "index": 6, "tlast": 0}
+{"cycle": 8, "state": "LOAD_X", "event": "AXIS_IN_BEAT", "index": 7, "tlast": 0}
+{"cycle": 9, "state": "LOAD_X", "event": "AXIS_IN_BEAT", "index": 8, "tlast": 0}
+{"cycle": 10, "state": "LOAD_X", "event": "AXIS_IN_BEAT", "index": 9, "tlast": 0}
+{"cycle": 11, "state": "LOAD_X", "event": "AXIS_IN_BEAT", "index": 10, "tlast": 1}
+{"cycle": 12, "state": "LOAD_X", "event": "AXIS_IN_BEAT", "index": 11, "tlast": 1}
+{"cycle": 12, "state": "LOAD_X", "event": "AXIS_INPUT_COMPLETE", "beats": 12}
+{"cycle": 13, "state": "SCALE_REQUEST", "event": "DDR_REQUEST", "kind": "SCALE", "ddr_rd_req": 1, "ddr_rd_rdy": 1, "ddr_rd_addra": 120, "ddr_rd_addrb": 120, "expected_beats": 1}
+{"cycle": 13, "state": "SCALE_REQUEST", "event": "DDR_BEAT", "kind": "SCALE", "ddr_rd_vld": 1, "beat_index": 0, "beat_addr": 120, "ddr_rd_data": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000003f8004003f800000"}
+{"cycle": 13, "state": "SCALE_REQUEST", "event": "DDR_RANGE_COMPLETE", "kind": "SCALE", "total_beats": 1}
+{"cycle": 14, "state": "SCALE_WAIT", "event": "SCALE_CACHE_READY", "group": 0, "scale_count": 2}
+{"cycle": 15, "state": "WEIGHT_REQUEST", "event": "DDR_READY_STALL", "kind": "WEIGHT", "ddr_rd_req": 0, "ddr_rd_rdy": 0}
+{"cycle": 16, "state": "WEIGHT_REQUEST", "event": "DDR_REQUEST", "kind": "WEIGHT", "ddr_rd_req": 1, "ddr_rd_rdy": 1, "ddr_rd_addra": 0, "ddr_rd_addrb": 16, "expected_beats": 3}
+{"cycle": 16, "state": "WEIGHT_REQUEST", "event": "DDR_BEAT", "kind": "WEIGHT", "ddr_rd_vld": 1, "beat_index": 0, "beat_addr": 0, "ddr_rd_data": "0xbd38b32ea9249f1a95108b06817bf671ec67e25dd853ce49c43fba35b02ba6219c17920d8803fd78f36ee964df5ad550cb46c13cb732ad28a31e99148f0a8500"}
+{"cycle": 19, "state": "WEIGHT_WAIT", "event": "DDR_BEAT", "kind": "WEIGHT", "ddr_rd_vld": 1, "beat_index": 1, "beat_addr": 8, "ddr_rd_data": "0x807af570eb66e15cd752cd48c33eb934af2aa5209b16910c8702fc77f26de863de59d44fca45c03bb631ac27a21d98138e09847ef974ef6ae560db56d14cc742"}
+{"cycle": 22, "state": "WEIGHT_WAIT", "event": "DDR_BEAT", "kind": "WEIGHT", "ddr_rd_vld": 1, "beat_index": 2, "beat_addr": 16, "ddr_rd_data": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000005"}
+{"cycle": 22, "state": "WEIGHT_WAIT", "event": "DDR_RANGE_COMPLETE", "kind": "WEIGHT", "total_beats": 3}
+{"cycle": 22, "state": "WEIGHT_WAIT", "event": "WEIGHT_ROW_READY", "channel": 0, "bytes": 129}
+{"cycle": 25, "state": "COMPUTE", "event": "B1", "row": 0, "n": 0, "k_block": 0, "raw": 33388366}
+{"cycle": 27, "state": "COMPUTE", "event": "B2", "row": 0, "n": 0, "k_block": 0, "term_mant": 280081914134528, "term_exp": -52}
+{"cycle": 29, "state": "COMPUTE", "event": "A2", "row": 0, "n": 0, "k_block": 0, "acc_mant": 140040957067264, "acc_exp": -51}
+{"cycle": 32, "state": "COMPUTE", "event": "B1", "row": 0, "n": 0, "k_block": 1, "raw": 10}
+{"cycle": 34, "state": "COMPUTE", "event": "B2", "row": 0, "n": 0, "k_block": 1, "term_mant": 83896320, "term_exp": -51}
+{"cycle": 36, "state": "COMPUTE", "event": "A2", "row": 0, "n": 0, "k_block": 1, "acc_mant": 140041040963584, "acc_exp": -51}
+{"cycle": 39, "state": "COMPUTE", "event": "B1", "row": 1, "n": 0, "k_block": 0, "raw": 34003392}
+{"cycle": 41, "state": "COMPUTE", "event": "B2", "row": 1, "n": 0, "k_block": 0, "term_mant": 285241126158336, "term_exp": -52}
+{"cycle": 43, "state": "COMPUTE", "event": "A2", "row": 1, "n": 0, "k_block": 0, "acc_mant": 71310281539584, "acc_exp": -50}
+{"cycle": 46, "state": "COMPUTE", "event": "B1", "row": 1, "n": 0, "k_block": 1, "raw": 45}
+{"cycle": 48, "state": "COMPUTE", "event": "B2", "row": 1, "n": 0, "k_block": 1, "term_mant": 377533440, "term_exp": -51}
+{"cycle": 50, "state": "COMPUTE", "event": "A2", "row": 1, "n": 0, "k_block": 1, "acc_mant": 71310470306304, "acc_exp": -50}
+{"cycle": 52, "state": "WEIGHT_REQUEST", "event": "DDR_REQUEST", "kind": "WEIGHT", "ddr_rd_req": 1, "ddr_rd_rdy": 1, "ddr_rd_addra": 24, "ddr_rd_addrb": 40, "expected_beats": 3}
+{"cycle": 52, "state": "WEIGHT_REQUEST", "event": "DDR_BEAT", "kind": "WEIGHT", "ddr_rd_vld": 1, "beat_index": 0, "beat_addr": 24, "ddr_rd_data": "0x40bb36b12ca7229d18930e8904fe79f46fea65e05bd651cc47c23db833ae29a41f9a15900b8601fb76f16ce762dd58d34ec944bf3ab530ab26a11c97128d0883"}
+{"cycle": 55, "state": "WEIGHT_WAIT", "event": "DDR_BEAT", "kind": "WEIGHT", "ddr_rd_vld": 1, "beat_index": 1, "beat_addr": 32, "ddr_rd_data": "0x03fd78f36ee964df5ad550cb46c13cb732ad28a31e99148f0a8500fa75f06be661dc57d24dc843be39b42faa25a01b96118c07827cf772ed68e35ed954cf4ac5"}
+{"cycle": 58, "state": "WEIGHT_WAIT", "event": "DDR_BEAT", "kind": "WEIGHT", "ddr_rd_vld": 1, "beat_index": 2, "beat_addr": 40, "ddr_rd_data": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000088"}
+{"cycle": 58, "state": "WEIGHT_WAIT", "event": "DDR_RANGE_COMPLETE", "kind": "WEIGHT", "total_beats": 3}
+{"cycle": 58, "state": "WEIGHT_WAIT", "event": "WEIGHT_ROW_READY", "channel": 1, "bytes": 129}
+{"cycle": 61, "state": "COMPUTE", "event": "B1", "row": 0, "n": 1, "k_block": 0, "raw": 22572108}
+{"cycle": 63, "state": "COMPUTE", "event": "B2", "row": 0, "n": 1, "k_block": 0, "term_mant": 189348565745664, "term_exp": -52}
+{"cycle": 65, "state": "COMPUTE", "event": "A2", "row": 0, "n": 1, "k_block": 0, "acc_mant": 94674282872832, "acc_exp": -51}
+{"cycle": 68, "state": "COMPUTE", "event": "B1", "row": 0, "n": 1, "k_block": 1, "raw": -16}
+{"cycle": 70, "state": "COMPUTE", "event": "B2", "row": 0, "n": 1, "k_block": 1, "term_mant": -134234112, "term_exp": -51}
+{"cycle": 72, "state": "COMPUTE", "event": "A2", "row": 0, "n": 1, "k_block": 1, "acc_mant": 94674148638720, "acc_exp": -51}
+{"cycle": 75, "state": "COMPUTE", "event": "B1", "row": 1, "n": 1, "k_block": 0, "raw": 20052171}
+{"cycle": 77, "state": "COMPUTE", "event": "B2", "row": 1, "n": 1, "k_block": 0, "term_mant": 168209802067968, "term_exp": -52}
+{"cycle": 79, "state": "COMPUTE", "event": "A2", "row": 1, "n": 1, "k_block": 0, "acc_mant": 84104901033984, "acc_exp": -51}
+{"cycle": 82, "state": "COMPUTE", "event": "B1", "row": 1, "n": 1, "k_block": 1, "raw": -72}
+{"cycle": 84, "state": "COMPUTE", "event": "B2", "row": 1, "n": 1, "k_block": 1, "term_mant": -604053504, "term_exp": -51}
+{"cycle": 86, "state": "COMPUTE", "event": "A2", "row": 1, "n": 1, "k_block": 1, "acc_mant": 84104296980480, "acc_exp": -51}
+{"cycle": 88, "state": "WEIGHT_REQUEST", "event": "DDR_REQUEST", "kind": "WEIGHT", "ddr_rd_req": 1, "ddr_rd_rdy": 1, "ddr_rd_addra": 48, "ddr_rd_addrb": 64, "expected_beats": 3}
+{"cycle": 88, "state": "WEIGHT_REQUEST", "event": "DDR_BEAT", "kind": "WEIGHT", "ddr_rd_vld": 1, "beat_index": 0, "beat_addr": 48, "ddr_rd_data": "0xc33eb934af2aa5209b16910c8702fc77f26de863de59d44fca45c03bb631ac27a21d98138e09847ef974ef6ae560db56d14cc742bd38b32ea9249f1a95108b06"}
+{"cycle": 91, "state": "WEIGHT_WAIT", "event": "DDR_BEAT", "kind": "WEIGHT", "ddr_rd_vld": 1, "beat_index": 1, "beat_addr": 56, "ddr_rd_data": "0x8601fb76f16ce762dd58d34ec944bf3ab530ab26a11c97128d08837df873ee69e45fda55d04bc641bc37b22da8239e19940f8a05807af570eb66e15cd752cd48"}
+{"cycle": 94, "state": "WEIGHT_WAIT", "event": "DDR_BEAT", "kind": "WEIGHT", "ddr_rd_vld": 1, "beat_index": 2, "beat_addr": 64, "ddr_rd_data": "0x0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000b"}
+{"cycle": 94, "state": "WEIGHT_WAIT", "event": "DDR_RANGE_COMPLETE", "kind": "WEIGHT", "total_beats": 3}
+{"cycle": 94, "state": "WEIGHT_WAIT", "event": "WEIGHT_ROW_READY", "channel": 2, "bytes": 129}
+{"cycle": 97, "state": "COMPUTE", "event": "B1", "row": 0, "n": 2, "k_block": 0, "raw": -11439933}
+{"cycle": 99, "state": "COMPUTE", "event": "B2", "row": 0, "n": 2, "k_block": 0, "term_mant": -95965113483264, "term_exp": -52}
+{"cycle": 101, "state": "COMPUTE", "event": "A2", "row": 0, "n": 2, "k_block": 0, "acc_mant": -95965113483264, "acc_exp": -52}
+{"cycle": 104, "state": "COMPUTE", "event": "B1", "row": 0, "n": 2, "k_block": 1, "raw": 22}
+{"cycle": 106, "state": "COMPUTE", "event": "B2", "row": 0, "n": 2, "k_block": 1, "term_mant": 184571904, "term_exp": -51}
+{"cycle": 108, "state": "COMPUTE", "event": "A2", "row": 0, "n": 2, "k_block": 1, "acc_mant": -95964744339456, "acc_exp": -52}
+{"cycle": 111, "state": "COMPUTE", "event": "B1", "row": 1, "n": 2, "k_block": 0, "raw": -10450359}
+{"cycle": 113, "state": "COMPUTE", "event": "B2", "row": 1, "n": 2, "k_block": 0, "term_mant": -87663965110272, "term_exp": -52}
+{"cycle": 115, "state": "COMPUTE", "event": "A2", "row": 1, "n": 2, "k_block": 0, "acc_mant": -87663965110272, "acc_exp": -52}
+{"cycle": 118, "state": "COMPUTE", "event": "B1", "row": 1, "n": 2, "k_block": 1, "raw": 99}
+{"cycle": 120, "state": "COMPUTE", "event": "B2", "row": 1, "n": 2, "k_block": 1, "term_mant": 830573568, "term_exp": -51}
+{"cycle": 122, "state": "COMPUTE", "event": "A2", "row": 1, "n": 2, "k_block": 1, "acc_mant": -87662303963136, "acc_exp": -52}
+{"cycle": 124, "state": "WEIGHT_REQUEST", "event": "DDR_REQUEST", "kind": "WEIGHT", "ddr_rd_req": 1, "ddr_rd_rdy": 1, "ddr_rd_addra": 72, "ddr_rd_addrb": 88, "expected_beats": 3}
+{"cycle": 124, "state": "WEIGHT_REQUEST", "event": "DDR_BEAT", "kind": "WEIGHT", "ddr_rd_vld": 1, "beat_index": 0, "beat_addr": 72, "ddr_rd_data": "0x46c13cb732ad28a31e99148f0a8500fa75f06be661dc57d24dc843be39b42faa25a01b96118c07827cf772ed68e35ed954cf4ac540bb36b12ca7229d18930e89"}
+{"cycle": 127, "state": "WEIGHT_WAIT", "event": "DDR_BEAT", "kind": "WEIGHT", "ddr_rd_vld": 1, "beat_index": 1, "beat_addr": 80, "ddr_rd_data": "0x09847ef974ef6ae560db56d14cc742bd38b32ea9249f1a95108b06817bf671ec67e25dd853ce49c43fba35b02ba6219c17920d8803fd78f36ee964df5ad550cb"}
+{"cycle": 130, "state": "WEIGHT_WAIT", "event": "DDR_BEAT", "kind": "WEIGHT", "ddr_rd_vld": 1, "beat_index": 2, "beat_addr": 88, "ddr_rd_data": "0x0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000008e"}
+{"cycle": 130, "state": "WEIGHT_WAIT", "event": "DDR_RANGE_COMPLETE", "kind": "WEIGHT", "total_beats": 3}
+{"cycle": 130, "state": "WEIGHT_WAIT", "event": "WEIGHT_ROW_READY", "channel": 3, "bytes": 129}
+{"cycle": 133, "state": "COMPUTE", "event": "B1", "row": 0, "n": 3, "k_block": 0, "raw": -31753378}
+{"cycle": 135, "state": "COMPUTE", "event": "B2", "row": 0, "n": 3, "k_block": 0, "term_mant": -266366640717824, "term_exp": -52}
+{"cycle": 137, "state": "COMPUTE", "event": "A2", "row": 0, "n": 3, "k_block": 0, "acc_mant": -133183320358912, "acc_exp": -51}
+{"cycle": 140, "state": "COMPUTE", "event": "B1", "row": 0, "n": 3, "k_block": 1, "raw": -28}
+{"cycle": 142, "state": "COMPUTE", "event": "B2", "row": 0, "n": 3, "k_block": 1, "term_mant": -234909696, "term_exp": -51}
+{"cycle": 144, "state": "COMPUTE", "event": "A2", "row": 0, "n": 3, "k_block": 1, "acc_mant": -133183555268608, "acc_exp": -51}
+{"cycle": 147, "state": "COMPUTE", "event": "B1", "row": 1, "n": 3, "k_block": 0, "raw": -30745173}
+{"cycle": 149, "state": "COMPUTE", "event": "B2", "row": 1, "n": 3, "k_block": 0, "term_mant": -257909204189184, "term_exp": -52}
+{"cycle": 151, "state": "COMPUTE", "event": "A2", "row": 1, "n": 3, "k_block": 0, "acc_mant": -128954602094592, "acc_exp": -51}
+{"cycle": 154, "state": "COMPUTE", "event": "B1", "row": 1, "n": 3, "k_block": 1, "raw": -126}
+{"cycle": 156, "state": "COMPUTE", "event": "B2", "row": 1, "n": 3, "k_block": 1, "term_mant": -1057093632, "term_exp": -51}
+{"cycle": 158, "state": "COMPUTE", "event": "A2", "row": 1, "n": 3, "k_block": 1, "acc_mant": -128955659188224, "acc_exp": -51}
+{"cycle": 160, "state": "WEIGHT_REQUEST", "event": "DDR_REQUEST", "kind": "WEIGHT", "ddr_rd_req": 1, "ddr_rd_rdy": 1, "ddr_rd_addra": 96, "ddr_rd_addrb": 112, "expected_beats": 3}
+{"cycle": 160, "state": "WEIGHT_REQUEST", "event": "DDR_BEAT", "kind": "WEIGHT", "ddr_rd_vld": 1, "beat_index": 0, "beat_addr": 96, "ddr_rd_data": "0xc944bf3ab530ab26a11c97128d08837df873ee69e45fda55d04bc641bc37b22da8239e19940f8a05807af570eb66e15cd752cd48c33eb934af2aa5209b16910c"}
+{"cycle": 163, "state": "WEIGHT_WAIT", "event": "DDR_BEAT", "kind": "WEIGHT", "ddr_rd_vld": 1, "beat_index": 1, "beat_addr": 104, "ddr_rd_data": "0x8c07827cf772ed68e35ed954cf4ac540bb36b12ca7229d18930e8904fe79f46fea65e05bd651cc47c23db833ae29a41f9a15900b8601fb76f16ce762dd58d34e"}
+{"cycle": 166, "state": "WEIGHT_WAIT", "event": "DDR_BEAT", "kind": "WEIGHT", "ddr_rd_vld": 1, "beat_index": 2, "beat_addr": 112, "ddr_rd_data": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000011"}
+{"cycle": 166, "state": "WEIGHT_WAIT", "event": "DDR_RANGE_COMPLETE", "kind": "WEIGHT", "total_beats": 3}
+{"cycle": 166, "state": "WEIGHT_WAIT", "event": "WEIGHT_ROW_READY", "channel": 4, "bytes": 129}
+{"cycle": 169, "state": "COMPUTE", "event": "B1", "row": 0, "n": 4, "k_block": 0, "raw": -2434445}
+{"cycle": 171, "state": "COMPUTE", "event": "B2", "row": 0, "n": 4, "k_block": 0, "term_mant": -20421604802560, "term_exp": -52}
+{"cycle": 173, "state": "COMPUTE", "event": "A2", "row": 0, "n": 4, "k_block": 0, "acc_mant": -20421604802560, "acc_exp": -52}
+{"cycle": 176, "state": "COMPUTE", "event": "B1", "row": 0, "n": 4, "k_block": 1, "raw": 36}
+{"cycle": 178, "state": "COMPUTE", "event": "B2", "row": 0, "n": 4, "k_block": 1, "term_mant": 302026752, "term_exp": -51}
+{"cycle": 180, "state": "COMPUTE", "event": "A2", "row": 0, "n": 4, "k_block": 1, "acc_mant": -20421000749056, "acc_exp": -52}
+{"cycle": 183, "state": "COMPUTE", "event": "B1", "row": 1, "n": 4, "k_block": 0, "raw": -1753071}
+{"cycle": 185, "state": "COMPUTE", "event": "B2", "row": 1, "n": 4, "k_block": 0, "term_mant": -14705825415168, "term_exp": -52}
+{"cycle": 187, "state": "COMPUTE", "event": "A2", "row": 1, "n": 4, "k_block": 0, "acc_mant": -14705825415168, "acc_exp": -52}
+{"cycle": 190, "state": "COMPUTE", "event": "B1", "row": 1, "n": 4, "k_block": 1, "raw": 162}
+{"cycle": 192, "state": "COMPUTE", "event": "B2", "row": 1, "n": 4, "k_block": 1, "term_mant": 1359120384, "term_exp": -51}
+{"cycle": 194, "state": "COMPUTE", "event": "A2", "row": 1, "n": 4, "k_block": 1, "acc_mant": -14703107174400, "acc_exp": -52}
+{"cycle": 195, "state": "NEXT_CHANNEL", "event": "OUTPUT_GROUP_REQUANT", "group": 0}
+{"cycle": 197, "state": "OUTPUT", "event": "AXIS_OUT_BEAT", "index": 0, "tlast": 1, "eot": 0}
+{"cycle": 198, "state": "OUTPUT", "event": "AXIS_OUT_BEAT", "index": 1, "tlast": 1, "eot": 1}
+{"cycle": 198, "state": "OUTPUT", "event": "STATUS_SUCCESS", "job_id": 42}

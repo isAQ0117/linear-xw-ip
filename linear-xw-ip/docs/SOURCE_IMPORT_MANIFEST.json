@@ -1,0 +1,129 @@
+{
+  "code_archive": "linear_xw_fp32_cycle_rtl_v0_2_ffn_style.zip",
+  "code_archive_sha256": "1db2ac3d6d273e912144d7234af9c02f68604edeef9c80a273c5bd1fa43993a2",
+  "standards_archive": "Linear_xW_Standards_Frozen_Baseline_V1.0.zip",
+  "standards_archive_sha256": "fba53fcfe88adaa965d0c9e96072f4cc7d32e2cea0d64389a6c6e2e5ccd2c716",
+  "duplicate_nine_phase_markdown_identical": true,
+  "code_files": {
+    "README.md": {
+      "sha256": "bd0a0f1530a585bcab9ffa975ce8ff71cadcf35c37f03941c7d1747ac3c1c383",
+      "original_path": "README.md"
+    },
+    "cycle_model.py": {
+      "sha256": "239a82e7c05dbbdb54be2518773e6f6b2bd9e41ee6581c88b488641eedff29fc",
+      "original_path": "cycle_model.py"
+    },
+    "docs/verification/history/fp32_v0_2/cycle_trace.jsonl": {
+      "sha256": "5efc2478167c82bd1bba58c25e9772631f9171c6239a35b3fbee549e98d845e6",
+      "original_path": "demo_results/cycle_trace.jsonl"
+    },
+    "docs/verification/history/fp32_v0_2/ddr_image.bin": {
+      "sha256": "8da426b1f27ee878bb10a532a29d9ba87c48deb83de4e253f5d4cb5c5a4d87e8",
+      "original_path": "demo_results/ddr_image.bin"
+    },
+    "docs/verification/history/fp32_v0_2/ddr_manifest.json": {
+      "sha256": "65718ebd834427d15db9ea0caa0d480607797ef35faaa2481cad60116195576e",
+      "original_path": "demo_results/ddr_manifest.json"
+    },
+    "docs/verification/history/fp32_v0_2/element_errors.csv": {
+      "sha256": "59bb982a6312afc2d61c3501cf143654d11e474fe59f0d3b8176f4bfeda0cd97",
+      "original_path": "demo_results/element_errors.csv"
+    },
+    "docs/verification/history/fp32_v0_2/input_axis_v2.jsonl": {
+      "sha256": "fd68a733bfdaa0f79a864a2bbfe0f393dc776168521f34e4fee21802cd9ed07c",
+      "original_path": "demo_results/input_axis_v2.jsonl"
+    },
+    "docs/verification/history/fp32_v0_2/metrics.json": {
+      "sha256": "1e413aeba303c40850a1c5e21b8fcf6847b9d90983ef232a1d7d886cde3a3f12",
+      "original_path": "demo_results/metrics.json"
+    },
+    "docs/verification/history/fp32_v0_2/output_axis_v2.jsonl": {
+      "sha256": "64f26ae7db77eda22c8e29f2d7436dfd11f2ecf430e1b0403d87f224285a45f3",
+      "original_path": "demo_results/output_axis_v2.jsonl"
+    },
+    "docs/verification/history/fp32_v0_2/output_numeric.json": {
+      "sha256": "c83662ea319cc11c3748fe62730a72a6354dbc9241cba418851a3b831f18f070",
+      "original_path": "demo_results/output_numeric.json"
+    },
+    "examples/fp32_demo_case.json": {
+      "sha256": "54427dcc295e8f5bb7c411af112db71a690b7cc49775a86b06cb402678da00cb",
+      "original_path": "examples/fp32_demo_case.json"
+    },
+    "linear_stream_model/__init__.py": {
+      "sha256": "5c3ee30bf0a8bf9fa41571cc7287fc7fdbd45024395ed8c87ded4ebe3ad80e27",
+      "original_path": "linear_stream_model/__init__.py"
+    },
+    "linear_stream_model/numeric.py": {
+      "sha256": "a9c6333d91dec40e324df84d241f27f2181714c9a877a02a2a410d90342c735d",
+      "original_path": "linear_stream_model/numeric.py"
+    },
+    "rtl/RTL_DESIGN_STATUS.md": {
+      "sha256": "02b85a081c6fefb42e916ef15d99862110f77026b860cadb390e324aeac78d6d",
+      "original_path": "rtl/RTL_DESIGN_STATUS.md"
+    },
+    "rtl/xw_ddr_range_rx.v": {
+      "sha256": "fd5c832687d189eeb3e17f39a3c3388b5e9bc8263a7e1623f18a565a395112b1",
+      "original_path": "rtl/xw_ddr_range_rx.v"
+    },
+    "rtl/xw_fp32_scale_b2.v": {
+      "sha256": "940dc1fabae45ed3aa252a340c236f8ebc38c5d1f915e35b93d12d60a377772b",
+      "original_path": "rtl/xw_fp32_scale_b2.v"
+    },
+    "rtl/xw_job_dim_cfg.v": {
+      "sha256": "32ac658f5231125d2c1872c04591f04626565103988af32f340206ea07914ba0",
+      "original_path": "rtl/xw_job_dim_cfg.v"
+    },
+    "rtl/xw_scale_group_cache.v": {
+      "sha256": "60ec69f4420d352165c85dac16ff97ec19163565dbf31ea98c66432ebbc7a35c",
+      "original_path": "rtl/xw_scale_group_cache.v"
+    },
+    "rtl_sources.f": {
+      "sha256": "df150e66bf8017b3c82b1daae652f7436e1b3528d52830b2853f560b29138001",
+      "original_path": "rtl_sources.f"
+    },
+    "run_rtl_tb.sh": {
+      "sha256": "6f6b451751bc2ef30468c072f10031d4bd0c656de91ade319f1c4d72558c95c5",
+      "original_path": "run_rtl_tb.sh"
+    },
+    "tb/README_MODELSIM.md": {
+      "sha256": "f5283251a0555a55c2e16970bc47fb2333b60963f8c5cd83c68fbff502e7da78",
+      "original_path": "tb/README_MODELSIM.md"
+    },
+    "tb/tb_xw_ddr_range_rx.v": {
+      "sha256": "32ed8588abc95a9a5488ab3b6701ffedcad0e0e4a8c8a149a2c4e811befec18e",
+      "original_path": "tb/tb_xw_ddr_range_rx.v"
+    },
+    "tb/tb_xw_fp32_scale_b2.v": {
+      "sha256": "b3812ab12ebbcdab88962b639eee339f6b946e39f658b59a435e2e0cb747f2dd",
+      "original_path": "tb/tb_xw_fp32_scale_b2.v"
+    },
+    "tb/tb_xw_scale_group_cache.v": {
+      "sha256": "fb92e396f89804438f329f22fc4162268957c7da5036db1e998803c7fe834870",
+      "original_path": "tb/tb_xw_scale_group_cache.v"
+    },
+    "test_cycle.py": {
+      "sha256": "b14e85f00d6296e0afc8a9b5afd0d35dc8ffd45faf7532385a4bcf49fa5ea8c4",
+      "original_path": "test_cycle.py"
+    },
+    "test_fp32.py": {
+      "sha256": "395901a3aae94cb7aa69b9866bce1fc059cd30aff4c4ebb76a50096a459d0953",
+      "original_path": "test_fp32.py"
+    },
+    "verification_report.json": {
+      "sha256": "e771cb99ce5ae9603524980e5ca9da8645f6c97bbcbccdfa375daf0e9906c1ce",
+      "original_path": "verification_report.json"
+    }
+  },
+  "standards_files": {
+    "docs/standards/Linear_xW_9Phase_Development_Standard_V1.0.md": "6914461bf984fa5ad19fa732feb92dbb446b459f03ab04143f33839cad8c70b2",
+    "docs/standards/Linear_xW_Stage0_Interface_Verification_Contract_V1.0.md": "3a46f7c6e4c11703fead1d5d9b6d6fc1bc2889a99cfd6e11a246f45f7e0a1eec",
+    "docs/standards/Linear_xW_Stage0_Interface_Verification_Contract_V1.0.docx": "b9d2d6f447bdbd7b037230168230d0868cc3287032efcdbbc7bf63474bb8f4af",
+    "docs/standards/Linear_xW_Standards_Freeze_Record_V1.0.md": "479692b645a2d5ef85d4c7d4acfe35946c12d4132a19e5f6c26af4c6c144a182",
+    "docs/standards/Linear_xW_Standards_Release_Manifest_V1.0.json": "d8e9d19ef8a4f76b94c4365c749ee2f5b88f492afd17924930845d2431880621"
+  },
+  "python_tests_verified": {
+    "test_cycle.py": "2/2 PASS",
+    "test_fp32.py": "10/10 PASS"
+  },
+  "rtl_hdl_verified": false
+}

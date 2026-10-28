@@ -1,0 +1,99 @@
+{
+  "python_test_suites": [
+    {
+      "script": "test_cycle.py",
+      "exit_code": 0,
+      "summary": "test_batch_weight_reuse (__main__.CycleTests.test_batch_weight_reuse) ... ok\ntest_small_and_boundaries (__main__.CycleTests.test_small_and_boundaries) ... ok\nRan 2 tests in 0.285s\nOK"
+    },
+    {
+      "script": "test_fp32.py",
+      "exit_code": 0,
+      "summary": "test_accumulate_signed72_against_fraction (__main__.FP32A2RoundoffTests.test_accumulate_signed72_against_fraction) ... ok\ntest_17_scale_values_need_two_beats (__main__.FP32DDRSimulationTests.test_17_scale_values_need_two_beats) ... ok\ntest_fp32_scale_not_truncated_to_bf16 (__main__.FP32DDRSimulationTests.test_fp32_scale_not_truncated_to_bf16) ... ok\ntest_mixed_boundaries_and_stalls (__main__.FP32DDRSimulationTests.test_mixed_boundaries_and_stalls) ... ok\ntest_multiple_batches_static (__main__.FP32DDRSimulationTests.test_multiple_batches_static) ... ok\ntest_optional_full_float_reference (__main__.FP32DDRSimulationTests.test_optional_full_float_reference) ... ok\ntest_fp32_crosscheck_1024_bitpatterns (__main__.FP32NumericalTests.test_fp32_crosscheck_1024_bitpatterns) ... ok\ntest_fp32_known_bit_patterns (__main__.FP32NumericalTests.test_fp32_known_bit_patterns) ... ok\ntest_reject_bad_scales (__main__.FP32NumericalTests.test_reject_bad_scales) ... ok\ntest_same_bf16_scale_value_preserves_acc (__main__.FP32NumericalTests.test_same_bf16_scale_value_preserves_acc) ... ok\nRan 10 tests in 0.312s\nOK"
+    }
+  ],
+  "cli_exit_code": 0,
+  "cli_metrics": {
+    "status": "SOFTWARE_CYCLE_MODEL_SUCCESS_NOT_RTL_SIGNOFF",
+    "cycles": 199,
+    "m": 2,
+    "n": 5,
+    "k": 129,
+    "b3b_golden_bit_exact": true,
+    "scale_format": "IEEE754_FP32_RAW32",
+    "b2_term_width_bits": 72,
+    "a2_state_mantissa_bits": 48,
+    "a2_state_exponent_bits": 16,
+    "ddr_requests": 6,
+    "ddr_return_beats": 16,
+    "axis_input_beats": 12,
+    "axis_output_beats": 2,
+    "reference_definition": "exact unrounded xW from BFP18, FP8, FP32-scale decoded data",
+    "max_abs_error": 4.488524609769229e-07,
+    "mean_abs_error": 1.7469310478190892e-07,
+    "rmse": 2.2046888147783567e-07,
+    "max_rel_error": 9.753857977019903e-05,
+    "event_counts": {
+      "JOB_ACCEPT": 1,
+      "AXIS_IN_BEAT": 12,
+      "AXIS_INPUT_COMPLETE": 1,
+      "DDR_REQUEST": 6,
+      "DDR_BEAT": 16,
+      "DDR_RANGE_COMPLETE": 6,
+      "SCALE_CACHE_READY": 1,
+      "DDR_READY_STALL": 1,
+      "WEIGHT_ROW_READY": 5,
+      "B1": 20,
+      "B2": 20,
+      "A2": 20,
+      "OUTPUT_GROUP_REQUANT": 1,
+      "AXIS_OUT_BEAT": 2,
+      "STATUS_SUCCESS": 1
+    },
+    "scale_layout": "FP32_LE_NBLOCK128_GROUP_PAD64_V3"
+  },
+  "rtl_structural_audit": [
+    {
+      "file": "xw_ddr_range_rx.v",
+      "modules": [
+        "xw_ddr_range_rx"
+      ],
+      "endmodule_count": 1,
+      "begin_end_balanced": true,
+      "forbidden_sv_tokens": [],
+      "static_check_ok": true
+    },
+    {
+      "file": "xw_fp32_scale_b2.v",
+      "modules": [
+        "xw_fp32_scale_b2"
+      ],
+      "endmodule_count": 1,
+      "begin_end_balanced": true,
+      "forbidden_sv_tokens": [],
+      "static_check_ok": true
+    },
+    {
+      "file": "xw_job_dim_cfg.v",
+      "modules": [
+        "xw_job_dim_cfg"
+      ],
+      "endmodule_count": 1,
+      "begin_end_balanced": true,
+      "forbidden_sv_tokens": [],
+      "static_check_ok": true
+    },
+    {
+      "file": "xw_scale_group_cache.v",
+      "modules": [
+        "xw_scale_group_cache"
+      ],
+      "endmodule_count": 1,
+      "begin_end_balanced": true,
+      "forbidden_sv_tokens": [],
+      "static_check_ok": true
+    }
+  ],
+  "rtl_simulator_available": false,
+  "rtl_simulation_executed": false,
+  "synthesis_executed": false
+}

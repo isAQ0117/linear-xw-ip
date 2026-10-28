@@ -1,0 +1,32 @@
+{
+  "release": "XW-BASELINE-2026-10-28",
+  "status": "CONTRACT_FROZEN_V1.0",
+  "development_route": "XW-DEV-STD-001 V1.0",
+  "technical_contract": "XW-CONTRACT-STD-001 V1.0",
+  "rtl_hdl_verified": false,
+  "platform_profile_pending": [
+    "DDR_MAX_BURST_BEATS",
+    "DDR_RESPONSE_MAX_LATENCY",
+    "DDR_RESPONSE_MAX_GAP",
+    "DDR_OLD_RESPONSE_CLEAR"
+  ],
+  "latest_ffn_style_source_preflight": "PENDING_REUPLOAD",
+  "files": {
+    "Linear_xW_9Phase_Development_Standard_V1.0.md": {
+      "bytes": 13957,
+      "sha256": "6914461bf984fa5ad19fa732feb92dbb446b459f03ab04143f33839cad8c70b2"
+    },
+    "Linear_xW_Stage0_Interface_Verification_Contract_V1.0.md": {
+      "bytes": 28179,
+      "sha256": "3a46f7c6e4c11703fead1d5d9b6d6fc1bc2889a99cfd6e11a246f45f7e0a1eec"
+    },
+    "Linear_xW_Stage0_Interface_Verification_Contract_V1.0.docx": {
+      "bytes": 57683,
+      "sha256": "b9d2d6f447bdbd7b037230168230d0868cc3287032efcdbbc7bf63474bb8f4af"
+    },
+    "Linear_xW_Standards_Freeze_Record_V1.0.md": {
+      "bytes": 2412,
+      "sha256": "479692b645a2d5ef85d4c7d4acfe35946c12d4132a19e5f6c26af4c6c144a182"
+    }
+  }
+}

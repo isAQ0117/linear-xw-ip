@@ -1,0 +1,13 @@
+{
+  "format": "DDR_RANGE_512_ADDR_STEP8_V1",
+  "weight_layout": "FP8_OUTPUT_MAJOR_K_CONTIGUOUS_PAD64_V1",
+  "scale_layout": "FP32_LE_NBLOCK128_GROUP_PAD64_V3",
+  "weight_base": 0,
+  "scale_base": 120,
+  "weight_words_per_row": 3,
+  "scale_words_per_group": 1,
+  "scale_format": "FP32_RAW32",
+  "scale_bytes_per_value": 4,
+  "n": 5,
+  "k": 129
+}
