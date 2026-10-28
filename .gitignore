@@ -1,0 +1,15 @@
+__pycache__/
+*.pyc
+.venv/
+build/
+sim_build/
+*.vcd
+*.fst
+*.fsdb
+*.out
+*.vvp
+.Xil/
+demo_results/
+gap_results/
+real_results/
+*.safetensors
