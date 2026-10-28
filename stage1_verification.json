@@ -1,0 +1,100 @@
+{
+  "standard_route": "XW-DEV-STD-001 V1.0",
+  "standard_contract": "XW-CONTRACT-STD-001 V1.0 FROZEN",
+  "stage": "1",
+  "stage_verification_status": "STAGE1_IMPLEMENTED_HDL_PENDING",
+  "date": "2026-10-28",
+  "source_baseline": {
+    "full_original_zip": "aCfgsGmRW3G6uah96lgeqC-1793113311.zip",
+    "full_original_sha256": "e23323a960e115a1961616f344801a0f0902646e79d872963335218d658c6ccc",
+    "starter_original_zip": "yhOzgzTCq3leZKmV8vifTY-1793113315.zip",
+    "starter_original_sha256": "c2d2c339296fb075b4343249c1c7004664544777a9ffc93201017d8ef93ed7fd",
+    "four_original_rtl_identical_in_both_archives": true,
+    "historical_ffn_style_zip_available_this_turn": false
+  },
+  "changes": {
+    "modified_files_relative_to_full_source": [
+      "README.md",
+      "rtl/RTL_DESIGN_STATUS.md",
+      "rtl/xw_ddr_range_rx.v",
+      "rtl/xw_fp32_scale_b2.v",
+      "rtl/xw_job_dim_cfg.v",
+      "rtl/xw_scale_group_cache.v",
+      "run_rtl_tb.sh",
+      "tb/README_MODELSIM.md",
+      "tb/tb_xw_ddr_range_rx.v",
+      "tb/tb_xw_fp32_scale_b2.v",
+      "tb/tb_xw_scale_group_cache.v"
+    ],
+    "new_files_relative_to_full_source": [
+      "docs/stage1/STAGE1_RTL_CONTRACT_ALIGNMENT.md",
+      "docs/standards/Linear_xW_9Phase_Development_Standard_V1.0.md",
+      "docs/standards/Linear_xW_Stage0_Interface_Verification_Contract_V1.0.md",
+      "docs/standards/Linear_xW_Standards_Freeze_Record_V1.0.md",
+      "run_modelsim_tb.sh",
+      "run_stage1_software.sh",
+      "stage1_contract_model.py",
+      "stage1_source_manifest.json",
+      "stage1_verification.json",
+      "tb/negative/tb_xw_invalid_cache_params.v",
+      "tb/negative/tb_xw_invalid_job_params.v",
+      "tb/tb_xw_job_dim_cfg.v",
+      "tb/vectors/b2_fp32_vectors.mem",
+      "test_stage1_contract.py",
+      "tools/check_stage1_static.py",
+      "tools/gen_b2_vectors.py"
+    ],
+    "missing_original_files": [],
+    "original_unmodified_file_count": 16,
+    "original_v02_python_and_demo_assets_byte_identical": true,
+    "internal_ports_added": {
+      "xw_ddr_range_rx": "range_error_code[7:0]",
+      "xw_scale_group_cache": "cache_error_code[7:0]"
+    },
+    "top_level_abi_35_named_ports_changed": false,
+    "b2_arithmetic_assignments_changed": false
+  },
+  "verification": {
+    "python_old_tests": {
+      "total": 12,
+      "passed": 12,
+      "result": "PASS"
+    },
+    "python_new_tests": {
+      "total": 23,
+      "passed": 23,
+      "result": "PASS"
+    },
+    "python_total_tests": {
+      "total": 35,
+      "passed": 35,
+      "result": "PASS"
+    },
+    "b2_vectors": {
+      "count": 512,
+      "source": "tools/gen_b2_vectors.py",
+      "deterministic_check": "PASS",
+      "exact_fraction_crosscheck": "PASS"
+    },
+    "rtl_static_structure": "PASS (structural lint only, not HDL compile)",
+    "b2_assignment_equivalence": "PASS (whitespace-insensitive RHS textual comparison)",
+    "tb_runner_fail_closed_mock_tests": "PASS 4/4, NOT real HDL",
+    "shell_syntax": "PASS",
+    "negative_hdl_elaboration_tests": "PREPARED 2, PENDING actual HDL compiler",
+    "python_compileall": "PASS",
+    "hdl_compilation": "PENDING (no HDL compiler in current environment)",
+    "hdl_simulation": "PENDING (no HDL simulator in current environment)",
+    "hdl_synthesis": "PENDING"
+  },
+  "next_required_actions": [
+    "Run run_rtl_tb.sh or run_modelsim_tb.sh on real HDL tools, archive logs",
+    "Run invalid parameter elaboration negative tests on HDL tools",
+    "Verify stable exposed cycles against Stage1 Python microarchitecture model",
+    "Confirm external DDR flush/reset guarantees for recovery (platform record)"
+  ],
+  "verification_limitations": [
+    "Cannot claim HDL syntax elaboration or runtime PASS without an HDL simulator",
+    "Historical FFN-style ZIP is unavailable; ANSI/FFN style re-established from original V0.2 code",
+    "No GPIO/physical FPGA hardware test executed"
+  ]
+}

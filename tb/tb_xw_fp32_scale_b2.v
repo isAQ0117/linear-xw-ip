@@ -1,46 +1,50 @@
 `timescale 1ns/1ps
-// Verilog-2001 direct-combinational B2 checks (no SV).
+// Exact signed72/signed12 B2 vectors: normal/subnormal/invalid/extrema.
+// Vector format: {raw48,act_exp8,scale_bits32,term72,term_exp12,valid1}.
 module tb_xw_fp32_scale_b2;
-    reg signed [47:0] raw;
-    reg signed [7:0] exp;
-    reg [31:0] scale;
+    localparam integer VECTOR_COUNT = 512;
+
+    reg  signed [47:0] raw;
+    reg  signed  [7:0] exp;
+    reg         [31:0] scale;
     wire signed [71:0] term;
     wire signed [11:0] term_e;
-    wire valid;
+    wire               valid;
+
+    reg [172:0] vectors [0:VECTOR_COUNT-1];
+    reg signed [71:0] exp_term;
+    reg signed [11:0] exp_term_e;
+    reg               exp_valid;
+    integer i;
 
     xw_fp32_scale_b2 dut (
         .b1_raw(raw), .act_exp(exp), .scale_bits(scale),
         .term_mant(term), .term_exp(term_e), .scale_valid(valid)
     );
+
     initial begin
-        raw = 48'sd100000; exp = -8'sd7; scale = 32'h3f800000;
-        #2;
-        if (valid !== 1'b1 || term !== 72'sd838860800000 ||
-            term_e !== -12'sd39) begin
-            $display("FAIL normal FP32 1.0 term=%d exp=%d",term,term_e);
-            $finish;
+        $readmemh("tb/vectors/b2_fp32_vectors.mem", vectors);
+        raw = 0; exp = 0; scale = 0;
+        exp_term = 0; exp_term_e = 0; exp_valid = 0;
+        for (i = 0; i < VECTOR_COUNT; i = i + 1) begin
+            if (^vectors[i] === 1'bx) begin
+                $display("FAIL missing or malformed B2 vector index=%0d", i);
+                $finish;
+            end
+            {raw, exp, scale, exp_term, exp_term_e, exp_valid} = vectors[i];
+            #2;
+            if (valid !== exp_valid || term !== exp_term ||
+                term_e !== exp_term_e) begin
+                $display("FAIL B2 vector i=%0d raw=%h act=%h scale=%h", 
+                         i, raw, exp, scale);
+                $display("expected valid=%b term=%h exp=%h", 
+                         exp_valid, exp_term, exp_term_e);
+                $display("actual   valid=%b term=%h exp=%h", 
+                         valid, term, term_e);
+                $finish;
+            end
         end
-        raw = -48'sd123456; exp = 8'sd5; scale = 32'h3f80624e;
-        #2;
-        if (valid !== 1'b1 || term !== -72'sd1038730882944 ||
-            term_e !== -12'sd27) begin
-            $display("FAIL fractional FP32");
-            $finish;
-        end
-        raw = 48'sd7; exp = 8'sd0; scale = 32'h00000001;
-        #2;
-        if (valid !== 1'b1 || term !== 72'sd7 ||
-            term_e !== -12'sd158) begin
-            $display("FAIL FP32 subnormal");
-            $finish;
-        end
-        raw = 48'sd7; exp = 8'sd0; scale = 32'hbf800000;
-        #2;
-        if (valid !== 1'b0 || term !== 72'sd0) begin
-            $display("FAIL negative scale rejection");
-            $finish;
-        end
-        $display("PASS tb_xw_fp32_scale_b2");
+        $display("PASS tb_xw_fp32_scale_b2 vectors=%0d", VECTOR_COUNT);
         $finish;
     end
 endmodule
