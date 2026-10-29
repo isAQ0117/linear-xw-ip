@@ -10,3 +10,7 @@ rtl/xw_b1_dot128.v
 rtl/xw_b2_fp32_pipe.v
 rtl/xw_a2_accum48.v
 rtl/xw_b3b_compute_ctrl.v
+rtl/xw_output_group_buffer.v
+rtl/xw_bfp18_requant.v
+rtl/xw_result_buffer.v
+rtl/xw_stage5_ctrl.v

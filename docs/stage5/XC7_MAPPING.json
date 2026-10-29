@@ -1,0 +1,32 @@
+{
+  "status": "PASS_EXPLORATORY_XC7_MAPPING",
+  "family": "xc7",
+  "part": "NOT_SPECIFIED",
+  "cells": {
+    "LUT2": 320,
+    "LUT6": 452,
+    "LUT3": 462,
+    "LUT5": 166,
+    "LUT4": 221,
+    "INV": 645,
+    "CARRY4": 123,
+    "FDCE": 550,
+    "FDRE": 10,
+    "FDPE": 1,
+    "RAMB36E1": 7,
+    "RAM32M": 6
+  },
+  "lut": 1621,
+  "ff": 561,
+  "bram36": 7,
+  "bram18": 0,
+  "dsp": 0,
+  "topological_path_cells": 50,
+  "note": "Topological count is not ns. No device delay/clock/placement/routing. Vivado and 100-150MHz PENDING.",
+  "source_sha256": {
+    "xw_output_group_buffer": "eed157bf2c17766ffbd8b59779c839fc8659dd6dd84b3a70c8715315796a3fc7",
+    "xw_bfp18_requant": "73c4ea5b75c384cbff88a40af0d55a23948e50015f178dd968beb3227dc9191b",
+    "xw_result_buffer": "33c4b1e274e1256748ca4a18bda7d3deb5aabaa813a6311fd3d3e444d50f6111",
+    "xw_stage5_ctrl": "5e0e99062beaaf887398f3b014d9d16574d203a5cd6b92cd791cad34022b0150"
+  }
+}

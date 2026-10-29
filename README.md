@@ -1,3 +1,11 @@
+# Linear xW IP — Stage 5
+
+当前已实现 Stage0–4 基线和 Stage5 BFP18 Requant + Full-Job Result Buffer。Stage5 本地数值、周期、真实HDL、Stage4+5联合、同步RAM结构及xc7探索映射通过；Vivado/器件时序与外部独立验收仍Pending。Stage6 AXIS输出、Stage7 Scheduler、Stage8多Batch尚未实现。
+
+Stage5审阅入口：[REVIEW_STAGE5.md](REVIEW_STAGE5.md)，最终证据：[docs/stage5/DELIVERY_REPORT.md](docs/stage5/DELIVERY_REPORT.md)。执行 `make stage5-test`、`make stage5-synthesis-check`、`make stage5-audit`。交付快照先执行 `python3 tools/check_stage5_delivery.py`，再重跑会重写日志的测试。默认MAX_N=12288；动态尺寸与参数边界见报告。
+
+下面保留原V0.2模型及Stage1–4的历史说明；当前状态以上述Stage5报告及docs/PROJECT_STATUS.md为准。
+
 # Linear xW / B3-B FP32-Scale Cycle Model — V0.2
 
 **Scale profile locked for this revision:** raw IEEE-754 **FP32**, not BF16.
@@ -141,7 +149,7 @@ interfaces, packages, structures, or `$clog2`.
 
 The current implementation and measured evidence are indexed in
 [docs/stage23/DELIVERY_REPORT.md](docs/stage23/DELIVERY_REPORT.md).
-This section describes the M=1 input/DDR storage baseline. The Stage4 computing core is now added below; Stage5–8 remain pending.
+This section describes the M=1 input/DDR storage baseline. The Stage4 computing core is now added below; Stage6–8 remain pending.
 The historical text above describes V0.2 and is not current signoff status.
 
 ```sh

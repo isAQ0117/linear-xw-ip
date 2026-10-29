@@ -1,0 +1,254 @@
+{
+  "status": "PASS",
+  "source": "actual RTL RESULT_READ events; independently checked against A2 Fraction Golden and original requant; software-only 28-lane roundtrip",
+  "jobs": [
+    {
+      "suite": "controller",
+      "job_id": 100,
+      "n": 1,
+      "read_words": 1,
+      "groups": 1,
+      "test_only_512bit_beats": 1
+    },
+    {
+      "suite": "controller",
+      "job_id": 101,
+      "n": 1,
+      "read_words": 1,
+      "groups": 1,
+      "test_only_512bit_beats": 1
+    },
+    {
+      "suite": "controller",
+      "job_id": 102,
+      "n": 1,
+      "read_words": 1,
+      "groups": 1,
+      "test_only_512bit_beats": 1
+    },
+    {
+      "suite": "controller",
+      "job_id": 103,
+      "n": 7,
+      "read_words": 1,
+      "groups": 1,
+      "test_only_512bit_beats": 1
+    },
+    {
+      "suite": "controller",
+      "job_id": 104,
+      "n": 8,
+      "read_words": 1,
+      "groups": 1,
+      "test_only_512bit_beats": 1
+    },
+    {
+      "suite": "controller",
+      "job_id": 105,
+      "n": 9,
+      "read_words": 2,
+      "groups": 1,
+      "test_only_512bit_beats": 1
+    },
+    {
+      "suite": "controller",
+      "job_id": 106,
+      "n": 28,
+      "read_words": 4,
+      "groups": 1,
+      "test_only_512bit_beats": 1
+    },
+    {
+      "suite": "controller",
+      "job_id": 107,
+      "n": 29,
+      "read_words": 4,
+      "groups": 1,
+      "test_only_512bit_beats": 2
+    },
+    {
+      "suite": "controller",
+      "job_id": 108,
+      "n": 127,
+      "read_words": 16,
+      "groups": 1,
+      "test_only_512bit_beats": 5
+    },
+    {
+      "suite": "controller",
+      "job_id": 109,
+      "n": 128,
+      "read_words": 16,
+      "groups": 1,
+      "test_only_512bit_beats": 5
+    },
+    {
+      "suite": "controller",
+      "job_id": 110,
+      "n": 128,
+      "read_words": 16,
+      "groups": 1,
+      "test_only_512bit_beats": 5
+    },
+    {
+      "suite": "controller",
+      "job_id": 111,
+      "n": 128,
+      "read_words": 16,
+      "groups": 1,
+      "test_only_512bit_beats": 5
+    },
+    {
+      "suite": "controller",
+      "job_id": 112,
+      "n": 129,
+      "read_words": 17,
+      "groups": 2,
+      "test_only_512bit_beats": 6
+    },
+    {
+      "suite": "controller",
+      "job_id": 113,
+      "n": 129,
+      "read_words": 17,
+      "groups": 2,
+      "test_only_512bit_beats": 6
+    },
+    {
+      "suite": "controller",
+      "job_id": 114,
+      "n": 129,
+      "read_words": 17,
+      "groups": 2,
+      "test_only_512bit_beats": 6
+    },
+    {
+      "suite": "controller",
+      "job_id": 115,
+      "n": 255,
+      "read_words": 32,
+      "groups": 2,
+      "test_only_512bit_beats": 10
+    },
+    {
+      "suite": "controller",
+      "job_id": 116,
+      "n": 256,
+      "read_words": 32,
+      "groups": 2,
+      "test_only_512bit_beats": 10
+    },
+    {
+      "suite": "controller",
+      "job_id": 117,
+      "n": 257,
+      "read_words": 33,
+      "groups": 3,
+      "test_only_512bit_beats": 11
+    },
+    {
+      "suite": "controller",
+      "job_id": 118,
+      "n": 12288,
+      "read_words": 1536,
+      "groups": 96,
+      "test_only_512bit_beats": 480
+    },
+    {
+      "suite": "controller",
+      "job_id": 119,
+      "n": 1,
+      "read_words": 1,
+      "groups": 1,
+      "test_only_512bit_beats": 1
+    },
+    {
+      "suite": "controller",
+      "job_id": 120,
+      "n": 1,
+      "read_words": 1,
+      "groups": 1,
+      "test_only_512bit_beats": 1
+    },
+    {
+      "suite": "controller",
+      "job_id": 121,
+      "n": 1,
+      "read_words": 1,
+      "groups": 1,
+      "test_only_512bit_beats": 1
+    },
+    {
+      "suite": "controller",
+      "job_id": 922,
+      "n": 1,
+      "read_words": 1,
+      "groups": 1,
+      "test_only_512bit_beats": 1
+    },
+    {
+      "suite": "controller",
+      "job_id": 923,
+      "n": 1,
+      "read_words": 1,
+      "groups": 1,
+      "test_only_512bit_beats": 1
+    },
+    {
+      "suite": "controller",
+      "job_id": 924,
+      "n": 1,
+      "read_words": 1,
+      "groups": 1,
+      "test_only_512bit_beats": 1
+    },
+    {
+      "suite": "controller",
+      "job_id": 925,
+      "n": 1,
+      "read_words": 1,
+      "groups": 1,
+      "test_only_512bit_beats": 1
+    },
+    {
+      "suite": "controller",
+      "job_id": 926,
+      "n": 1,
+      "read_words": 1,
+      "groups": 1,
+      "test_only_512bit_beats": 1
+    },
+    {
+      "suite": "controller",
+      "job_id": 927,
+      "n": 1,
+      "read_words": 1,
+      "groups": 1,
+      "test_only_512bit_beats": 1
+    },
+    {
+      "suite": "integration",
+      "job_id": 5001,
+      "n": 2,
+      "read_words": 1,
+      "groups": 1,
+      "test_only_512bit_beats": 1
+    },
+    {
+      "suite": "integration",
+      "job_id": 5002,
+      "n": 129,
+      "read_words": 17,
+      "groups": 2,
+      "test_only_512bit_beats": 6
+    },
+    {
+      "suite": "integration",
+      "job_id": 5003,
+      "n": 129,
+      "read_words": 17,
+      "groups": 2,
+      "test_only_512bit_beats": 6
+    }
+  ]
+}

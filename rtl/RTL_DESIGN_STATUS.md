@@ -23,7 +23,18 @@
 执行 `make rtl-test` 与 `make stage23-test` 可复现；详细日志/哈希/限制见
 `docs/stage23/DELIVERY_REPORT.md`。
 Yosys确认新大容量Buffer的同步RAM推断，Vivado 2023.2及FPGA实现仍Pending。
-Stage4 B1/B2 Pipe/A2/局部Controller已实现并通过本地数值、HDL、周期和结构验证，见docs/stage4/DELIVERY_REPORT.md；Stage5 Requant、Stage6输出/Job状态、Stage7完整集成、Stage8多Batch均未实现。
+Stage4 B1/B2 Pipe/A2/局部Controller已实现并通过本地数值、HDL、周期和结构验证，见docs/stage4/DELIVERY_REPORT.md；Stage5 Requant/Buffer已实现并与真实Stage4连接；Stage6输出/Job状态、Stage7完整集成、Stage8多Batch仍未实现。
 
 
 独立审查R1补充：此前P0-01/P0-02及P1-03已修复，详见docs/stage23/REVIEW_RESOLUTION.md（从仓库根定位）。所有PASS仅为本地可复现测试结果；外部独立复审和正式签核仍Pending。
+
+## Stage5结果缓存
+
+| 模块 | 状态 | 实测证据 |
+|---|---|---|
+| xw_output_group_buffer | 128×64同步RAM，接收时Hmax | 模块PRE/NBA、全字段边界通过 |
+| xw_bfp18_requant | 单条精确RNE、最多一次原值retry | 两Golden bit-exact，模块HDL通过 |
+| xw_result_buffer | 参数化144bit完整Job RAM、同步指数RAM | 尾mask/重试覆盖/同步读/参数65535通过 |
+| xw_stage5_ctrl | 局部收集/提交/完成/首错及恢复 | 整Job/故障竞争/真实Stage4+5通过 |
+
+完整证据见docs/stage5/DELIVERY_REPORT.md。xc7家族探索映射不等于Vivado实际器件时序通过；Stage6/7未提前实现。

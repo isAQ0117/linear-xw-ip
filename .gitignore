@@ -22,3 +22,11 @@ docs/stage4/PERFORMANCE.json
 docs/stage4/RESULTS_*.json
 docs/stage4/SOURCE_CHANGES.patch
 docs/stage4/DELIVERY_MANIFEST.json
+
+# Stage 5 full-review artifacts, regenerated outside the source repository
+docs/stage5/logs/
+docs/stage5/NUMERIC_DECISIONS.jsonl.gz
+docs/stage5/BASELINE_DOCX_EXTRACT.txt
+docs/stage5/DELIVERY_MANIFEST.json
+docs/stage5/SOURCE_CHANGES.patch
+docs/stage5/RESULTS_*.json

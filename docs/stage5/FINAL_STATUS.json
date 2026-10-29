@@ -1,0 +1,17 @@
+{
+  "RTL_Implemented": "PASS",
+  "Numeric_Golden": "PASS",
+  "Python_Cycle_Model": "PASS",
+  "HDL_Module_Simulation": "PASS",
+  "Stage4_5_Integration": "PASS",
+  "Synthesis_Structure": "PASS",
+  "Vivado_Timing": "PENDING",
+  "main_cycles": 136036,
+  "alternate_cycles": 149615,
+  "rtl_events": 62992,
+  "remaining_risks": [
+    "Vivado/part/constraints/timing",
+    "external clean-boundary and reset guarantees",
+    "external independent acceptance"
+  ]
+}

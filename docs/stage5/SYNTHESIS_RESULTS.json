@@ -1,0 +1,201 @@
+{
+  "tool": "Yosys 0.23 (git sha1 7ce5011c24b)",
+  "modules": [
+    {
+      "module": "xw_output_group_buffer",
+      "status": "PASS_GENERIC_STRUCTURE",
+      "ff_bits": 88,
+      "memories": [
+        {
+          "module": "xw_output_group_buffer",
+          "name": "states",
+          "WIDTH": 64,
+          "SIZE": 128,
+          "RD_PORTS": 1,
+          "WR_PORTS": 1,
+          "RD_CLK_ENABLE": 1,
+          "WR_CLK_ENABLE": 1
+        }
+      ],
+      "cells": {
+        "$add": 10,
+        "$adffe": 10,
+        "$reduce_bool": 11,
+        "$ne": 6,
+        "$not": 3,
+        "$reduce_and": 6,
+        "$eq": 1,
+        "$logic_not": 8,
+        "$ge": 1,
+        "$gt": 3,
+        "$logic_and": 17,
+        "$logic_or": 12,
+        "$adff": 1,
+        "$mux": 48,
+        "$mem_v2": 1
+      },
+      "latches": 0,
+      "combinational_loops": 0,
+      "multipliers": 0
+    },
+    {
+      "module": "xw_bfp18_requant",
+      "status": "PASS_GENERIC_STRUCTURE",
+      "ff_bits": 93,
+      "memories": [],
+      "cells": {
+        "$add": 5,
+        "$adffe": 12,
+        "$ne": 9,
+        "$reduce_bool": 5,
+        "$not": 5,
+        "$reduce_and": 9,
+        "$eq": 5,
+        "$logic_not": 4,
+        "$gt": 4,
+        "$le": 1,
+        "$logic_and": 12,
+        "$logic_or": 10,
+        "$lt": 4,
+        "$neg": 1,
+        "$adff": 4,
+        "$mux": 52,
+        "$pmux": 5,
+        "$shiftx": 1,
+        "$shl": 2,
+        "$shr": 1,
+        "$sub": 5
+      },
+      "latches": 0,
+      "combinational_loops": 0,
+      "multipliers": 0
+    },
+    {
+      "module": "xw_result_buffer",
+      "status": "PASS_GENERIC_STRUCTURE",
+      "ff_bits": 251,
+      "memories": [
+        {
+          "module": "xw_result_buffer",
+          "name": "exponents",
+          "WIDTH": 8,
+          "SIZE": 96,
+          "RD_PORTS": 1,
+          "WR_PORTS": 1,
+          "RD_CLK_ENABLE": 1,
+          "WR_CLK_ENABLE": 1
+        },
+        {
+          "module": "xw_result_buffer",
+          "name": "words",
+          "WIDTH": 144,
+          "SIZE": 1536,
+          "RD_PORTS": 1,
+          "WR_PORTS": 1,
+          "RD_CLK_ENABLE": 1,
+          "WR_CLK_ENABLE": 1
+        }
+      ],
+      "cells": {
+        "$add": 7,
+        "$adffe": 16,
+        "$reduce_bool": 9,
+        "$ne": 13,
+        "$not": 3,
+        "$reduce_and": 11,
+        "$logic_not": 9,
+        "$eq": 10,
+        "$ge": 5,
+        "$gt": 2,
+        "$logic_and": 23,
+        "$logic_or": 38,
+        "$lt": 1,
+        "$adff": 2,
+        "$mux": 75,
+        "$shr": 1,
+        "$sub": 2,
+        "$mem_v2": 2
+      },
+      "latches": 0,
+      "combinational_loops": 0,
+      "multipliers": 0
+    },
+    {
+      "module": "xw_stage5_ctrl",
+      "status": "PASS_GENERIC_STRUCTURE",
+      "ff_bits": 561,
+      "memories": [
+        {
+          "module": "$paramod\\xw_result_buffer\\MAX_N=s32'00000000000000000011000000000000",
+          "name": "exponents",
+          "WIDTH": 8,
+          "SIZE": 96,
+          "RD_PORTS": 1,
+          "WR_PORTS": 1,
+          "RD_CLK_ENABLE": 1,
+          "WR_CLK_ENABLE": 1
+        },
+        {
+          "module": "$paramod\\xw_result_buffer\\MAX_N=s32'00000000000000000011000000000000",
+          "name": "words",
+          "WIDTH": 144,
+          "SIZE": 1536,
+          "RD_PORTS": 1,
+          "WR_PORTS": 1,
+          "RD_CLK_ENABLE": 1,
+          "WR_CLK_ENABLE": 1
+        },
+        {
+          "module": "xw_output_group_buffer",
+          "name": "states",
+          "WIDTH": 64,
+          "SIZE": 128,
+          "RD_PORTS": 1,
+          "WR_PORTS": 1,
+          "RD_CLK_ENABLE": 1,
+          "WR_CLK_ENABLE": 1
+        }
+      ],
+      "cells": {
+        "$add": 23,
+        "$adffe": 48,
+        "$reduce_bool": 29,
+        "$ne": 37,
+        "$not": 14,
+        "$reduce_and": 33,
+        "$logic_not": 32,
+        "$eq": 25,
+        "$ge": 8,
+        "$gt": 11,
+        "$logic_and": 82,
+        "$logic_or": 81,
+        "$lt": 7,
+        "$adff": 9,
+        "$mux": 208,
+        "$shr": 2,
+        "$sub": 8,
+        "$mem_v2": 3,
+        "$le": 2,
+        "$neg": 1,
+        "$pmux": 7,
+        "$shiftx": 1,
+        "$shl": 2,
+        "xw_output_group_buffer": 1,
+        "xw_bfp18_requant": 1,
+        "$paramod\\xw_result_buffer\\MAX_N=s32'00000000000000000011000000000000": 1
+      },
+      "latches": 0,
+      "combinational_loops": 0,
+      "multipliers": 0
+    }
+  ],
+  "source_sha256": {
+    "xw_output_group_buffer": "eed157bf2c17766ffbd8b59779c839fc8659dd6dd84b3a70c8715315796a3fc7",
+    "xw_bfp18_requant": "73c4ea5b75c384cbff88a40af0d55a23948e50015f178dd968beb3227dc9191b",
+    "xw_result_buffer": "33c4b1e274e1256748ca4a18bda7d3deb5aabaa813a6311fd3d3e444d50f6111",
+    "xw_stage5_ctrl": "5e0e99062beaaf887398f3b014d9d16574d203a5cd6b92cd791cad34022b0150"
+  },
+  "vivado": "PENDING",
+  "part": "NOT_SPECIFIED",
+  "timing": "PENDING"
+}

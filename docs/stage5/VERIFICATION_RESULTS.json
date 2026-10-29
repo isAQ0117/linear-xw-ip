@@ -1,0 +1,109 @@
+{
+  "status": "PASS",
+  "iverilog": "Icarus Verilog version 11.0 (stable) ()",
+  "tests": [
+    {
+      "label": "group",
+      "result": "PASS",
+      "cycles": 3123,
+      "coverage": {
+        "groups": 32,
+        "lengths": [
+          1,
+          7,
+          8,
+          9,
+          28,
+          29,
+          127,
+          128
+        ],
+        "fault_cases": 7,
+        "seed": "0x5181"
+      },
+      "events": 0,
+      "vector_sha256": "93f4f0bd922bd452f652fe6413eda12394c4f16b94be17e3c06667a621eb622f",
+      "seconds": 0.151
+    },
+    {
+      "label": "requant",
+      "result": "PASS",
+      "cycles": 54370,
+      "coverage": {
+        "groups": 2892,
+        "retries": 190,
+        "range_errors": 535,
+        "response_errors": 2,
+        "cycles": 54370
+      },
+      "events": 0,
+      "vector_sha256": "13998a24dddc3df7bd7250a9feaed7c37ccdb893831a7096dfad4b8244969c3e",
+      "seconds": 6.528
+    },
+    {
+      "label": "result",
+      "result": "PASS",
+      "cycles": 29189,
+      "coverage": {
+        "jobs": 14,
+        "max_n": 12288,
+        "fault_cases": 8,
+        "retry_overwrite": true,
+        "cycles": 29189
+      },
+      "events": 0,
+      "vector_sha256": "bb4290fa06383f289e04301b6f28fa029e7399d9eac94e0917c9086c7d80e426",
+      "seconds": 1.362
+    },
+    {
+      "label": "controller",
+      "result": "PASS",
+      "cycles": 37053,
+      "coverage": {
+        "jobs": 28,
+        "max_n": 12288,
+        "n_matrix": [
+          1,
+          7,
+          8,
+          9,
+          28,
+          29,
+          127,
+          128,
+          129,
+          255,
+          256,
+          257,
+          12288,
+          1
+        ],
+        "fault_cases": 12,
+        "collision_cases": 12,
+        "seed": "0x5184",
+        "cycles": 37053
+      },
+      "events": 61856,
+      "vector_sha256": "6db0e27a18c95ca363e852e325ecc35caaf4c78c358182d435d31db8233935d1",
+      "seconds": 7.531
+    },
+    {
+      "label": "integration",
+      "result": "PASS",
+      "cycles": 12301,
+      "coverage": {
+        "channels": 260,
+        "real_n2_k129": true,
+        "real_n129_k129": true,
+        "real_n129_k1": true,
+        "stage4_result_stall_edges": 168,
+        "ddr_requests": 265,
+        "ddr_beats": 527,
+        "cycles": 12301
+      },
+      "events": 1136,
+      "vector_sha256": "10146bbae871d569075bcc9f4e9e329b86d98160243df7cb5a64616075532a31",
+      "seconds": 22.603
+    }
+  ]
+}

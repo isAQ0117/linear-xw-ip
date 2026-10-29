@@ -1,0 +1,58 @@
+{
+  "status": "PASS",
+  "directed_constants": "PASS",
+  "parameter_guards": 4,
+  "alternate_parameter_tests": [
+    {
+      "label": "result_1",
+      "max_n": 1,
+      "cycles": 79,
+      "vector_sha256": "edc72089f5bcd8b3469f441eea27f3aaa793081fa098c7801f8560b0e13b7fcc"
+    },
+    {
+      "label": "result_65535",
+      "max_n": 65535,
+      "cycles": 143587,
+      "vector_sha256": "16d5ac814d6bdaa1b8a4bfce7035f1bfd9485a55543a4db839e6d9be9d6f25d4"
+    },
+    {
+      "label": "controller_257",
+      "max_n": 257,
+      "cycles": 5949,
+      "vector_sha256": "a941e7b1f50fee60714d5c9799aadfc9e99e7a87277029bfa7f6c5797ac30a7a"
+    }
+  ],
+  "runner_rejections": 3,
+  "mutations": [
+    {
+      "name": "tie_even",
+      "status": "EXPECTED_REJECTION",
+      "exit_code": 1
+    },
+    {
+      "name": "symmetric_bound",
+      "status": "EXPECTED_REJECTION",
+      "exit_code": 1
+    },
+    {
+      "name": "premature_exp",
+      "status": "EXPECTED_REJECTION",
+      "exit_code": 1
+    },
+    {
+      "name": "double_round",
+      "status": "EXPECTED_REJECTION",
+      "exit_code": 1
+    },
+    {
+      "name": "early_publish",
+      "status": "EXPECTED_REJECTION",
+      "exit_code": 1
+    },
+    {
+      "name": "tail_stale",
+      "status": "EXPECTED_REJECTION",
+      "exit_code": 1
+    }
+  ]
+}
