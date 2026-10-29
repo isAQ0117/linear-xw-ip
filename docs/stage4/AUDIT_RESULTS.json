@@ -1,0 +1,23 @@
+{
+  "uploaded_head": "b67698ac6d318518ae328ab3ae91496f5a55b039",
+  "baseline_files": 122,
+  "missing": [],
+  "protected_files": 14,
+  "protected_unchanged": true,
+  "production_sources": [
+    "rtl/xw_job_dim_cfg.v",
+    "rtl/xw_ddr_range_rx.v",
+    "rtl/xw_scale_group_cache.v",
+    "rtl/xw_fp32_scale_b2.v",
+    "rtl/xw_axis_bfp18_input.v",
+    "rtl/xw_activation_buffer.v",
+    "rtl/xw_ddr_addr_gen.v",
+    "rtl/xw_weight_row_buffer.v",
+    "rtl/xw_b1_dot128.v",
+    "rtl/xw_b2_fp32_pipe.v",
+    "rtl/xw_a2_accum48.v",
+    "rtl/xw_b3b_compute_ctrl.v"
+  ],
+  "historic_ddr_rebuild": "PASS",
+  "source_signatures_current": true
+}

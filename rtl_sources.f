@@ -6,3 +6,7 @@ rtl/xw_axis_bfp18_input.v
 rtl/xw_activation_buffer.v
 rtl/xw_ddr_addr_gen.v
 rtl/xw_weight_row_buffer.v
+rtl/xw_b1_dot128.v
+rtl/xw_b2_fp32_pipe.v
+rtl/xw_a2_accum48.v
+rtl/xw_b3b_compute_ctrl.v

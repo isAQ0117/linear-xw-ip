@@ -137,11 +137,11 @@ The target is Vivado 2023.2 and older ModelSim as possible; RTL deliberately
 uses traditional Verilog-2001 without SystemVerilog `logic`, `always_ff`,
 interfaces, packages, structures, or `$clog2`.
 
-## Current Stage 2+3 development
+## Stage 2+3 storage baseline
 
 The current implementation and measured evidence are indexed in
 [docs/stage23/DELIVERY_REPORT.md](docs/stage23/DELIVERY_REPORT.md).
-This is M=1 input/DDR storage infrastructure, without the Stage4–8 engine.
+This section describes the M=1 input/DDR storage baseline. The Stage4 computing core is now added below; Stage5–8 remain pending.
 The historical text above describes V0.2 and is not current signoff status.
 
 ```sh
@@ -158,3 +158,7 @@ vector hashes, baseline hashes and reports are under `docs/stage23/`.
 `DDR_MAX_BURST_BEATS` must be explicitly set for synthesis; test values do not
 represent a DDR controller specification. Target Vivado 2023.2, FPGA mapping,
 timing closure, and external transaction cleanup guarantees remain unverified.
+
+## Stage 4计算核心
+
+已实现B1/B2 Pipe/A2及局部Controller，完整复审入口见[REVIEW_STAGE4.md](REVIEW_STAGE4.md)。Stage4数值/真实Icarus/周期/通用结构检查通过，Vivado与目标时序仍Pending。执行`make stage4-test`或`make all-tests`，不要将局部result当作完整Linear Job输出。

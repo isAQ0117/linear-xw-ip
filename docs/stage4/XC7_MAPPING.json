@@ -1,0 +1,34 @@
+{
+  "logic_path_cells": 47,
+  "logic_path_note": "Topological cell count before FF technology mapping; no delay model",
+  "source_sha256": {
+    "rtl/xw_fp32_scale_b2.v": "ed5ce3a375474ecf01801b8886390129089ebdbf669c90172c140ae39c5911e3",
+    "rtl/xw_b1_dot128.v": "cae107a03e3156d9bbb0d6625e32bd18c402910b0fc702a911348e6a2bfcca8e",
+    "rtl/xw_b2_fp32_pipe.v": "98a6fe047def3a486582ffca8bf1899ca9665b1e25ae727843022f68a9389e94",
+    "rtl/xw_a2_accum48.v": "68e1db3cc4de49ecc09b4dd2863e826a941ad90c4fcbbcfb03cad6c4e43d1a42",
+    "rtl/xw_b3b_compute_ctrl.v": "0b78e743f81a1d72c20d31cb5a473111f3f1204404c6400274e38ce9ba6264ff"
+  },
+  "status": "PASS_EXPLORATORY_FAMILY_MAPPING",
+  "family": "xc7",
+  "target_part": "NOT_SPECIFIED",
+  "cells": {
+    "LUT6": 1230,
+    "LUT3": 2769,
+    "LUT5": 318,
+    "LUT4": 514,
+    "LUT2": 2097,
+    "INV": 2633,
+    "CARRY4": 520,
+    "FDPE": 1,
+    "FDCE": 1892,
+    "FDRE": 566,
+    "DSP48E1": 14,
+    "RAM32M": 43
+  },
+  "dsp": 14,
+  "lut": 6928,
+  "ff": 2459,
+  "bram": 0,
+  "timing": "PENDING: no delay/placement/routing or clock target applied",
+  "vivado_2023_2": "PENDING"
+}

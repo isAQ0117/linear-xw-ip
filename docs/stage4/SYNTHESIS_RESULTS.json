@@ -1,0 +1,306 @@
+{
+  "tool": "Yosys 0.23 (git sha1 7ce5011c24b)",
+  "modules": [
+    {
+      "module": "xw_b1_dot128",
+      "result": "PASS_GENERIC_STRUCTURE",
+      "latches": 0,
+      "combinational_loops": 0,
+      "check_problems": 0,
+      "generic_ff_bits": 833,
+      "multipliers": [
+        {
+          "A_WIDTH": 37,
+          "B_WIDTH": 19,
+          "Y_WIDTH": 37,
+          "A_SIGNED": 1,
+          "B_SIGNED": 1
+        },
+        {
+          "A_WIDTH": 37,
+          "B_WIDTH": 19,
+          "Y_WIDTH": 37,
+          "A_SIGNED": 1,
+          "B_SIGNED": 1
+        },
+        {
+          "A_WIDTH": 37,
+          "B_WIDTH": 19,
+          "Y_WIDTH": 37,
+          "A_SIGNED": 1,
+          "B_SIGNED": 1
+        },
+        {
+          "A_WIDTH": 37,
+          "B_WIDTH": 19,
+          "Y_WIDTH": 37,
+          "A_SIGNED": 1,
+          "B_SIGNED": 1
+        },
+        {
+          "A_WIDTH": 37,
+          "B_WIDTH": 19,
+          "Y_WIDTH": 37,
+          "A_SIGNED": 1,
+          "B_SIGNED": 1
+        },
+        {
+          "A_WIDTH": 37,
+          "B_WIDTH": 19,
+          "Y_WIDTH": 37,
+          "A_SIGNED": 1,
+          "B_SIGNED": 1
+        },
+        {
+          "A_WIDTH": 37,
+          "B_WIDTH": 19,
+          "Y_WIDTH": 37,
+          "A_SIGNED": 1,
+          "B_SIGNED": 1
+        },
+        {
+          "A_WIDTH": 37,
+          "B_WIDTH": 19,
+          "Y_WIDTH": 37,
+          "A_SIGNED": 1,
+          "B_SIGNED": 1
+        }
+      ],
+      "memories": [],
+      "cells": {
+        "$add": 9,
+        "$sdffce": 8,
+        "$dffe": 7,
+        "$adffe": 21,
+        "$reduce_bool": 5,
+        "$ne": 5,
+        "$not": 2,
+        "$reduce_and": 7,
+        "$logic_not": 14,
+        "$eq": 9,
+        "$logic_and": 18,
+        "$logic_or": 5,
+        "$mul": 8,
+        "$neg": 8,
+        "$adff": 1,
+        "$mux": 38,
+        "$shl": 8,
+        "$sub": 8
+      },
+      "warnings": [
+        "Warning: Replacing memory \\half_sum with list of registers. See rtl/xw_b1_dot128.v:158",
+        "Warning: Replacing memory \\pair_sum with list of registers. See rtl/xw_b1_dot128.v:154",
+        "Warning: Replacing memory \\product with list of registers. See rtl/xw_b1_dot128.v:150",
+        "Warning: Replacing memory \\exp_pipe with list of registers. See rtl/xw_b1_dot128.v:100",
+        "Warning: Replacing memory \\block_pipe with list of registers. See rtl/xw_b1_dot128.v:99"
+      ],
+      "source_sha256": "cae107a03e3156d9bbb0d6625e32bd18c402910b0fc702a911348e6a2bfcca8e"
+    },
+    {
+      "module": "xw_b2_fp32_pipe",
+      "result": "PASS_GENERIC_STRUCTURE",
+      "latches": 0,
+      "combinational_loops": 0,
+      "check_problems": 0,
+      "generic_ff_bits": 214,
+      "multipliers": [
+        {
+          "A_WIDTH": 48,
+          "B_WIDTH": 25,
+          "Y_WIDTH": 72,
+          "A_SIGNED": 1,
+          "B_SIGNED": 1
+        }
+      ],
+      "memories": [],
+      "cells": {
+        "$adffe": 10,
+        "$reduce_bool": 4,
+        "$not": 1,
+        "$reduce_and": 2,
+        "$logic_and": 5,
+        "$logic_not": 5,
+        "$logic_or": 3,
+        "$mux": 9,
+        "xw_fp32_scale_b2": 1,
+        "$add": 1,
+        "$mul": 1,
+        "$ne": 1,
+        "$sub": 2
+      },
+      "warnings": [],
+      "source_sha256": "98a6fe047def3a486582ffca8bf1899ca9665b1e25ae727843022f68a9389e94"
+    },
+    {
+      "module": "xw_a2_accum48",
+      "result": "PASS_GENERIC_STRUCTURE",
+      "latches": 0,
+      "combinational_loops": 0,
+      "check_problems": 0,
+      "generic_ff_bits": 1158,
+      "multipliers": [],
+      "memories": [],
+      "cells": {
+        "$add": 40,
+        "$and": 27,
+        "$adffe": 38,
+        "$ne": 17,
+        "$reduce_bool": 87,
+        "$not": 4,
+        "$reduce_and": 16,
+        "$reduce_or": 1,
+        "$logic_not": 14,
+        "$eq": 12,
+        "$ge": 6,
+        "$gt": 6,
+        "$le": 3,
+        "$logic_and": 18,
+        "$logic_or": 13,
+        "$lt": 3,
+        "$neg": 6,
+        "$adff": 1,
+        "$mux": 213,
+        "$pmux": 18,
+        "$shiftx": 1,
+        "$shl": 3,
+        "$shr": 3,
+        "$sshl": 2,
+        "$sub": 35
+      },
+      "warnings": [],
+      "source_sha256": "68e1db3cc4de49ecc09b4dd2863e826a941ad90c4fcbbcfb03cad6c4e43d1a42"
+    },
+    {
+      "module": "xw_b3b_compute_ctrl",
+      "result": "PASS_GENERIC_STRUCTURE",
+      "latches": 0,
+      "combinational_loops": 0,
+      "check_problems": 0,
+      "generic_ff_bits": 2481,
+      "multipliers": [
+        {
+          "A_WIDTH": 37,
+          "B_WIDTH": 19,
+          "Y_WIDTH": 37,
+          "A_SIGNED": 1,
+          "B_SIGNED": 1
+        },
+        {
+          "A_WIDTH": 37,
+          "B_WIDTH": 19,
+          "Y_WIDTH": 37,
+          "A_SIGNED": 1,
+          "B_SIGNED": 1
+        },
+        {
+          "A_WIDTH": 37,
+          "B_WIDTH": 19,
+          "Y_WIDTH": 37,
+          "A_SIGNED": 1,
+          "B_SIGNED": 1
+        },
+        {
+          "A_WIDTH": 37,
+          "B_WIDTH": 19,
+          "Y_WIDTH": 37,
+          "A_SIGNED": 1,
+          "B_SIGNED": 1
+        },
+        {
+          "A_WIDTH": 37,
+          "B_WIDTH": 19,
+          "Y_WIDTH": 37,
+          "A_SIGNED": 1,
+          "B_SIGNED": 1
+        },
+        {
+          "A_WIDTH": 37,
+          "B_WIDTH": 19,
+          "Y_WIDTH": 37,
+          "A_SIGNED": 1,
+          "B_SIGNED": 1
+        },
+        {
+          "A_WIDTH": 37,
+          "B_WIDTH": 19,
+          "Y_WIDTH": 37,
+          "A_SIGNED": 1,
+          "B_SIGNED": 1
+        },
+        {
+          "A_WIDTH": 37,
+          "B_WIDTH": 19,
+          "Y_WIDTH": 37,
+          "A_SIGNED": 1,
+          "B_SIGNED": 1
+        },
+        {
+          "A_WIDTH": 48,
+          "B_WIDTH": 25,
+          "Y_WIDTH": 72,
+          "A_SIGNED": 1,
+          "B_SIGNED": 1
+        }
+      ],
+      "memories": [
+        {
+          "module": "xw_b3b_compute_ctrl",
+          "name": "responses",
+          "WIDTH": 253,
+          "SIZE": 4,
+          "RD_PORTS": 1,
+          "WR_PORTS": 1,
+          "RD_CLK_ENABLE": 0,
+          "WR_CLK_ENABLE": 1
+        }
+      ],
+      "cells": {
+        "$add": 59,
+        "$and": 28,
+        "$adffe": 91,
+        "$ne": 47,
+        "$reduce_bool": 102,
+        "$not": 10,
+        "$reduce_and": 35,
+        "$reduce_or": 2,
+        "$logic_not": 45,
+        "$eq": 35,
+        "$ge": 7,
+        "$gt": 8,
+        "$le": 3,
+        "$logic_and": 99,
+        "$logic_or": 55,
+        "$lt": 8,
+        "$neg": 14,
+        "$adff": 5,
+        "$mux": 331,
+        "$pmux": 24,
+        "$shiftx": 1,
+        "$shl": 11,
+        "$shr": 4,
+        "$sshl": 2,
+        "$sub": 48,
+        "$sdffce": 8,
+        "$dffe": 7,
+        "$mul": 9,
+        "xw_fp32_scale_b2": 2,
+        "xw_a2_accum48": 1,
+        "xw_b1_dot128": 1,
+        "$mem_v2": 1,
+        "xw_b2_fp32_pipe": 1
+      },
+      "warnings": [
+        "Warning: Replacing memory \\half_sum with list of registers. See rtl/xw_b1_dot128.v:158",
+        "Warning: Replacing memory \\pair_sum with list of registers. See rtl/xw_b1_dot128.v:154",
+        "Warning: Replacing memory \\product with list of registers. See rtl/xw_b1_dot128.v:150",
+        "Warning: Replacing memory \\exp_pipe with list of registers. See rtl/xw_b1_dot128.v:100",
+        "Warning: Replacing memory \\block_pipe with list of registers. See rtl/xw_b1_dot128.v:99"
+      ],
+      "source_sha256": "0b78e743f81a1d72c20d31cb5a473111f3f1204404c6400274e38ce9ba6264ff"
+    }
+  ],
+  "vivado": "PENDING",
+  "target_part": "NOT_SPECIFIED",
+  "timing": "PENDING",
+  "scope": "Generic lowering; device resources require mapping/implementation"
+}

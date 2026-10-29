@@ -1,0 +1,69 @@
+{
+  "tool": "Yosys 0.23 (git sha1 7ce5011c24b)",
+  "scope": "generic RTL lowering and clocked memory inference, no technology mapping",
+  "vivado_2023_2": "PENDING",
+  "fpga_timing": "PENDING",
+  "modules": [
+    {
+      "module": "xw_axis_bfp18_input",
+      "result": "PASS",
+      "check_problems": 0,
+      "latches": 0,
+      "memories": [],
+      "source_sha256": "3a23997c78e44c555c8f934df09831f53f4c1734412b65c6e823b90c69b50780"
+    },
+    {
+      "module": "xw_activation_buffer",
+      "result": "PASS",
+      "check_problems": 0,
+      "latches": 0,
+      "memories": [
+        {
+          "WIDTH": 8,
+          "SIZE": 96,
+          "RD_PORTS": 1,
+          "WR_PORTS": 1,
+          "RD_CLK_ENABLE": 1,
+          "WR_CLK_ENABLE": 1,
+          "name": "exponents"
+        },
+        {
+          "WIDTH": 144,
+          "SIZE": 1536,
+          "RD_PORTS": 1,
+          "WR_PORTS": 1,
+          "RD_CLK_ENABLE": 1,
+          "WR_CLK_ENABLE": 1,
+          "name": "words"
+        }
+      ],
+      "source_sha256": "736f709d3d5b7600c43e57fede9f096daba7095a835200982b2a8940df6705f8"
+    },
+    {
+      "module": "xw_weight_row_buffer",
+      "result": "PASS",
+      "check_problems": 0,
+      "latches": 0,
+      "memories": [
+        {
+          "WIDTH": 512,
+          "SIZE": 192,
+          "RD_PORTS": 1,
+          "WR_PORTS": 1,
+          "RD_CLK_ENABLE": 1,
+          "WR_CLK_ENABLE": 1,
+          "name": "words"
+        }
+      ],
+      "source_sha256": "359ecfca53dc0e59898668aa43909b35753cb00ccb84f27dcf9b0e03893ffd44"
+    },
+    {
+      "module": "xw_ddr_addr_gen",
+      "result": "PASS",
+      "check_problems": 0,
+      "latches": 0,
+      "memories": [],
+      "source_sha256": "cce934e0bd35381a1dd3ef459c77d351d56bc9192ae5ac0ad375cec722c6e450"
+    }
+  ]
+}

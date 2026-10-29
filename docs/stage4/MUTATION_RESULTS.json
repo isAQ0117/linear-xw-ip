@@ -1,0 +1,22 @@
+[
+  {
+    "name": "masked_nan",
+    "expected": "FAIL from real HDL self-check",
+    "result": "PASS_MUTANT_REJECTED"
+  },
+  {
+    "name": "negative_boundary",
+    "expected": "FAIL from real HDL self-check",
+    "result": "PASS_MUTANT_REJECTED"
+  },
+  {
+    "name": "lost_remote_sticky",
+    "expected": "FAIL from real HDL self-check",
+    "result": "PASS_MUTANT_REJECTED"
+  },
+  {
+    "name": "fifo_ignores_inflight",
+    "expected": "FAIL from real HDL self-check",
+    "result": "PASS_MUTANT_REJECTED"
+  }
+]

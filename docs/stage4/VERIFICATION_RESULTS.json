@@ -1,0 +1,140 @@
+{
+  "hdl": "PASS",
+  "tool": "Icarus Verilog version 11.0 (stable) ()",
+  "tests": [
+    {
+      "label": "b1",
+      "result": "PASS",
+      "cycles": 19976,
+      "coverage": {
+        "blocks": 931,
+        "k_matrix": [
+          1,
+          7,
+          8,
+          9,
+          127,
+          128,
+          129,
+          2048,
+          2049,
+          4096,
+          12288
+        ],
+        "all_fp8_codes": 256,
+        "continuous_interval": 1,
+        "max_b1_cycles_no_gaps": 20,
+        "cycles": 19976
+      },
+      "vector_sha256": "fe39500de2b9cb01d249ace587681ea9093c87fdaf4d90e549689d4432d61f62"
+    },
+    {
+      "label": "b2",
+      "result": "PASS",
+      "cycles": 8014,
+      "coverage": {
+        "cases": 5075,
+        "cycles": 8014,
+        "backpressure": "random, seed 0xB232",
+        "stages": 2
+      },
+      "vector_sha256": "0f72661d1b710817de01cbc48fff32ae04a44a5424c76546df1b55b916ded063"
+    },
+    {
+      "label": "a2",
+      "result": "PASS",
+      "cycles": 146790,
+      "coverage": {
+        "vectors": 6894,
+        "updates": 13585,
+        "retries": 419,
+        "fast_count": 7961,
+        "special_count": 5624,
+        "fast_min": 2,
+        "fast_max": 10,
+        "special_min": 8,
+        "special_max": 28,
+        "cycles": 146790
+      },
+      "vector_sha256": "fb3b33aa29afcd090af2730f0e28ccabd1d0e5d706bff64308107b51071b93e0"
+    },
+    {
+      "label": "controller",
+      "result": "PASS",
+      "cycles": 21482,
+      "coverage": {
+        "channels": 33,
+        "peak_fifo": 4,
+        "fault_cases": [
+          [
+            "missing_loaded",
+            64
+          ],
+          [
+            "scale",
+            48
+          ],
+          [
+            "fp8",
+            49
+          ],
+          [
+            "mask",
+            64
+          ],
+          [
+            "missing_x",
+            64
+          ],
+          [
+            "stray_scale",
+            64
+          ],
+          [
+            "abort",
+            64
+          ],
+          [
+            "system_vs_nan",
+            33
+          ],
+          [
+            "upstream_zero",
+            64
+          ],
+          [
+            "bad_k",
+            64
+          ],
+          [
+            "scale_mask",
+            64
+          ]
+        ],
+        "cycles": 21482
+      },
+      "vector_sha256": "5c3e350bcde37f836449f171e00b531ecc288eb19553f494af709f72fecd9d22"
+    },
+    {
+      "label": "harness",
+      "result": "PASS",
+      "cycles": 56597,
+      "coverage": {
+        "legal_channels": 15,
+        "joint_n2k129_updates": 4,
+        "cycles": 56597,
+        "ddr_requests": 231,
+        "ddr_beats": 636,
+        "numeric_error_cases": 3,
+        "inflight_fault_cases": 3,
+        "max_fifo": 4
+      },
+      "vector_sha256": "b7f1de1d10a67b722a697eee068a7b48b29f273e2c79b831f0e4b5d7e37534ea"
+    }
+  ],
+  "events": {
+    "result": "PASS",
+    "records": 21299,
+    "source": "actual HDL $fdisplay vs cycle model + independent per-block Golden"
+  }
+}

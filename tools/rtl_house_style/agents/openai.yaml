@@ -1,0 +1,4 @@
+interface:
+  display_name: "Verilog RTL House Style"
+  short_description: "统一纯 Verilog RTL 的 ANSI 端口、信号分组、注释和缩进"
+  default_prompt: "请按照我的 RTL 统一排版规范编写或修改 Verilog-2001 代码，确保 ANSI 接口、声明集中、功能分组注释及 4 空格缩进，不改变原有行为。"

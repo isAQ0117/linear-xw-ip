@@ -13,3 +13,12 @@ demo_results/
 gap_results/
 real_results/
 *.safetensors
+
+# Generated Stage 4 verification outputs; retain full snapshot separately
+docs/stage4/logs/
+docs/stage4/CONTROLLER_MEASUREMENTS.json
+docs/stage4/HARNESS_MEASUREMENTS.json
+docs/stage4/PERFORMANCE.json
+docs/stage4/RESULTS_*.json
+docs/stage4/SOURCE_CHANGES.patch
+docs/stage4/DELIVERY_MANIFEST.json
