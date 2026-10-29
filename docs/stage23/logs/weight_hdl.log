@@ -1,0 +1,7 @@
+COMMAND iverilog -g2001 -Wall -s tb_xw_weight_row_buffer_cycle -o /workspace/scratch/5f8e1b5d92cf/linear-xw-ip/sim_build/stage23/weight.vvp /workspace/scratch/5f8e1b5d92cf/linear-xw-ip/rtl/xw_weight_row_buffer.v /workspace/scratch/5f8e1b5d92cf/linear-xw-ip/tb/tb_xw_weight_row_buffer_cycle.v
+warning: Some modules have no timescale. This may cause
+       : confusing timing results.	Affected modules are:
+       :   -- module xw_weight_row_buffer declared here: /workspace/scratch/5f8e1b5d92cf/linear-xw-ip/rtl/xw_weight_row_buffer.v:2
+COMMAND vvp /workspace/scratch/5f8e1b5d92cf/linear-xw-ip/sim_build/stage23/weight.vvp +VECTORS=/workspace/scratch/5f8e1b5d92cf/linear-xw-ip/sim_build/stage23/weight.vec
+PASS tb_xw_weight_row_buffer_cycle cycles=12758
+/workspace/scratch/5f8e1b5d92cf/linear-xw-ip/tb/tb_xw_weight_row_buffer_cycle.v:83: $finish called at 127586000 (1ps)

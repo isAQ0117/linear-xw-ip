@@ -1,0 +1,10 @@
+P0-01 deliberately regressed output:
+CHECK P0-02 extra beat and Loaded same edge: PASS
+CHECK Reset/Abort/Loaded/Done priority: PASS
+FAIL P0-01 activation local write classification
+tb/tb_xw_stage23_review.v:89: $finish called at 356000 (1ps)
+PASS: independent TB rejects P0-01 regression
+P0-02 deliberately regressed output:
+FAIL P0-02 same-edge extra beat / completion
+tb/tb_xw_stage23_review.v:64: $finish called at 86000 (1ps)
+PASS: independent TB rejects P0-02 regression

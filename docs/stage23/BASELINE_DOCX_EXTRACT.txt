@@ -1,0 +1,795 @@
+Linear xW IP 接口与验证契约标准
+标准编号：XW-CONTRACT-STD-001
+ 
+版本：V1.0
+ 
+冻结日期：2026-10-28
+ 
+状态：FROZEN（用户已确认本轮候选方案作为正式规则）
+ 
+适用阶段：阶段 0 的正式产物；阶段 1—8 的强制设计与验收依据
+ 
+配套路线：XW-DEV-STD-001 V1.0《Linear xW IP 九阶段开发与验收标准》
+核心约束：不修改已确定的九阶段开发顺序；不增加第一版顶层物理端口；保持 B3-B-FP32 数值算法、AXIS TUSER V2、DDR Layout V3；将异常、恢复和验证行为明确为可检查的约束。
+0. 文件定位、效力和状态定义
+1. 
+本标准定义 Linear xW IP 的
+跨模块技术契约
+，对 RTL、软件 Golden、Cycle Model、Testbench、DDR Mock、顶层集成和以后版本兼容性具有约束力。文中“必须”“不得”是强制要求，“建议”是非强制实现建议。
+2. 
+本文件与九阶段路线标准并行生效：
+路线标准管开发顺序；本标准管硬件行为和验证判据；House Style 管编码风格；Source Preflight 管源码真实性、版本和可读性。
+3. 
+用户已在本次对话中明确批准上一轮提出的冻结规则。因此本文件使用 
+CONTRACT_FROZEN_V1.0
+ 作为
+技术契约签核状态
+，不再将这些规则称为候选。它不表示已有 RTL 已执行过 HDL 编译、仿真或综合。
+4. 
+两类事项与“规则冻结”区分记录：其一，
+平台实测配置
+（DDR Controller 最大 Burst、返回时延保证、复位清理能力）需按具体环境填写；其二，
+源码基线准入
+（最新 FFN-style 工程实际可读、SHA-256 和依赖）需在继续修改 RTL 前复核。它们不重开已冻结的设计原则。
+5. 
+本文件优先于早期临时建议中与之冲突的内容；历史《阶段 0 冻结审计报告》仅保留作问题发现记录，
+不得再被当作当前规则状态
+。改动冻结规则必须由用户明确批准，并形成新版本和变更记录。
+1. 顶层架构、参数与接口 ABI
+1.1 固定的首版形态
+IP 名称：
+linear_xw_ip
+；单 Active Job；先缓存当前 Job 的全部 X，按 N Group 读取 FP32 Scale、按通道读取完整 Weight Row，再按 K Block 顺序计算。
+首版策略：
+M=1
+、
+MAX_M_TILE=1
+、
+P_N=1
+、
+P_K=8
+；无 DDR / Compute 重叠；整个 Job 数值计算完成之后才按 Row-Major 输出。
+顶层保留动态尺寸物理接口。
+STATIC_DIM_MODE=1
+ 时，实际 N/K 为编译参数 
+N_DIM/K_DIM
+，
+忽略
+物理输入 
+job_n/job_k
+ 的数值，不因其值为 0 或与静态配置不同而拒绝合法 Job。
+STATIC_DIM_MODE=0
+ 时，实际 N/K 在 Job 接受时从 
+job_n/job_k
+ 锁存并进行上下界检查。
+第一版 
+job_m
+ 与 
+job_m_tile
+ 均必须为 1；其他值返回 
+UNSUPPORTED_JOB
+，实际多 Batch / M_TILE 功能只在固定路线的阶段 8 扩展。
+使用 Vivado 2023.2、纯 Verilog-2001 保守子集；保持 FFN 风格 ANSI 端口、四空格缩进及按功能分组声明。
+1.2 顶层 Parameter（共 10 项）
+Parameter
+首版默认值
+约束说明
+STATIC_DIM_MODE
+1
+1 静态、0 动态
+N_DIM
+12288
+静态有效 N；合法范围 1..65535，且符合 TUSER 编址约束
+K_DIM
+4096
+静态有效 K；合法范围 1..65535，且符合 TUSER 编址约束
+MAX_N
+12288
+动态 N 上限；不得超过物理/缓存能力
+MAX_K
+12288
+动态 K 上限；不得超过物理/缓存能力
+MAX_M
+1
+首版仅支持 M=1
+MAX_M_TILE
+1
+首版仅支持 Tile=1
+P_N
+1
+首版单输出通道计算
+P_K
+8
+首版 K 方向并行度
+AXIS_DATA_W
+512
+第一版只保证 512-bit 物理 AXIS 实现
+实际编译参数必须满足缓存深度、端口位宽和实现容量，参数组合不合法应在仿真/综合前的配置检查中明确失败，不得无声截断。
+1.3 物理端口（共 35 个命名端口）
+类别
+端口与位宽
+数量
+Clock/Reset
+clk
+, 
+rst_n
+2
+Job
+job_valid
+, 
+job_ready
+, 
+job_id[31:0]
+, 
+job_m[15:0]
+, 
+job_n[15:0]
+, 
+job_k[15:0]
+, 
+job_m_tile[7:0]
+, 
+job_weight_base[28:0]
+, 
+job_scale_base[28:0]
+9
+Status
+busy
+, 
+status_valid
+, 
+status_ready
+, 
+status_job_id[31:0]
+, 
+status_ok
+, 
+status_error_code[7:0]
+6
+Input AXIS
+s_axis_tdata[511:0]
+, 
+s_axis_tvalid
+, 
+s_axis_tready
+, 
+s_axis_tkeep[63:0]
+, 
+s_axis_tlast
+, 
+s_axis_tuser[127:0]
+6
+Output AXIS
+对应六个 
+m_axis_*
+，位宽同 Input AXIS
+6
+DDR
+ddr_rd_req
+, 
+ddr_rd_addra[28:0]
+, 
+ddr_rd_addrb[28:0]
+, 
+ddr_rd_rdy
+, 
+ddr_rd_data[511:0]
+, 
+ddr_rd_vld
+6
+总计 
+2+9+6+6+6+6=35
+。历史记录中“37 个端口”属统计错误，不改变物理端口定义；35 指
+命名端口数
+，不是所有位宽相加。
+2. Job / Status 生命周期（强制）
+2.1 单任务执行顺序
+IDLE → VALIDATE → LOAD_X → (LOAD_SCALE → LOAD_WEIGHT → B1/B2/A2 → GROUP_REQUANT)* → OUTPUT → STATUS → IDLE
+。
+其中括号代表依照 N Group / Channel / K Block 顺序重复；整体必须符合已冻结的第一版数据访问次序。内部具体 FSM 状态名称可以不同，但对外可观察行为必须等价。
+2.2 Job 接受与配置
+1. 
+只有 
+job_valid && job_ready
+ 在 
+clk
+ 上升沿同时为 1 时，Job 才被接受。此沿锁存 Job ID、M/N/K/M_TILE、Weight/Scale DDR 基地址及运行配置。已接受 Job 执行期间不得使用未经锁存的外部参数。
+2. 
+job_ready
+ 仅在 IDLE 且未处于系统故障锁定时置 1。第一版不接受第二个未完成 Job，不实现排队。
+3. 
+非法 Job 必须可以被接受，然后返回失败 Status
+；不得因为输入 N/K/M_TILE 非法而让 
+job_ready
+ 永久保持 0。静态模式物理 
+job_n/job_k
+ 不参与合法性验证。
+4. 
+验证错误在任何 DDR/AXIS 数据传输之前产生；若为可恢复配置错误，进入 STATUS，交付失败后允许正常重新接单。
+2.3 Status 与 Busy
+1. 
+每个已接受的 Job 必须且只能对应
+一个最终 Status
+。
+status_valid
+ 有效后，
+status_job_id
+、
+status_ok
+、
+status_error_code
+ 必须保持稳定，直到 
+status_valid && status_ready
+ 的上升沿握手。
+2. 
+busy
+ 从 Job 被接受后置 1，保持到最终 Status 被接受；普通任务在 Status 握手后返回 IDLE，
+job_ready
+ 最早在后续周期重新有效。
+3. 
+成功：
+status_ok=1
+ 且 
+status_error_code=0x00
+。失败：
+status_ok=0
+ 且错误码非零。
+4. 
+最后一个输出 Beat 发生 
+m_axis_tvalid && m_axis_tready
+ 有效握手后，才允许发布成功 Status：若该输出握手在上升沿 
+t
+，
+status_valid
+ 最早于 
+t
+ 后变为 1，状态握手最早发生于 
+t+1
+ 上升沿。
+5. 
+正常计算阶段发现失败时，由于首版 OUTPUT 在整个 Job 计算完成后才启动，
+不得向下游发送该失败 Job 的输出 Beat
+；清理内部有效标记并进入 STATUS。复位若发生于已开始输出之后，下游已收到的部分结果无法撤销，需由上层按 Job ID 丢弃。
+6. 
+处于 
+FAULT_LOCK
+ 时，
+job_ready=0
+。若已有被接受的 Job，则先交付其失败 Status；Status 握手后 
+busy=0
+ 且继续保持锁定，直到外部清理并复位。
+7. 
+在没有活动 Job 的 IDLE 时检测到不可归属的 DDR 故障，不得制造虚构 Job ID 或伪造 Status；进入 
+FAULT_LOCK
+，需要系统层诊断和恢复。
+3. Error Code 编码、优先级与恢复类别
+3.1 固定 8-bit 错误码
+Code
+名称
+触发条件
+恢复类别
+0x00
+SUCCESS
+正常完成
+正常
+0x01
+INVALID_JOB
+有效尺寸非法、越界
+任务级
+0x02
+UNSUPPORTED_JOB
+第一版不支持的 M/M_TILE/模式
+任务级
+0x03
+ADDRESS_RANGE
+DDR 基地址未对齐、越界、溢出或布局重叠
+任务级
+0x10
+AXIS_HEADER
+TUSER 格式、保留位、Job ID 不符
+流失同步，需清理与复位
+0x11
+AXIS_SEQUENCE
+Row / Group / Offset / Exponent 次序错误
+流失同步，需清理与复位
+0x12
+AXIS_PAYLOAD
+TKEEP 或 Padding 错误
+流失同步，需清理与复位
+0x13
+AXIS_TERMINATOR
+TLAST 或 EOT 错误
+流失同步，需清理与复位
+0x20
+DDR_COMMAND
+内部命令 Range 格式违反接口合同
+系统级，需复位
+0x21
+DDR_RESPONSE
+可检测的无归属或异常 DDR 返回
+系统级，需复位
+0x22
+DDR_TIMEOUT
+启用硬件 Watchdog 后请求超时
+系统级，需复位
+0x23
+DDR_BUFFER
+接收缓存无法无反压安全写入
+系统级，需复位
+0x30
+INVALID_SCALE
+FP32 Scale 为负、零、NaN、Inf 等
+有前提的任务级
+0x31
+INVALID_FP8
+FP8 出现 E4M3FN 非法编码
+有前提的任务级
+0x32
+ACC_RANGE
+A2 / 内部指数或运算范围超界
+有前提的任务级
+0x33
+BFP_EXP_RANGE
+输出共享指数超出 signed8
+有前提的任务级
+0x40
+INTERNAL_FAULT
+内部状态/握手/存储不变量破坏
+系统级，需复位
+其余错误码保留，不得被随意赋予新含义。
+0x22
+ 在首版默认关闭硬件 Timeout 时可保留但不会因时间推移被硬件主动触发。
+3.2 处理优先级与安全退出
+1. 
+首个错误锁存
+：一旦确定当前 Job 的首个错误，不得被以后到达的次要错误覆盖。同一个时钟沿多种错误同时首次出现时，优先锁存会导致系统失同步/故障锁定的错误；同一恢复类别内按上表先后顺序选择最先匹配者，保证软件/RTL 输出确定性。
+2. 
+任务级恢复须满足干净边界
+：已接收的输入 Tensor 完整且无需继续重新同步；没有未完成 DDR 请求，也不存在迟到响应；对应内部 Buffer 被作废。满足时错误 Status 完成交付后可以接收新任务，否则升级为系统级故障锁定。
+3. 
+AXIS 格式与序列错误默认
+不自动尝试 EOT 重新同步
+，因为 EOT 可能正是错误内容；上层负责清理流并协调复位。
+4. 
+DDR 协议、响应失同步、Timeout 和内部不可恢复错误进入 
+FAULT_LOCK
+；绝不能仅在下一请求到来时自动清除错误并继续接收 DDR。
+5. 
+错误码代表可检测的异常；没有 Response ID / Last 的物理接口
+无法保证所有 DDR 错误都可以被识别
+，此限制必须出现在系统集成说明和验证报告中。
+4. Reset 与故障恢复
+1. 
+rst_n
+ 低有效，
+异步断言、在 `clk` 域同步释放
+（推荐两级释放同步）。所有同一时钟域的状态机、Valid 标记、计数器和任务所有权按照此规则恢复。
+2. 
+Reset 清除本地 Job、尚未交付的 Status、可观察 Valid、事务计数及 Buffer 有效标记；
+大容量 BRAM / RAM 数据位不要求逐位清零
+，但不得将旧内容作为新任务有效数据。
+3. 
+Reset 不具备取消已被外部 DDR Controller 接受的请求的能力。若有旧响应在途，外部系统必须先
+清空或复位外部 DDR 事务域
+，确保不会把旧数据交给复位后的新任务。
+4. 
+系统级恢复顺序固定为：停止分配新任务 → 当前可归属任务报告失败（若接口仍可交付）→ 进入 
+FAULT_LOCK
+ → 上层清理 DDR 和 AXIS 事务 → 受控 Reset → 确认外部事务域干净 → 重新进入 IDLE。
+5. 
+仅重置 Linear IP 不能保证 DDR 链路恢复。
+ 如果平台不提供旧响应清理/复位保证，系统不得声称具备完整的故障自动恢复能力；此为集成前置条件，不通过增加首版顶层端口规避。
+5. AXIS BFP18 / TUSER V2
+5.1 数据格式
+输入和输出第一版均为 512-bit AXIS，载荷为 signed18 Mantissa；128 个元素构成一个 BFP18 共享指数 Group，指数为 signed8。
+每 512-bit Beat 最多包含 
+floor(512/18)=28
+ 个 Mantissa。Mantissa 从 
+tdata
+ 最低位开始依次打包，未使用的高位必须为 0。
+TUSER V2 固定 128-bit，
+format_tag = 0xB2
+；输入和输出使用相同物理字段定义。
+位段
+字段
+宽度与要求
+[31:0]
+job_id
+32-bit
+[47:32]
+row_id
+16-bit
+[56:48]
+group_id
+9-bit
+[63:57]
+reserved_0
+必须为 0
+[71:64]
+shared_exp
+signed8，组内不变
+[79:72]
+group_len
+1..128，尾组为实际长度
+[87:80]
+group_offset
+当前 Beat 在 Group 内的元素偏移
+[88]
+end_of_tensor
+全 Tensor 的最后一 Beat 才为 1
+[95:89]
+reserved_1
+必须为 0
+[103:96]
+format_tag
+固定 
+0xB2
+[127:104]
+reserved_2
+必须为 0
+5.2 合法 Beat 与反压
+1. 
+当前 Group 余下 
+r
+ 个元素时，本 Beat 有效元素数 
+L=min(28,r)
+，有效字节 
+B=ceil(18L/8)
+；
+TKEEP
+ 必须为低 
+B
+ 位连续为 1，其余为 0。所有 Padding bit 必须为 0。
+2. 
+Row、Group、Offset 必须与按 Row-Major / K-Group 顺序计算的期望游标相同；
+group_len
+ 与有效 K（输出时为 N）的实际尾组长度相同。
+shared_exp
+ 在同一 Group 的每一个 Beat 中保持一致。
+3. 
+TLAST
+ 仅在当前 BFP Group 的最后一个 Beat 有效；EOT 只在整个 Tensor 的最后一个 Beat 有效；Reserved bit 必须为 0，
+job_id
+ 必须对应已接受 Job。
+4. 
+上游可在 Beat 之间任意停顿；不得因正常空隙报错。
+TVALID && !TREADY
+ 期间，上游必须保持 TDATA/TKEEP/TLAST/TUSER 稳定；输出侧同样必须保持全部这些字段及 TVALID 稳定，直到发生握手。
+5. 
+输入 Parser 只能在 
+TVALID && TREADY
+ 的上升沿消费一个 Beat；不能使用尚未握手的 TUSER 或 DATA 更新逻辑游标。
+6. 
+不符合格式、序列或 EOT 的输入按第 3 节对应错误码报告，触发流同步失效，不自动恢复。
+6. DDR 六信号协议与 Layout V3
+6.1 物理合同
+1. 
+DDR 端保持六信号和 512-bit 返回，不增设 
+ready/last/id
+；逻辑地址 29-bit，每 Beat 地址步长为 8，
+ddr_rd_addra
+、
+ddr_rd_addrb
+ 定义
+包含式
+ Range。
+2. 
+同时最多一个 Outstanding Range；必须等待该 Range 按约定 Beat 数完整接收，才能接受下一 Range。DDR 返回允许 Beat 间隙；Receiver 端没有回压，
+ddr_rd_vld=1
+ 时必须无条件接收完整 512-bit 数据。
+3. 
+DDR 请求通过 
+ddr_rd_req && ddr_rd_rdy
+ 在上升沿被接受；待发的内部 
+cmd_valid
+ 及地址/Beat 数应保持到接受时。
+首个数据 Beat 可以在请求接受的同一上升沿出现
+，接收端不得丢失。
+4. 
+无 Response ID/Last 使得请求边界依赖预期 Beat 数和外部控制器正确行为。外部 DDR 必须保证响应顺序、数量和不混入其他事务；系统集成需要单独核实该约束。
+6.2 DDR Layout V3 与地址公式
+Weight：FP8 
+[N,K]
+，输出通道主序、同一行 K 连续，
+每 Weight Row 独立 64 Byte 对齐
+。
+Scale：每 128 输出通道为一个 N Group；每 Group 有 
+ceil(K/128)
+ 个 FP32 原始 32-bit 值，little-endian 保存，16 个 FP32 / 512-bit Beat，
+每 Group 独立 64 Byte 对齐
+。
+设 
+RW=ceil(K/64)
+、
+RS=ceil(K/2048)
+、
+G=ceil(N/128)
+、
+J=ceil(K/128)
+。第 
+n
+ 个 Weight Row 的起始地址：
+AW(n)=job_weight_base+8*n*RW
+；第 
+g
+ 个 Scale Group 的起始地址：
+AS(g)=job_scale_base+8*g*RS
+。
+任意物理 Range 的包含式 End：
+Aend=Astart+8*(R-1)
+，其中 
+R
+ 为本次读取 Beat 数。
+使用足够宽的内部表达式运算，检查地址后才允许截为 29-bit
+。
+Base 地址必须按 8 对齐，整段 Weight / Scale 不得越界或相互重叠。末端独占边界允许等于 
+2^29
+，但每次实际发送的 Start/End 均必须在 29-bit 合法范围内。
+6.3 Burst 分段、Timeout 与故障
+1. 
+“完整读取 Weight Row 后才计算”是
+逻辑行为
+，不要求物理上只能使用一次 Range。如果实际 DDR Controller 不支持一行的完整 Burst，地址生成器必须按平台 
+DDR_MAX_BURST_BEATS
+ 分段，依次读取并完整拼回 Weight Buffer；Scale 也遵守该上限。
+2. 
+DDR_MAX_BURST_BEATS
+、请求响应最大合法时延、控制器重置/旧响应清理保证，登记到
+平台配置档案
+；不能凭以前 FFN RTL 中的示例请求长度推断硬件保证。物理分段方式一经登记必须与 Python Microarchitecture Cycle Model 一致。
+3. 
+第一版功能 RTL 默认不启用 DDR 硬件 Timeout。
+ Testbench 应设置仿真超时避免无限等待。以后只有取得外部控制器最大延迟保证，才允许启用可配置 Watchdog；触发 
+DDR_TIMEOUT
+ 后必须故障锁定，不得自动发下一请求。
+4. 
+若没有硬件 Timeout，缺失响应可能导致 Job 长期等待；不承诺在任意损坏的 DDR 环境中自动前进。实际系统应由系统层监测并在必要时执行受控恢复。
+5. 
+xw_ddr_range_rx.v
+ 中现有“下一笔命令到来时清除 sticky range_error”的实现不符合本合同的故障锁定语义，必须在
+阶段 1
+修正并通过 HDL Testbench，不能再把它视为仅格式问题。
+7. B3-B-FP32 数值与异常规则
+7.1 输入及阶段格式
+阶段
+精确格式与行为
+Activation
+BFP18：signed18 Mantissa、每 128 K 元素共享 signed8 Exponent
+Weight
+FP8 E4M3FN 原始 uint8；有限值解码为 Q9 整数，
+0x7F
+/
+0xFF
+ 为非法 NaN
+Scale
+IEEE-754 FP32 原始 bit pattern；只允许正、有限、非零，包含 normal 与 subnormal
+B1
+每 128 K Block 有效元素逐项点积，输出 exact signed48 RAW
+B2
+RAW48 × FP32 significand24
+，保留完整 signed72 Term；指数 
+E_A-9+E_SCALE
+，signed12
+A2
+按升序 K Block 将 term 与旧状态对齐、累加、RNE，状态 signed48 Mantissa + signed16 Exponent
+Requant
+每 1..128 个输出值共享 signed8 Exponent，Mantissa 为 signed18
+FP32 normal 的精确整数解码为 
+(2^23 + fraction) * 2^(biased_exp-150)
+；subnormal 为 
+fraction * 2^(-149)
+。不得先用低精度 float 或 BF16 近似处理原始 Scale，也不得把 B2 Term 提前截断为旧 BF16 Profile 的 signed56。
+7.2 A2 与 Requant 必须 Bit-Exact
+1. 
+A2 每接收到一个 K Block 的 Term 就执行一次 48-bit 有符号状态舍入与归一化。
+不得先把全部 K Block 无损累加再统一舍入
+，不得重排非结合的舍入运算。
+2. 
+RNE 为 Round-to-Nearest, Ties-to-Even；负数必须先根据幅度判断距离，再按符号恢复，不能把算术右移直接当成 RNE。
+3. 
+精确指数差和正负抵消的数学含义以当前 FP32 V0.2 的 
+accumulate_48(..., term_bits=72)
+ 为基线。RTL 可使用有限宽对齐、Guard/Round/Sticky 和归一化，但必须通过边界证明/定向向量与 Golden 一致。
+4. 
+BFP18 Requant 保留当前 
+requant_bfp18()
+ 规则：首选共享指数使有效输出精度最大；若舍入后绝对值超过 
+131071
+，提高共享指数直到均满足对称幅度约束。全零 Group 的共享指数为 0。
+5. 
+禁止将非法 FP8/Scale、A2 指数超界、输出 BFP18 指数超界静默地转换为零、替代 Scale、饱和或忽略；必须按 
+0x31/0x30/0x32/0x33
+ 进入统一异常路径。
+6. 
+对来自 DDR 的非法值，若错误发生时 Range 尚未完成，先确保本次返回能够完整安全收尾；无法确认干净 DDR 边界时必须升级为 
+FAULT_LOCK
+，不能在旧 Beat 尚在途时重试下一个 Job。
+8. 逐周期与内部握手验证合同
+8.1 两层周期约束
+阶段 0 即冻结的内容
+：所有外部 
+valid/ready
+ 握手的采样上升沿、Payload 在 Stall 时保持、输出与 Status 的先后、DDR 同周期首 Beat 支持、错误与复位后的可观察行为、事件定义及状态一致性。
+分模块实施时确定的内容
+：B1 乘法 Lane、归约树、B2 乘法寄存器、A2 对齐/归一化流水线、BRAM 同步读、内部 FIFO 延迟和总 Pipeline Latency。这些值在所属模块的设计/验收中固定，不允许把 V0.2 软件自定义的延迟参数误称为硬件已冻结延迟。
+模块内部若使用 Ready/Valid，必须保证 
+valid&&!ready
+ 时 Payload 及必要 Sideband 保持；若使用无回压通道（如 DDR Receiver → Buffer），必须证明接收容量覆盖最坏完整响应。RAM 同地址读写和延迟行为必须在相应模块验收前写入该模块的时序附录。
+8.2 统一上升沿定义与事件词表
+外部握手在上升沿 
+t
+ 同时采样有效才算发生；该沿更新的寄存器输出在 
+t
+ 后有效，下一同步模块一般在后续上升沿消费（除非经过已明确的组合旁路）。
+Trace 必须携带至少 
+cycle
+、
+event
+、
+job_id
+ 和与事件相关的行/组/通道/K Block/Beat 索引，错误事件还需携带 error code 与故障锁定类别。
+事件名固定为：
+JOB_ACCEPT
+、
+AXIS_IN_ACCEPT
+、
+DDR_REQ_ACCEPT
+、
+DDR_BEAT
+、
+RANGE_DONE
+、
+B1_VALID
+、
+B2_VALID
+、
+A2_UPDATE
+、
+GROUP_REQUANT
+、
+AXIS_OUT_ACCEPT
+、
+STATUS_ACCEPT
+；允许有额外调试事件，但不能改变这些事件的定义。
+对已冻结精确周期关系的接口事件，Cycle Model 与 RTL 必须逐周期相同；对尚未正式确定内部流水线长度的模块，只验证阶段 0 规定的握手、顺序、数值和不变量，待对应阶段确定延迟后再开启精确周期比较。
+9. 三层验证体系与通过条件
+9.1 验证体系
+层级
+目的
+必须检查
+Level 1 — Independent Numeric Golden
+独立于 DDR/RTL 时序的数学正确性
+FP8/FP32 精确解码，B1/B2/A2 每 Block，Requant 输出；尤其 A2 的独立交叉验证
+Level 2 — Microarchitecture Cycle Model
+架构级握手/状态/存储/流水线的时间一致性
+AXIS/DDR 接受、Buffer、RAM/FIFO、有效信号、错误、Reset、Latency
+Level 3 — Real RTL Simulation
+实际 Verilog 行为
+HDL 编译、模块自检、全链路数值 Bit-Exact、已定义周期事件精确一致
+9.2 最低测试矩阵
+Job
+：合法 Job、静态模式忽略 
+job_n/job_k
+、动态 N/K 上下界、非法 M/TILE、连续任务、Status 永久 Stall 后恢复、失败 Status。
+AXIS
+：28 元素满 Beat、1 元素尾 Beat、K/N=127/128/129 边界，Group 指数变化、输入停顿和输出反压，TKEEP/Zero Padding/Offset/Job ID/TLAST/EOT/Reserved 错误。
+DDR
+：同周期首 Beat、响应无气泡/有气泡、最大 Burst 分段、Scale Group 尾部、地址极限、重叠、不对齐、意外 Extra Beat、响应缺失（仿真超时）、Reset 时未完成 Range。
+数值
+：FP8 正负零、普通值及 
+0x7F/0xFF
+；FP32 最小/最大正规、非正规、零、负数、NaN/Inf；B1/B2 signed 边界；A2 负数 ties、指数差、完全抵消、连续多 Block RNE、输出全零/对称 131071 边界。
+端到端
+：第一例 
+M=1,N=2,K=129
+；再扩展 K=127/128/2048/2049/4096/12288，N=127/128/129；动态尺寸、重启和异常场景按对应阶段逐步覆盖。
+9.3 逐阶段准入/退出
+1. 
+每个新增或修改的 RTL 模块必须同时交付：对应 Python 参考行为、模块级 Testbench、合法/边界/异常向量、实际执行命令和 PASS/FAIL 记录。
+2. 
+Functional Check 的 B1 RAW、B2 Term、A2 每次更新、Requant 和 DDR 原始位模式必须 
+Bit-Exact，允许差异数为 0
+；Cycle Check 对已冻结的事件边沿要求完全一致。
+3. 
+对尚未运行的 HDL 编译/仿真只能标记 
+PENDING
+，不能因为 Python 通过而标记为 
+PASS
+。异常案例不能以仿真挂起作为“正确处理”；需要明确由 RTL 锁定故障、还是由 Testbench 判定 Timeout 的责任。
+4. 
+在继续改动源码前必须实际核对最新工程包是否可读取、版本与 SHA-256、必要 RTL/Python/TB/DDR Manifest 是否齐全。缺少关键源码时不得从历史下载链接推断其内容。
+10. 平台配置档案（规则冻结，具体测量值独立记录）
+以下字段用于适配具体外部 DDR Controller，不属于重新商议接口协议。
+平台字段
+当前登记值
+不可违反的冻结原则
+DDR_MAX_BURST_BEATS
+未获平台规格，待实测/登记
+分段不改变完整 Row/Group 的数据和顺序
+DDR_RESPONSE_MAX_LATENCY
+未获保证，待登记
+无保证时不得硬启用 Timeout；本版默认关闭
+DDR_RESPONSE_MAX_GAP
+未获保证，待登记
+未约束间隙应作为合法等待；不能误报超时
+DDR_OLD_RESPONSE_CLEAR
+待系统集成确认
+只有外部旧响应清理后才可安全复位并接新 Job
+AXIS_DATA_W_SUPPORTED
+512
+当前 RTL 不承诺其他 AXIS 位宽
+DDR_BEAT_WIDTH/ADDR_STEP
+512 / 8
+不可改；若平台不匹配必须显式适配而不能静默重解释
+平台档案还须注明控制器型号、配置来源、验证方法、日期和责任人。没有实测依据时保持“待登记”，不得写入猜测的常数。
+11. 九阶段标准映射与本轮冻结效力
+阶段
+本标准主要约束
+该阶段主要完成的工作
+0
+第 0—10 节全部行为契约
+本轮规则已正式批准；建立版本签核记录
+1
+Job N/K 锁存、DDR Receiver、Scale Cache、B2
+修正与契约冲突的四模块行为，完成真实 HDL 测试
+2
+第 5 节及 Job 输入生命周期
+AXIS Input、Activation Buffer 和周期模型
+3
+第 6 节
+DDR 地址、Burst 分段、Weight Buffer 和周期模型
+4
+第 7、8、9 节
+B1/B2/A2 数值及周期级 Bit-Exact
+5
+第 7 节输出量化与缓存
+Group Requant、Result Buffer
+6
+第 2、3、5 节输出与终态
+AXIS Output、Status/Backpressure
+7
+全部
+M=1 端到端系统集成与异常测试
+8
+不改变已冻结物理合同
+M_TILE 扩展、真实 
+.safetensors
+ 与 Weight Reuse
+11.1 冻结记录
+用户决策
+：已明确表示“你提出的这些内容就直接作为冻结规则吧”；因此本文件的规则不再需要二次确认。
+技术规则状态
+：
+CONTRACT_FROZEN_V1.0
+。
+阶段 0 的工程归档与平台准入
+：仍须记录最新实际可读的 FFN-style 完整 RTL 工程、源文件清单/哈希及平台配置档案。当前可核对的是原始 FP32 V0.2 工程；不能将先前的格式整理版历史下载链接当成本轮已经实读的文件。
+实现验证状态
+：FP32 V0.2 历史 Python 测试通过 12/12；该事实
+不等于
+ B1/A2 等尚未完成的 RTL 已编译、仿真或满足本标准。
+下一正式开发步骤
+：保持九阶段路线不变，执行阶段 1 的四模块契约对齐、编译与 Testbench；遇到规则与旧源码不一致，以本合同为修正依据，而不是反过来降低契约要求。
+12. 版本控制与变更机制
+1. 
+任何改变顶层端口、Error Code 含义、TUSER V2 格式、DDR Layout V3、数值 RNE/量化规则或成功/失败时序的修改，均属于
+契约破坏性变更
+，必须列出差异、软件与 RTL 的影响、回归用例，并取得用户明确批准后发布新主版本。
+2. 
+实现优化、模块内部新增寄存器或流水线细节，在不影响已冻结外部行为、Bit-Exact 和已签核周期合同的前提下，可留在所属阶段细化，并记录在模块的时序附录。
+3. 
+平台 DDR Burst 数、受证实的时延界或 DDR 清理流程的登记属于平台配置补全，不改变本 V1.0 的固定原则；若发现原六信号物理接口无法满足必要功能，需单独提出兼容性评估，不得默默增加端口。
+4. 
+每次新工程交付必须标明：开发路线版本 
+XW-DEV-STD-001 V1.0
+、技术契约版本 
+XW-CONTRACT-STD-001 V1.0
+、源码 SHA-256、测试与仿真结论、未验证项。
+版本历史
+版本
+日期
+变更
+V1.0
+2026-10-28
+用户明确批准阶段 0 候选规则；冻结 Job/Status/Error、Reset、AXIS、DDR、数值和验证行为；不更改九阶段路线
+结束标记：`XW-CONTRACT-STD-001 / V1.0 / FROZEN`

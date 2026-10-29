@@ -1,0 +1,42 @@
+COMMAND iverilog -g2001 -s tb_xw_invalid_parser_params -o /workspace/scratch/5f8e1b5d92cf/linear-xw-ip/sim_build/stage23/negative.vvp /workspace/scratch/5f8e1b5d92cf/linear-xw-ip/rtl/xw_axis_bfp18_input.v tb/negative/tb_xw_invalid_stage23_params.v
+/workspace/scratch/5f8e1b5d92cf/linear-xw-ip/rtl/xw_axis_bfp18_input.v:59: error: Unknown module type: XW_INVALID_AXIS_INPUT_PARAMETERS
+1 error(s) during elaboration.
+*** These modules were missing:
+        XW_INVALID_AXIS_INPUT_PARAMETERS referenced 1 times.
+***
+PASS negative elaboration parser_params
+COMMAND iverilog -g2001 -s tb_xw_invalid_activation_params -o /workspace/scratch/5f8e1b5d92cf/linear-xw-ip/sim_build/stage23/negative.vvp /workspace/scratch/5f8e1b5d92cf/linear-xw-ip/rtl/xw_activation_buffer.v tb/negative/tb_xw_invalid_stage23_params.v
+/workspace/scratch/5f8e1b5d92cf/linear-xw-ip/rtl/xw_activation_buffer.v:53: error: Unknown module type: XW_INVALID_ACTIVATION_BUFFER_PARAMETERS
+1 error(s) during elaboration.
+*** These modules were missing:
+        XW_INVALID_ACTIVATION_BUFFER_PARAMETERS referenced 1 times.
+***
+PASS negative elaboration activation_params
+COMMAND iverilog -g2001 -s tb_xw_invalid_weight_params -o /workspace/scratch/5f8e1b5d92cf/linear-xw-ip/sim_build/stage23/negative.vvp /workspace/scratch/5f8e1b5d92cf/linear-xw-ip/rtl/xw_weight_row_buffer.v tb/negative/tb_xw_invalid_stage23_params.v
+/workspace/scratch/5f8e1b5d92cf/linear-xw-ip/rtl/xw_weight_row_buffer.v:46: error: Unknown module type: XW_INVALID_WEIGHT_BUFFER_PARAMETERS
+1 error(s) during elaboration.
+*** These modules were missing:
+        XW_INVALID_WEIGHT_BUFFER_PARAMETERS referenced 1 times.
+***
+PASS negative elaboration weight_params
+COMMAND iverilog -g2001 -s tb_xw_invalid_burst_unspecified -o /workspace/scratch/5f8e1b5d92cf/linear-xw-ip/sim_build/stage23/negative.vvp /workspace/scratch/5f8e1b5d92cf/linear-xw-ip/rtl/xw_ddr_addr_gen.v tb/negative/tb_xw_invalid_stage23_params.v
+/workspace/scratch/5f8e1b5d92cf/linear-xw-ip/rtl/xw_ddr_addr_gen.v:78: error: Unknown module type: XW_INVALID_ADDR_GEN_PARAMETERS
+1 error(s) during elaboration.
+*** These modules were missing:
+        XW_INVALID_ADDR_GEN_PARAMETERS referenced 1 times.
+***
+PASS negative elaboration burst_unspecified
+COMMAND iverilog -g2001 -s tb_xw_invalid_burst_large -o /workspace/scratch/5f8e1b5d92cf/linear-xw-ip/sim_build/stage23/negative.vvp /workspace/scratch/5f8e1b5d92cf/linear-xw-ip/rtl/xw_ddr_addr_gen.v tb/negative/tb_xw_invalid_stage23_params.v
+/workspace/scratch/5f8e1b5d92cf/linear-xw-ip/rtl/xw_ddr_addr_gen.v:78: error: Unknown module type: XW_INVALID_ADDR_GEN_PARAMETERS
+1 error(s) during elaboration.
+*** These modules were missing:
+        XW_INVALID_ADDR_GEN_PARAMETERS referenced 1 times.
+***
+PASS negative elaboration burst_large
+COMMAND iverilog -g2001 -s tb_xw_invalid_address_max -o /workspace/scratch/5f8e1b5d92cf/linear-xw-ip/sim_build/stage23/negative.vvp /workspace/scratch/5f8e1b5d92cf/linear-xw-ip/rtl/xw_ddr_addr_gen.v tb/negative/tb_xw_invalid_stage23_params.v
+/workspace/scratch/5f8e1b5d92cf/linear-xw-ip/rtl/xw_ddr_addr_gen.v:78: error: Unknown module type: XW_INVALID_ADDR_GEN_PARAMETERS
+1 error(s) during elaboration.
+*** These modules were missing:
+        XW_INVALID_ADDR_GEN_PARAMETERS referenced 1 times.
+***
+PASS negative elaboration address_max

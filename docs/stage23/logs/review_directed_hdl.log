@@ -1,0 +1,16 @@
+warning: Some modules have no timescale. This may cause
+       : confusing timing results.	Affected modules are:
+       :   -- module xw_activation_buffer declared here: rtl/xw_activation_buffer.v:2
+       :   -- module xw_axis_bfp18_input declared here: rtl/xw_axis_bfp18_input.v:3
+       :   -- module xw_ddr_addr_gen declared here: rtl/xw_ddr_addr_gen.v:3
+       :   -- module xw_ddr_range_rx declared here: rtl/xw_ddr_range_rx.v:4
+       :   -- module xw_fp32_scale_b2 declared here: rtl/xw_fp32_scale_b2.v:4
+       :   -- module xw_job_dim_cfg declared here: rtl/xw_job_dim_cfg.v:3
+       :   -- module xw_scale_group_cache declared here: rtl/xw_scale_group_cache.v:4
+       :   -- module xw_stage23_harness declared here: tb/support/xw_stage23_harness.v:2
+       :   -- module xw_weight_row_buffer declared here: rtl/xw_weight_row_buffer.v:2
+CHECK P0-02 extra beat and Loaded same edge: PASS
+CHECK Reset/Abort/Loaded/Done priority: PASS
+CHECK P0-01 invalid X write -> test result40: PASS
+PASS tb_xw_stage23_review
+tb/tb_xw_stage23_review.v:95: $finish called at 366000 (1ps)

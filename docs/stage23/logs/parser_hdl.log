@@ -1,0 +1,7 @@
+COMMAND iverilog -g2001 -Wall -s tb_xw_axis_bfp18_input_cycle -o /workspace/scratch/5f8e1b5d92cf/linear-xw-ip/sim_build/stage23/parser.vvp /workspace/scratch/5f8e1b5d92cf/linear-xw-ip/rtl/xw_axis_bfp18_input.v /workspace/scratch/5f8e1b5d92cf/linear-xw-ip/tb/tb_xw_axis_bfp18_input_cycle.v
+warning: Some modules have no timescale. This may cause
+       : confusing timing results.	Affected modules are:
+       :   -- module xw_axis_bfp18_input declared here: /workspace/scratch/5f8e1b5d92cf/linear-xw-ip/rtl/xw_axis_bfp18_input.v:3
+COMMAND vvp /workspace/scratch/5f8e1b5d92cf/linear-xw-ip/sim_build/stage23/parser.vvp +VECTORS=/workspace/scratch/5f8e1b5d92cf/linear-xw-ip/sim_build/stage23/parser.vec
+PASS tb_xw_axis_bfp18_input_cycle cycles=108822
+/workspace/scratch/5f8e1b5d92cf/linear-xw-ip/tb/tb_xw_axis_bfp18_input_cycle.v:95: $finish called at 1088226000 (1ps)

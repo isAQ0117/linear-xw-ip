@@ -1,0 +1,15 @@
+COMMAND iverilog -g2001 -Wall -s tb_xw_stage23_harness_cycle -o /workspace/scratch/5f8e1b5d92cf/linear-xw-ip/sim_build/stage23/harness_b2.vvp -P tb_xw_stage23_harness_cycle.BURST=2 -P tb_xw_stage23_harness_cycle.STATIC_MODE=0 -f rtl_sources.f /workspace/scratch/5f8e1b5d92cf/linear-xw-ip/tb/support/xw_stage23_harness.v /workspace/scratch/5f8e1b5d92cf/linear-xw-ip/tb/tb_xw_stage23_harness_cycle.v
+warning: Some modules have no timescale. This may cause
+       : confusing timing results.	Affected modules are:
+       :   -- module xw_activation_buffer declared here: rtl/xw_activation_buffer.v:2
+       :   -- module xw_axis_bfp18_input declared here: rtl/xw_axis_bfp18_input.v:3
+       :   -- module xw_ddr_addr_gen declared here: rtl/xw_ddr_addr_gen.v:3
+       :   -- module xw_ddr_range_rx declared here: rtl/xw_ddr_range_rx.v:4
+       :   -- module xw_fp32_scale_b2 declared here: rtl/xw_fp32_scale_b2.v:4
+       :   -- module xw_job_dim_cfg declared here: rtl/xw_job_dim_cfg.v:3
+       :   -- module xw_scale_group_cache declared here: rtl/xw_scale_group_cache.v:4
+       :   -- module xw_stage23_harness declared here: /workspace/scratch/5f8e1b5d92cf/linear-xw-ip/tb/support/xw_stage23_harness.v:2
+       :   -- module xw_weight_row_buffer declared here: rtl/xw_weight_row_buffer.v:2
+COMMAND vvp /workspace/scratch/5f8e1b5d92cf/linear-xw-ip/sim_build/stage23/harness_b2.vvp +VECTORS=/workspace/scratch/5f8e1b5d92cf/linear-xw-ip/sim_build/stage23/harness_b2.vec
+PASS tb_xw_stage23_harness_cycle cycles=82986
+/workspace/scratch/5f8e1b5d92cf/linear-xw-ip/tb/tb_xw_stage23_harness_cycle.v:206: $finish called at 829866000 (1ps)

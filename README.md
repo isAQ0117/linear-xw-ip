@@ -136,3 +136,25 @@ here have not been executed**.
 The target is Vivado 2023.2 and older ModelSim as possible; RTL deliberately
 uses traditional Verilog-2001 without SystemVerilog `logic`, `always_ff`,
 interfaces, packages, structures, or `$clog2`.
+
+## Current Stage 2+3 development
+
+The current implementation and measured evidence are indexed in
+[docs/stage23/DELIVERY_REPORT.md](docs/stage23/DELIVERY_REPORT.md).
+This is M=1 input/DDR storage infrastructure, without the Stage4–8 engine.
+The historical text above describes V0.2 and is not current signoff status.
+
+```sh
+make py-test          # 43 software tests, including Stage2/3 boundary matrices
+make rtl-test         # existing four-module Stage1 regression
+make stage23-test     # actual Icarus Verilog-2001 PRE/NBA lockstep + integration
+make synthesis-check # optional Yosys generic structure/clocked memory checks
+```
+
+Dependencies: Python 3 standard library; `iverilog` and `vvp` (tested 12.0);
+optional `yosys` (tested 0.33). All commands run from the repository root.
+`sim_build/stage23/` is reproducibly generated and ignored by Git. Actual logs,
+vector hashes, baseline hashes and reports are under `docs/stage23/`.
+`DDR_MAX_BURST_BEATS` must be explicitly set for synthesis; test values do not
+represent a DDR controller specification. Target Vivado 2023.2, FPGA mapping,
+timing closure, and external transaction cleanup guarantees remain unverified.

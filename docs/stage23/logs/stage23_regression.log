@@ -1,0 +1,17 @@
+parser: software PASS, HDL PASS, 108822 cycles, 6.5s
+activation: software PASS, HDL PASS, 28146 cycles, 1.0s
+weight: software PASS, HDL PASS, 12758 cycles, 0.5s
+address_b1: software PASS, HDL PASS, 63091 cycles, 2.9s
+address_b2: software PASS, HDL PASS, 32147 cycles, 1.5s
+address_b3: software PASS, HDL PASS, 21647 cycles, 1.0s
+address_b64: software PASS, HDL PASS, 1827 cycles, 0.1s
+address_b192: software PASS, HDL PASS, 1192 cycles, 0.1s
+harness_b1: software PASS, HDL PASS, 90664 cycles, 23.4s
+harness_b2: software PASS, HDL PASS, 82986 cycles, 22.0s
+harness_b3: software PASS, HDL PASS, 80260 cycles, 21.3s
+harness_b64: software PASS, HDL PASS, 76219 cycles, 16.5s
+harness_b192: software PASS, HDL PASS, 76284 cycles, 16.0s
+harness_static: software PASS, HDL PASS, 250 cycles, 0.1s
+stage1_rx_cycle: software PASS, HDL PASS, 1115 cycles, 0.1s
+stage1_scale_cycle: software PASS, HDL PASS, 1251 cycles, 0.0s
+PASS Stage2/3 software and actual Verilog-2001 PRE/NBA cycle regression

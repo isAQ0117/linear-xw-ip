@@ -1,0 +1,90 @@
+{
+  "check_type": "STRUCTURAL_ONLY_NOT_HDL_COMPILATION",
+  "modules": {
+    "xw_job_dim_cfg": {
+      "ports": 13,
+      "name_list": [
+        "clk",
+        "rst_n",
+        "job_accept",
+        "job_n",
+        "job_k",
+        "cfg_valid",
+        "cfg_error",
+        "active_n",
+        "active_k",
+        "n_groups",
+        "k_blocks",
+        "weight_words_per_row",
+        "scale_words_per_group"
+      ],
+      "balanced": true
+    },
+    "xw_ddr_range_rx": {
+      "ports": 22,
+      "name_list": [
+        "clk",
+        "rst_n",
+        "cmd_valid",
+        "cmd_ready",
+        "cmd_addr_start",
+        "cmd_addr_end",
+        "cmd_beats",
+        "cmd_kind",
+        "ddr_rd_req",
+        "ddr_rd_addra",
+        "ddr_rd_addrb",
+        "ddr_rd_rdy",
+        "ddr_rd_data",
+        "ddr_rd_vld",
+        "busy",
+        "word_valid",
+        "word_data",
+        "word_index",
+        "word_kind",
+        "range_done",
+        "range_error",
+        "range_error_code"
+      ],
+      "balanced": true
+    },
+    "xw_scale_group_cache": {
+      "ports": 15,
+      "name_list": [
+        "clk",
+        "rst_n",
+        "load_begin",
+        "load_words",
+        "load_scales",
+        "wr_valid",
+        "wr_data",
+        "wr_word_index",
+        "loaded",
+        "cache_error",
+        "cache_error_code",
+        "rd_req",
+        "rd_scale_index",
+        "rd_valid",
+        "rd_scale_bits"
+      ],
+      "balanced": true
+    },
+    "xw_fp32_scale_b2": {
+      "ports": 6,
+      "name_list": [
+        "b1_raw",
+        "act_exp",
+        "scale_bits",
+        "term_mant",
+        "term_exp",
+        "scale_valid"
+      ],
+      "balanced": true
+    }
+  },
+  "errors": [],
+  "b2_assignment_identity": {
+    "checked": false
+  }
+}
+PASS structural Stage-1 checks (not HDL compilation)

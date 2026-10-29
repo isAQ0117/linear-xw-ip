@@ -1,0 +1,48 @@
+test_batch_weight_reuse (test_cycle.CycleTests.test_batch_weight_reuse) ... ok
+test_small_and_boundaries (test_cycle.CycleTests.test_small_and_boundaries) ... ok
+test_accumulate_signed72_against_fraction (test_fp32.FP32A2RoundoffTests.test_accumulate_signed72_against_fraction) ... ok
+test_17_scale_values_need_two_beats (test_fp32.FP32DDRSimulationTests.test_17_scale_values_need_two_beats) ... ok
+test_fp32_scale_not_truncated_to_bf16 (test_fp32.FP32DDRSimulationTests.test_fp32_scale_not_truncated_to_bf16) ... ok
+test_mixed_boundaries_and_stalls (test_fp32.FP32DDRSimulationTests.test_mixed_boundaries_and_stalls) ... ok
+test_multiple_batches_static (test_fp32.FP32DDRSimulationTests.test_multiple_batches_static) ... ok
+test_optional_full_float_reference (test_fp32.FP32DDRSimulationTests.test_optional_full_float_reference) ... ok
+test_fp32_crosscheck_1024_bitpatterns (test_fp32.FP32NumericalTests.test_fp32_crosscheck_1024_bitpatterns) ... ok
+test_fp32_known_bit_patterns (test_fp32.FP32NumericalTests.test_fp32_known_bit_patterns) ... ok
+test_reject_bad_scales (test_fp32.FP32NumericalTests.test_reject_bad_scales) ... ok
+test_same_bf16_scale_value_preserves_acc (test_fp32.FP32NumericalTests.test_same_bf16_scale_value_preserves_acc) ... ok
+test_decoder_extremes_and_invalid (test_stage1_contract.TestB2Numerics.test_decoder_extremes_and_invalid) ... ok
+test_ddr_waits_for_ready (test_stage1_contract.TestDdrRangeReceiver.test_ddr_waits_for_ready) ... ok
+test_invalid_command_sticky_0x20 (test_stage1_contract.TestDdrRangeReceiver.test_invalid_command_sticky_0x20) ... ok
+test_many_random_ranges (test_stage1_contract.TestDdrRangeReceiver.test_many_random_ranges) ... ok
+test_reset_gates_command (test_stage1_contract.TestDdrRangeReceiver.test_reset_gates_command) ... ok
+test_same_edge_beat0_gap_last_and_handoff (test_stage1_contract.TestDdrRangeReceiver.test_same_edge_beat0_gap_last_and_handoff) ... ok
+test_unsolicited_and_extra_response_0x21 (test_stage1_contract.TestDdrRangeReceiver.test_unsolicited_and_extra_response_0x21) ... ok
+test_dynamic_invalid_and_next_good (test_stage1_contract.TestDimensionConfig.test_dynamic_invalid_and_next_good) ... ok
+test_dynamic_mode_does_not_require_static_dims_inside_limits (test_stage1_contract.TestDimensionConfig.test_dynamic_mode_does_not_require_static_dims_inside_limits) ... ok
+test_illegal_parameters_rejected (test_stage1_contract.TestDimensionConfig.test_illegal_parameters_rejected) ... ok
+test_max_width (test_stage1_contract.TestDimensionConfig.test_max_width) ... ok
+test_reset_invalidates_result (test_stage1_contract.TestDimensionConfig.test_reset_invalidates_result) ... ok
+test_static_ignores_physical_nk (test_stage1_contract.TestDimensionConfig.test_static_ignores_physical_nk) ... ok
+test_early_read_fatal (test_stage1_contract.TestScaleGroupCache.test_early_read_fatal) ... ok
+test_invalid_scale_count_beyond_maxk (test_stage1_contract.TestScaleGroupCache.test_invalid_scale_count_beyond_maxk) ... ok
+test_load_and_first_write_overlap_fatal (test_stage1_contract.TestScaleGroupCache.test_load_and_first_write_overlap_fatal) ... ok
+test_normal_group_loading_does_not_raise_fault (test_stage1_contract.TestScaleGroupCache.test_normal_group_loading_does_not_raise_fault) ... ok
+test_read_oob_is_fault (test_stage1_contract.TestScaleGroupCache.test_read_oob_is_fault) ... ok
+test_simultaneous_read_write_fatal (test_stage1_contract.TestScaleGroupCache.test_simultaneous_read_write_fatal) ... ok
+test_two_word_load_reads_and_reload (test_stage1_contract.TestScaleGroupCache.test_two_word_load_reads_and_reload) ... ok
+test_write_extra_is_fatal_and_sticky (test_stage1_contract.TestScaleGroupCache.test_write_extra_is_fatal_and_sticky) ... ok
+test_first_beat_pipelined_to_cache_without_loss (test_stage1_contract.TestStage1ReceiverCacheIntegration.test_first_beat_pipelined_to_cache_without_loss) ... ok
+test_reset_while_range_inflight_does_not_prove_ddr_flush (test_stage1_contract.TestStage1ReceiverCacheIntegration.test_reset_while_range_inflight_does_not_prove_ddr_flush) ... ok
+test_activation (test_stage23.Stage23SoftwareTests.test_activation) ... ok
+test_address_matrix (test_stage23.Stage23SoftwareTests.test_address_matrix) ... ok
+test_harness_matrix (test_stage23.Stage23SoftwareTests.test_harness_matrix) ... ok
+test_harness_static (test_stage23.Stage23SoftwareTests.test_harness_static) ... ok
+test_independent_oracle_fixed_patterns (test_stage23.Stage23SoftwareTests.test_independent_oracle_fixed_patterns) ... ok
+test_parser (test_stage23.Stage23SoftwareTests.test_parser) ... ok
+test_stage1_actual_cycle_vectors (test_stage23.Stage23SoftwareTests.test_stage1_actual_cycle_vectors) ... ok
+test_weight (test_stage23.Stage23SoftwareTests.test_weight) ... ok
+
+----------------------------------------------------------------------
+Ran 43 tests in 86.920s
+
+OK

@@ -1,0 +1,7 @@
+COMMAND iverilog -g2001 -Wall -s tb_xw_scale_group_cache_cycle -o /workspace/scratch/5f8e1b5d92cf/linear-xw-ip/sim_build/stage23/stage1_scale_cycle.vvp /workspace/scratch/5f8e1b5d92cf/linear-xw-ip/rtl/xw_scale_group_cache.v /workspace/scratch/5f8e1b5d92cf/linear-xw-ip/tb/tb_xw_scale_group_cache_cycle.v
+warning: Some modules have no timescale. This may cause
+       : confusing timing results.	Affected modules are:
+       :   -- module xw_scale_group_cache declared here: /workspace/scratch/5f8e1b5d92cf/linear-xw-ip/rtl/xw_scale_group_cache.v:4
+COMMAND vvp /workspace/scratch/5f8e1b5d92cf/linear-xw-ip/sim_build/stage23/stage1_scale_cycle.vvp +VECTORS=/workspace/scratch/5f8e1b5d92cf/linear-xw-ip/sim_build/stage23/stage1_scale_cycle.vec
+PASS tb_xw_scale_group_cache_cycle cycles=1251
+/workspace/scratch/5f8e1b5d92cf/linear-xw-ip/tb/tb_xw_scale_group_cache_cycle.v:81: $finish called at 12516000 (1ps)

@@ -1,0 +1,7 @@
+COMMAND iverilog -g2001 -Wall -s tb_xw_ddr_range_rx_cycle -o /workspace/scratch/5f8e1b5d92cf/linear-xw-ip/sim_build/stage23/stage1_rx_cycle.vvp /workspace/scratch/5f8e1b5d92cf/linear-xw-ip/rtl/xw_ddr_range_rx.v /workspace/scratch/5f8e1b5d92cf/linear-xw-ip/tb/tb_xw_ddr_range_rx_cycle.v
+warning: Some modules have no timescale. This may cause
+       : confusing timing results.	Affected modules are:
+       :   -- module xw_ddr_range_rx declared here: /workspace/scratch/5f8e1b5d92cf/linear-xw-ip/rtl/xw_ddr_range_rx.v:4
+COMMAND vvp /workspace/scratch/5f8e1b5d92cf/linear-xw-ip/sim_build/stage23/stage1_rx_cycle.vvp +VECTORS=/workspace/scratch/5f8e1b5d92cf/linear-xw-ip/sim_build/stage23/stage1_rx_cycle.vec
+PASS tb_xw_ddr_range_rx_cycle cycles=1115
+/workspace/scratch/5f8e1b5d92cf/linear-xw-ip/tb/tb_xw_ddr_range_rx_cycle.v:95: $finish called at 11156000 (1ps)

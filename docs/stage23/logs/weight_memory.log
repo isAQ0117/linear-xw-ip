@@ -1,0 +1,275 @@
+
+-- Running command `read_verilog rtl/xw_weight_row_buffer.v; hierarchy -check -top xw_weight_row_buffer; proc; opt; memory_dff; memory_collect; opt_clean; check -assert; stat; write_json sim_build/stage23/weight_memory.json' --
+
+1. Executing Verilog-2005 frontend: rtl/xw_weight_row_buffer.v
+Parsing Verilog input from `rtl/xw_weight_row_buffer.v' to AST representation.
+Generating RTLIL representation for module `\xw_weight_row_buffer'.
+Successfully finished Verilog frontend.
+
+2. Executing HIERARCHY pass (managing design hierarchy).
+
+2.1. Analyzing design hierarchy..
+Top module:  \xw_weight_row_buffer
+
+2.2. Analyzing design hierarchy..
+Top module:  \xw_weight_row_buffer
+Removed 0 unused modules.
+
+3. Executing PROC pass (convert processes to netlists).
+
+3.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+3.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 6 switch rules as full_case in process $proc$rtl/xw_weight_row_buffer.v:79$74 in module xw_weight_row_buffer.
+Marked 1 switch rules as full_case in process $proc$rtl/xw_weight_row_buffer.v:71$65 in module xw_weight_row_buffer.
+Removed a total of 0 dead cases.
+
+3.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 1 redundant assignment.
+Promoted 3 assignments to connections.
+
+3.4. Executing PROC_INIT pass (extract init attributes).
+
+3.5. Executing PROC_ARST pass (detect async resets in processes).
+Found async reset \rst_n in `\xw_weight_row_buffer.$proc$rtl/xw_weight_row_buffer.v:79$74'.
+
+3.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~10 debug messages>
+
+3.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\xw_weight_row_buffer.$proc$rtl/xw_weight_row_buffer.v:79$74'.
+     1/12: $0\read_valid_reg[0:0]
+     2/12: $0\written[15:0]
+     3/12: $0\read_words[15:0]
+     4/12: $0\total_words[15:0]
+     5/12: $0\active_k[15:0]
+     6/12: $0\loaded_reg[0:0]
+     7/12: $0\loading[0:0]
+     8/12: $0\read_seen[0:0]
+     9/12: $0\read_lane[2:0]
+    10/12: $0\rd_mask[7:0]
+    11/12: $0\error_code[7:0]
+    12/12: $0\fault[0:0]
+Creating decoders for process `\xw_weight_row_buffer.$proc$rtl/xw_weight_row_buffer.v:71$65'.
+     1/4: $1$memwr$\words$rtl/xw_weight_row_buffer.v:73$1_EN[511:0]$71
+     2/4: $1$memwr$\words$rtl/xw_weight_row_buffer.v:73$1_DATA[511:0]$70
+     3/4: $1$memwr$\words$rtl/xw_weight_row_buffer.v:73$1_ADDR[15:0]$69
+     4/4: $0\ram_read_word[511:0]
+
+3.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+3.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\xw_weight_row_buffer.\fault' using process `\xw_weight_row_buffer.$proc$rtl/xw_weight_row_buffer.v:79$74'.
+  created $adff cell `$procdff$278' with positive edge clock and negative level reset.
+Creating register for signal `\xw_weight_row_buffer.\error_code' using process `\xw_weight_row_buffer.$proc$rtl/xw_weight_row_buffer.v:79$74'.
+  created $adff cell `$procdff$279' with positive edge clock and negative level reset.
+Creating register for signal `\xw_weight_row_buffer.\rd_mask' using process `\xw_weight_row_buffer.$proc$rtl/xw_weight_row_buffer.v:79$74'.
+  created $adff cell `$procdff$280' with positive edge clock and negative level reset.
+Creating register for signal `\xw_weight_row_buffer.\read_lane' using process `\xw_weight_row_buffer.$proc$rtl/xw_weight_row_buffer.v:79$74'.
+  created $adff cell `$procdff$281' with positive edge clock and negative level reset.
+Creating register for signal `\xw_weight_row_buffer.\read_seen' using process `\xw_weight_row_buffer.$proc$rtl/xw_weight_row_buffer.v:79$74'.
+  created $adff cell `$procdff$282' with positive edge clock and negative level reset.
+Creating register for signal `\xw_weight_row_buffer.\loading' using process `\xw_weight_row_buffer.$proc$rtl/xw_weight_row_buffer.v:79$74'.
+  created $adff cell `$procdff$283' with positive edge clock and negative level reset.
+Creating register for signal `\xw_weight_row_buffer.\loaded_reg' using process `\xw_weight_row_buffer.$proc$rtl/xw_weight_row_buffer.v:79$74'.
+  created $adff cell `$procdff$284' with positive edge clock and negative level reset.
+Creating register for signal `\xw_weight_row_buffer.\read_valid_reg' using process `\xw_weight_row_buffer.$proc$rtl/xw_weight_row_buffer.v:79$74'.
+  created $adff cell `$procdff$285' with positive edge clock and negative level reset.
+Creating register for signal `\xw_weight_row_buffer.\active_k' using process `\xw_weight_row_buffer.$proc$rtl/xw_weight_row_buffer.v:79$74'.
+  created $adff cell `$procdff$286' with positive edge clock and negative level reset.
+Creating register for signal `\xw_weight_row_buffer.\total_words' using process `\xw_weight_row_buffer.$proc$rtl/xw_weight_row_buffer.v:79$74'.
+  created $adff cell `$procdff$287' with positive edge clock and negative level reset.
+Creating register for signal `\xw_weight_row_buffer.\read_words' using process `\xw_weight_row_buffer.$proc$rtl/xw_weight_row_buffer.v:79$74'.
+  created $adff cell `$procdff$288' with positive edge clock and negative level reset.
+Creating register for signal `\xw_weight_row_buffer.\written' using process `\xw_weight_row_buffer.$proc$rtl/xw_weight_row_buffer.v:79$74'.
+  created $adff cell `$procdff$289' with positive edge clock and negative level reset.
+Creating register for signal `\xw_weight_row_buffer.\ram_read_word' using process `\xw_weight_row_buffer.$proc$rtl/xw_weight_row_buffer.v:71$65'.
+  created $dff cell `$procdff$290' with positive edge clock.
+Creating register for signal `\xw_weight_row_buffer.$memwr$\words$rtl/xw_weight_row_buffer.v:73$1_ADDR' using process `\xw_weight_row_buffer.$proc$rtl/xw_weight_row_buffer.v:71$65'.
+  created $dff cell `$procdff$291' with positive edge clock.
+Creating register for signal `\xw_weight_row_buffer.$memwr$\words$rtl/xw_weight_row_buffer.v:73$1_DATA' using process `\xw_weight_row_buffer.$proc$rtl/xw_weight_row_buffer.v:71$65'.
+  created $dff cell `$procdff$292' with positive edge clock.
+Creating register for signal `\xw_weight_row_buffer.$memwr$\words$rtl/xw_weight_row_buffer.v:73$1_EN' using process `\xw_weight_row_buffer.$proc$rtl/xw_weight_row_buffer.v:71$65'.
+  created $dff cell `$procdff$293' with positive edge clock.
+
+3.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+3.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 8 empty switches in `\xw_weight_row_buffer.$proc$rtl/xw_weight_row_buffer.v:79$74'.
+Removing empty process `xw_weight_row_buffer.$proc$rtl/xw_weight_row_buffer.v:79$74'.
+Found and cleaned up 2 empty switches in `\xw_weight_row_buffer.$proc$rtl/xw_weight_row_buffer.v:71$65'.
+Removing empty process `xw_weight_row_buffer.$proc$rtl/xw_weight_row_buffer.v:71$65'.
+Cleaned up 10 empty switches.
+
+3.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module xw_weight_row_buffer.
+<suppressed ~7 debug messages>
+
+4. Executing OPT pass (performing simple optimizations).
+
+4.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module xw_weight_row_buffer.
+<suppressed ~2 debug messages>
+
+4.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\xw_weight_row_buffer'.
+<suppressed ~54 debug messages>
+Removed a total of 18 cells.
+
+4.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \xw_weight_row_buffer..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+      Replacing known input bits on port B of cell $procmux$263: \fault -> 1'1
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~24 debug messages>
+
+4.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \xw_weight_row_buffer.
+    Consolidated identical input bits for $mux cell $procmux$268:
+      Old ports: A=512'00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000, B=512'11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111, Y=$procmux$268_Y
+      New ports: A=1'0, B=1'1, Y=$procmux$268_Y [0]
+      New connections: $procmux$268_Y [511:1] = { $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] }
+  Optimizing cells in module \xw_weight_row_buffer.
+Performed a total of 2 changes.
+
+4.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\xw_weight_row_buffer'.
+Removed a total of 0 cells.
+
+4.6. Executing OPT_DFF pass (perform DFF optimizations).
+Adding EN signal on $procdff$281 ($adff) from module xw_weight_row_buffer (D = \rd_word_index [2:0], Q = \read_lane).
+Adding EN signal on $procdff$278 ($adff) from module xw_weight_row_buffer (D = $procmux$265_Y, Q = \fault).
+Adding EN signal on $procdff$282 ($adff) from module xw_weight_row_buffer (D = 1'1, Q = \read_seen).
+Adding EN signal on $procdff$283 ($adff) from module xw_weight_row_buffer (D = $procmux$189_Y, Q = \loading).
+Adding EN signal on $procdff$279 ($adff) from module xw_weight_row_buffer (D = $procmux$248_Y, Q = \error_code).
+Adding EN signal on $procdff$284 ($adff) from module xw_weight_row_buffer (D = $procmux$172_Y, Q = \loaded_reg).
+Adding EN signal on $procdff$280 ($adff) from module xw_weight_row_buffer (D = $ternary$rtl/xw_weight_row_buffer.v:52$18_Y, Q = \rd_mask).
+Adding EN signal on $procdff$286 ($adff) from module xw_weight_row_buffer (D = \load_k, Q = \active_k).
+Adding EN signal on $procdff$287 ($adff) from module xw_weight_row_buffer (D = $shr$rtl/xw_weight_row_buffer.v:111$79_Y [15:0], Q = \total_words).
+Adding EN signal on $procdff$288 ($adff) from module xw_weight_row_buffer (D = $shr$rtl/xw_weight_row_buffer.v:112$81_Y [15:0], Q = \read_words).
+Adding EN signal on $procdff$289 ($adff) from module xw_weight_row_buffer (D = $procmux$122_Y, Q = \written).
+Adding EN signal on $procdff$290 ($dff) from module xw_weight_row_buffer (D = $memrd$\words$rtl/xw_weight_row_buffer.v:75$72_DATA, Q = \ram_read_word).
+
+4.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \xw_weight_row_buffer..
+Removed 31 unused cells and 150 unused wires.
+<suppressed ~32 debug messages>
+
+4.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module xw_weight_row_buffer.
+<suppressed ~5 debug messages>
+
+4.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+4.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \xw_weight_row_buffer..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~18 debug messages>
+
+4.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \xw_weight_row_buffer.
+Performed a total of 0 changes.
+
+4.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\xw_weight_row_buffer'.
+<suppressed ~81 debug messages>
+Removed a total of 27 cells.
+
+4.13. Executing OPT_DFF pass (perform DFF optimizations).
+Setting constant 0-bit at position 11 on $auto$ff.cc:266:slice$369 ($adffe) from module xw_weight_row_buffer.
+Setting constant 0-bit at position 12 on $auto$ff.cc:266:slice$369 ($adffe) from module xw_weight_row_buffer.
+Setting constant 0-bit at position 13 on $auto$ff.cc:266:slice$369 ($adffe) from module xw_weight_row_buffer.
+Setting constant 0-bit at position 14 on $auto$ff.cc:266:slice$369 ($adffe) from module xw_weight_row_buffer.
+Setting constant 0-bit at position 15 on $auto$ff.cc:266:slice$369 ($adffe) from module xw_weight_row_buffer.
+Setting constant 0-bit at position 14 on $auto$ff.cc:266:slice$376 ($adffe) from module xw_weight_row_buffer.
+Setting constant 0-bit at position 15 on $auto$ff.cc:266:slice$376 ($adffe) from module xw_weight_row_buffer.
+
+4.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \xw_weight_row_buffer..
+Removed 0 unused cells and 27 unused wires.
+<suppressed ~1 debug messages>
+
+4.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module xw_weight_row_buffer.
+
+4.16. Rerunning OPT passes. (Maybe there is more to do..)
+
+4.17. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \xw_weight_row_buffer..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~18 debug messages>
+
+4.18. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \xw_weight_row_buffer.
+Performed a total of 0 changes.
+
+4.19. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\xw_weight_row_buffer'.
+Removed a total of 0 cells.
+
+4.20. Executing OPT_DFF pass (perform DFF optimizations).
+
+4.21. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \xw_weight_row_buffer..
+
+4.22. Executing OPT_EXPR pass (perform const folding).
+Optimizing module xw_weight_row_buffer.
+
+4.23. Finished OPT passes. (There is nothing left to do.)
+
+5. Executing MEMORY_DFF pass (merging $dff cells to $memrd).
+Checking read port `\words'[0] in module `\xw_weight_row_buffer': merging output FF to cell.
+    Write port 0: don't care on collision.
+
+6. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \xw_weight_row_buffer..
+Removed 1 unused cells and 513 unused wires.
+<suppressed ~2 debug messages>
+
+8. Executing CHECK pass (checking for obvious problems).
+Checking module xw_weight_row_buffer...
+Found and reported 0 problems.
+
+9. Printing statistics.
+
+=== xw_weight_row_buffer ===
+
+   Number of wires:                135
+   Number of wire bits:           3146
+   Number of public wires:          32
+   Number of public wire bits:    1308
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                131
+     $add                            4
+     $adff                           1
+     $adffe                         11
+     $eq                             2
+     $ge                             3
+     $gt                             1
+     $logic_and                     23
+     $logic_not                      9
+     $logic_or                      11
+     $mem_v2                         1
+     $mux                           43
+     $ne                             6
+     $not                            4
+     $reduce_and                     6
+     $reduce_bool                    3
+     $shr                            2
+     $sub                            1
+
+10. Executing JSON backend.

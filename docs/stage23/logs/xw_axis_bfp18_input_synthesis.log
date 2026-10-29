@@ -1,0 +1,314 @@
+COMMAND yosys -p read_verilog rtl/xw_axis_bfp18_input.v; hierarchy -check -top xw_axis_bfp18_input; proc; opt; memory_dff; memory_collect; opt_clean; check -assert; stat; write_json /workspace/scratch/5f8e1b5d92cf/linear-xw-ip/sim_build/stage23/xw_axis_bfp18_input_netlist.json
+
+-- Running command `read_verilog rtl/xw_axis_bfp18_input.v; hierarchy -check -top xw_axis_bfp18_input; proc; opt; memory_dff; memory_collect; opt_clean; check -assert; stat; write_json /workspace/scratch/5f8e1b5d92cf/linear-xw-ip/sim_build/stage23/xw_axis_bfp18_input_netlist.json' --
+
+1. Executing Verilog-2005 frontend: rtl/xw_axis_bfp18_input.v
+Parsing Verilog input from `rtl/xw_axis_bfp18_input.v' to AST representation.
+Generating RTLIL representation for module `\xw_axis_bfp18_input'.
+Successfully finished Verilog frontend.
+
+2. Executing HIERARCHY pass (managing design hierarchy).
+
+2.1. Analyzing design hierarchy..
+Top module:  \xw_axis_bfp18_input
+
+2.2. Analyzing design hierarchy..
+Top module:  \xw_axis_bfp18_input
+Removed 0 unused modules.
+
+3. Executing PROC pass (convert processes to netlists).
+
+3.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+3.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 9 switch rules as full_case in process $proc$rtl/xw_axis_bfp18_input.v:100$77 in module xw_axis_bfp18_input.
+Marked 4 switch rules as full_case in process $proc$rtl/xw_axis_bfp18_input.v:76$33 in module xw_axis_bfp18_input.
+Removed a total of 0 dead cases.
+
+3.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 1 redundant assignment.
+Promoted 5 assignments to connections.
+
+3.4. Executing PROC_INIT pass (extract init attributes).
+
+3.5. Executing PROC_ARST pass (detect async resets in processes).
+Found async reset \rst_n in `\xw_axis_bfp18_input.$proc$rtl/xw_axis_bfp18_input.v:100$77'.
+
+3.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~17 debug messages>
+
+3.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\xw_axis_bfp18_input.$proc$rtl/xw_axis_bfp18_input.v:100$77'.
+     1/23: $0\done[0:0]
+     2/23: $0\next_word[15:0]
+     3/23: $0\pack_lanes[2:0]
+     4/23: $0\pack_data[143:0]
+     5/23: $0\beat_final[0:0]
+     6/23: $0\beat_exp[7:0]
+     7/23: $0\remaining[5:0]
+     8/23: $0\beat_shift[511:0]
+     9/23: $0\input_end[0:0]
+    10/23: $0\group_exp[7:0]
+    11/23: $0\group_offset[7:0]
+    12/23: $0\group_id[8:0]
+    13/23: $0\active_k[15:0]
+    14/23: $0\active_id[31:0]
+    15/23: $0\active[0:0]
+    16/23: $0\error_code[7:0]
+    17/23: $0\fault[0:0]
+    18/23: $0\wr_last[0:0]
+    19/23: $0\wr_word_index[15:0]
+    20/23: $0\wr_exp[7:0]
+    21/23: $0\wr_mask[7:0]
+    22/23: $0\wr_data[143:0]
+    23/23: $0\wr_valid[0:0]
+Creating decoders for process `\xw_axis_bfp18_input.$proc$rtl/xw_axis_bfp18_input.v:76$33'.
+     1/4: $4\check_error[7:0]
+     2/4: $3\check_error[7:0]
+     3/4: $2\check_error[7:0]
+     4/4: $1\check_error[7:0]
+
+3.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+No latch inferred for signal `\xw_axis_bfp18_input.\packed_next' from process `\xw_axis_bfp18_input.$proc$rtl/xw_axis_bfp18_input.v:76$33'.
+No latch inferred for signal `\xw_axis_bfp18_input.\check_error' from process `\xw_axis_bfp18_input.$proc$rtl/xw_axis_bfp18_input.v:76$33'.
+No latch inferred for signal `\xw_axis_bfp18_input.$bitselwrite$mask$rtl/xw_axis_bfp18_input.v:96$1' from process `\xw_axis_bfp18_input.$proc$rtl/xw_axis_bfp18_input.v:76$33'.
+No latch inferred for signal `\xw_axis_bfp18_input.$bitselwrite$data$rtl/xw_axis_bfp18_input.v:96$2' from process `\xw_axis_bfp18_input.$proc$rtl/xw_axis_bfp18_input.v:76$33'.
+No latch inferred for signal `\xw_axis_bfp18_input.$bitselwrite$sel$rtl/xw_axis_bfp18_input.v:96$3' from process `\xw_axis_bfp18_input.$proc$rtl/xw_axis_bfp18_input.v:76$33'.
+
+3.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\xw_axis_bfp18_input.\wr_valid' using process `\xw_axis_bfp18_input.$proc$rtl/xw_axis_bfp18_input.v:100$77'.
+  created $adff cell `$procdff$551' with positive edge clock and negative level reset.
+Creating register for signal `\xw_axis_bfp18_input.\wr_data' using process `\xw_axis_bfp18_input.$proc$rtl/xw_axis_bfp18_input.v:100$77'.
+  created $adff cell `$procdff$552' with positive edge clock and negative level reset.
+Creating register for signal `\xw_axis_bfp18_input.\wr_mask' using process `\xw_axis_bfp18_input.$proc$rtl/xw_axis_bfp18_input.v:100$77'.
+  created $adff cell `$procdff$553' with positive edge clock and negative level reset.
+Creating register for signal `\xw_axis_bfp18_input.\wr_exp' using process `\xw_axis_bfp18_input.$proc$rtl/xw_axis_bfp18_input.v:100$77'.
+  created $adff cell `$procdff$554' with positive edge clock and negative level reset.
+Creating register for signal `\xw_axis_bfp18_input.\wr_word_index' using process `\xw_axis_bfp18_input.$proc$rtl/xw_axis_bfp18_input.v:100$77'.
+  created $adff cell `$procdff$555' with positive edge clock and negative level reset.
+Creating register for signal `\xw_axis_bfp18_input.\wr_last' using process `\xw_axis_bfp18_input.$proc$rtl/xw_axis_bfp18_input.v:100$77'.
+  created $adff cell `$procdff$556' with positive edge clock and negative level reset.
+Creating register for signal `\xw_axis_bfp18_input.\done' using process `\xw_axis_bfp18_input.$proc$rtl/xw_axis_bfp18_input.v:100$77'.
+  created $adff cell `$procdff$557' with positive edge clock and negative level reset.
+Creating register for signal `\xw_axis_bfp18_input.\fault' using process `\xw_axis_bfp18_input.$proc$rtl/xw_axis_bfp18_input.v:100$77'.
+  created $adff cell `$procdff$558' with positive edge clock and negative level reset.
+Creating register for signal `\xw_axis_bfp18_input.\error_code' using process `\xw_axis_bfp18_input.$proc$rtl/xw_axis_bfp18_input.v:100$77'.
+  created $adff cell `$procdff$559' with positive edge clock and negative level reset.
+Creating register for signal `\xw_axis_bfp18_input.\active' using process `\xw_axis_bfp18_input.$proc$rtl/xw_axis_bfp18_input.v:100$77'.
+  created $adff cell `$procdff$560' with positive edge clock and negative level reset.
+Creating register for signal `\xw_axis_bfp18_input.\active_id' using process `\xw_axis_bfp18_input.$proc$rtl/xw_axis_bfp18_input.v:100$77'.
+  created $adff cell `$procdff$561' with positive edge clock and negative level reset.
+Creating register for signal `\xw_axis_bfp18_input.\active_k' using process `\xw_axis_bfp18_input.$proc$rtl/xw_axis_bfp18_input.v:100$77'.
+  created $adff cell `$procdff$562' with positive edge clock and negative level reset.
+Creating register for signal `\xw_axis_bfp18_input.\group_id' using process `\xw_axis_bfp18_input.$proc$rtl/xw_axis_bfp18_input.v:100$77'.
+  created $adff cell `$procdff$563' with positive edge clock and negative level reset.
+Creating register for signal `\xw_axis_bfp18_input.\group_offset' using process `\xw_axis_bfp18_input.$proc$rtl/xw_axis_bfp18_input.v:100$77'.
+  created $adff cell `$procdff$564' with positive edge clock and negative level reset.
+Creating register for signal `\xw_axis_bfp18_input.\group_exp' using process `\xw_axis_bfp18_input.$proc$rtl/xw_axis_bfp18_input.v:100$77'.
+  created $adff cell `$procdff$565' with positive edge clock and negative level reset.
+Creating register for signal `\xw_axis_bfp18_input.\input_end' using process `\xw_axis_bfp18_input.$proc$rtl/xw_axis_bfp18_input.v:100$77'.
+  created $adff cell `$procdff$566' with positive edge clock and negative level reset.
+Creating register for signal `\xw_axis_bfp18_input.\beat_shift' using process `\xw_axis_bfp18_input.$proc$rtl/xw_axis_bfp18_input.v:100$77'.
+  created $adff cell `$procdff$567' with positive edge clock and negative level reset.
+Creating register for signal `\xw_axis_bfp18_input.\remaining' using process `\xw_axis_bfp18_input.$proc$rtl/xw_axis_bfp18_input.v:100$77'.
+  created $adff cell `$procdff$568' with positive edge clock and negative level reset.
+Creating register for signal `\xw_axis_bfp18_input.\beat_exp' using process `\xw_axis_bfp18_input.$proc$rtl/xw_axis_bfp18_input.v:100$77'.
+  created $adff cell `$procdff$569' with positive edge clock and negative level reset.
+Creating register for signal `\xw_axis_bfp18_input.\beat_final' using process `\xw_axis_bfp18_input.$proc$rtl/xw_axis_bfp18_input.v:100$77'.
+  created $adff cell `$procdff$570' with positive edge clock and negative level reset.
+Creating register for signal `\xw_axis_bfp18_input.\pack_data' using process `\xw_axis_bfp18_input.$proc$rtl/xw_axis_bfp18_input.v:100$77'.
+  created $adff cell `$procdff$571' with positive edge clock and negative level reset.
+Creating register for signal `\xw_axis_bfp18_input.\pack_lanes' using process `\xw_axis_bfp18_input.$proc$rtl/xw_axis_bfp18_input.v:100$77'.
+  created $adff cell `$procdff$572' with positive edge clock and negative level reset.
+Creating register for signal `\xw_axis_bfp18_input.\next_word' using process `\xw_axis_bfp18_input.$proc$rtl/xw_axis_bfp18_input.v:100$77'.
+  created $adff cell `$procdff$573' with positive edge clock and negative level reset.
+
+3.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+3.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 13 empty switches in `\xw_axis_bfp18_input.$proc$rtl/xw_axis_bfp18_input.v:100$77'.
+Removing empty process `xw_axis_bfp18_input.$proc$rtl/xw_axis_bfp18_input.v:100$77'.
+Found and cleaned up 4 empty switches in `\xw_axis_bfp18_input.$proc$rtl/xw_axis_bfp18_input.v:76$33'.
+Removing empty process `xw_axis_bfp18_input.$proc$rtl/xw_axis_bfp18_input.v:76$33'.
+Cleaned up 17 empty switches.
+
+3.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module xw_axis_bfp18_input.
+<suppressed ~15 debug messages>
+
+4. Executing OPT pass (performing simple optimizations).
+
+4.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module xw_axis_bfp18_input.
+<suppressed ~8 debug messages>
+
+4.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\xw_axis_bfp18_input'.
+<suppressed ~21 debug messages>
+Removed a total of 7 cells.
+
+4.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \xw_axis_bfp18_input..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+      Replacing known input bits on port A of cell $procmux$502: \wr_valid -> 1'1
+      Replacing known input bits on port A of cell $procmux$499: \wr_valid -> 1'0
+      Replacing known input bits on port A of cell $procmux$497: \wr_valid -> 1'0
+      Replacing known input bits on port B of cell $procmux$392: \fault -> 1'1
+  Analyzing evaluation results.
+    dead port 1/2 on $mux $procmux$546.
+    dead port 1/2 on $mux $procmux$540.
+    dead port 1/2 on $mux $procmux$537.
+    dead port 1/2 on $mux $procmux$531.
+    dead port 1/2 on $mux $procmux$528.
+    dead port 1/2 on $mux $procmux$525.
+Removed 6 multiplexer ports.
+<suppressed ~26 debug messages>
+
+4.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \xw_axis_bfp18_input.
+  Optimizing cells in module \xw_axis_bfp18_input.
+Performed a total of 1 changes.
+
+4.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\xw_axis_bfp18_input'.
+Removed a total of 0 cells.
+
+4.6. Executing OPT_DFF pass (perform DFF optimizations).
+Adding EN signal on $procdff$566 ($adff) from module xw_axis_bfp18_input (D = $procmux$261_Y, Q = \input_end).
+Adding EN signal on $procdff$571 ($adff) from module xw_axis_bfp18_input (D = $procmux$176_Y, Q = \pack_data).
+Adding EN signal on $procdff$567 ($adff) from module xw_axis_bfp18_input (D = $procmux$243_Y, Q = \beat_shift).
+Adding EN signal on $procdff$568 ($adff) from module xw_axis_bfp18_input (D = $procmux$232_Y, Q = \remaining).
+Adding EN signal on $procdff$569 ($adff) from module xw_axis_bfp18_input (D = \s_axis_tuser [71:64], Q = \beat_exp).
+Adding EN signal on $procdff$564 ($adff) from module xw_axis_bfp18_input (D = $procmux$296_Y, Q = \group_offset).
+Adding EN signal on $procdff$573 ($adff) from module xw_axis_bfp18_input (D = $procmux$136_Y, Q = \next_word).
+Adding EN signal on $procdff$572 ($adff) from module xw_axis_bfp18_input (D = $procmux$156_Y, Q = \pack_lanes).
+Adding EN signal on $procdff$570 ($adff) from module xw_axis_bfp18_input (D = $logic_and$rtl/xw_axis_bfp18_input.v:71$19_Y, Q = \beat_final).
+Adding EN signal on $procdff$565 ($adff) from module xw_axis_bfp18_input (D = $procmux$278_Y, Q = \group_exp).
+Adding EN signal on $procdff$558 ($adff) from module xw_axis_bfp18_input (D = $procmux$394_Y, Q = \fault).
+Adding EN signal on $procdff$559 ($adff) from module xw_axis_bfp18_input (D = $procmux$377_Y, Q = \error_code).
+Adding EN signal on $procdff$560 ($adff) from module xw_axis_bfp18_input (D = $procmux$360_Y, Q = \active).
+Adding EN signal on $procdff$561 ($adff) from module xw_axis_bfp18_input (D = \job_id, Q = \active_id).
+Adding EN signal on $procdff$562 ($adff) from module xw_axis_bfp18_input (D = \job_k, Q = \active_k).
+Adding EN signal on $procdff$563 ($adff) from module xw_axis_bfp18_input (D = $procmux$314_Y, Q = \group_id).
+Adding EN signal on $procdff$551 ($adff) from module xw_axis_bfp18_input (D = $procmux$519_Y, Q = \wr_valid).
+Adding EN signal on $procdff$552 ($adff) from module xw_axis_bfp18_input (D = \packed_next, Q = \wr_data).
+Adding EN signal on $procdff$553 ($adff) from module xw_axis_bfp18_input (D = $shr$rtl/xw_axis_bfp18_input.v:188$100_Y, Q = \wr_mask).
+Adding EN signal on $procdff$554 ($adff) from module xw_axis_bfp18_input (D = \beat_exp, Q = \wr_exp).
+Adding EN signal on $procdff$555 ($adff) from module xw_axis_bfp18_input (D = \next_word, Q = \wr_word_index).
+Adding EN signal on $procdff$556 ($adff) from module xw_axis_bfp18_input (D = $logic_and$rtl/xw_axis_bfp18_input.v:191$102_Y, Q = \wr_last).
+
+4.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \xw_axis_bfp18_input..
+Removed 69 unused cells and 288 unused wires.
+<suppressed ~72 debug messages>
+
+4.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module xw_axis_bfp18_input.
+<suppressed ~12 debug messages>
+
+4.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+4.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \xw_axis_bfp18_input..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~17 debug messages>
+
+4.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \xw_axis_bfp18_input.
+Performed a total of 0 changes.
+
+4.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\xw_axis_bfp18_input'.
+<suppressed ~225 debug messages>
+Removed a total of 75 cells.
+
+4.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+4.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \xw_axis_bfp18_input..
+Removed 0 unused cells and 75 unused wires.
+<suppressed ~1 debug messages>
+
+4.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module xw_axis_bfp18_input.
+
+4.16. Rerunning OPT passes. (Maybe there is more to do..)
+
+4.17. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \xw_axis_bfp18_input..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~18 debug messages>
+
+4.18. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \xw_axis_bfp18_input.
+Performed a total of 0 changes.
+
+4.19. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\xw_axis_bfp18_input'.
+Removed a total of 0 cells.
+
+4.20. Executing OPT_DFF pass (perform DFF optimizations).
+
+4.21. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \xw_axis_bfp18_input..
+
+4.22. Executing OPT_EXPR pass (perform const folding).
+Optimizing module xw_axis_bfp18_input.
+
+4.23. Finished OPT passes. (There is nothing left to do.)
+
+5. Executing MEMORY_DFF pass (merging $dff cells to $memrd).
+
+6. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \xw_axis_bfp18_input..
+
+8. Executing CHECK pass (checking for obvious problems).
+Checking module xw_axis_bfp18_input...
+Found and reported 0 problems.
+
+9. Printing statistics.
+
+=== xw_axis_bfp18_input ===
+
+   Number of wires:                240
+   Number of wire bits:           6547
+   Number of public wires:          47
+   Number of public wire bits:    1994
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                226
+     $add                            6
+     $adff                           1
+     $adffe                         22
+     $and                            1
+     $eq                             4
+     $ge                             1
+     $gt                             2
+     $logic_and                     12
+     $logic_not                      8
+     $logic_or                      15
+     $mul                            2
+     $mux                           81
+     $ne                            24
+     $neg                            1
+     $not                            7
+     $or                             1
+     $reduce_and                    14
+     $reduce_bool                   14
+     $shift                          2
+     $shr                            3
+     $sub                            5
+
+10. Executing JSON backend.

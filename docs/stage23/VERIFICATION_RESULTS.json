@@ -1,0 +1,434 @@
+{
+  "contract": "XW-CONTRACT-STD-001 V1.0",
+  "baseline": "4f3fc68f1f59ab83ae2f657356eec35a41d56e22",
+  "hdl_executed": true,
+  "tests": [
+    {
+      "label": "parser",
+      "module": "xw_axis_bfp18_input",
+      "cycles": 108822,
+      "software": "PASS",
+      "hdl": "PASS",
+      "vector_sha256": "0684db8d60e41508ad79d48abd3745a8a0e2576efdb9372f0eeefe37e0f4248f",
+      "coverage": {
+        "legal_jobs": 29,
+        "malformed_fields": 26,
+        "boundary_k": [
+          1,
+          7,
+          8,
+          27,
+          28,
+          29,
+          63,
+          64,
+          65,
+          127,
+          128,
+          129,
+          2048,
+          2049,
+          4096,
+          12288,
+          65535
+        ]
+      }
+    },
+    {
+      "label": "activation",
+      "module": "xw_activation_buffer",
+      "cycles": 28146,
+      "software": "PASS",
+      "hdl": "PASS",
+      "vector_sha256": "12b608056e8f12628164c69db1e3412c2552c031316e32f3d087a88e8e252e3f",
+      "coverage": {
+        "legal_loads": 19,
+        "random_seed": 136,
+        "misuse_cases": 16
+      }
+    },
+    {
+      "label": "weight",
+      "module": "xw_weight_row_buffer",
+      "cycles": 12758,
+      "software": "PASS",
+      "hdl": "PASS",
+      "vector_sha256": "20e8711e91a334d5132c8750be530098a8f8cfd8a041351a87c7b0472e93ff8f",
+      "coverage": {
+        "legal_loads": 19,
+        "random_seed": 136,
+        "misuse_cases": 12
+      }
+    },
+    {
+      "label": "address_b1",
+      "module": "xw_ddr_addr_gen",
+      "cycles": 63091,
+      "software": "PASS",
+      "hdl": "PASS",
+      "vector_sha256": "14a9096c09635446a5acb89758cdaf499d8405ae9f15b75c190be10484655f10",
+      "coverage": {
+        "burst": 1,
+        "config_matrix": 21,
+        "config_negative_cases": 7
+      }
+    },
+    {
+      "label": "address_b2",
+      "module": "xw_ddr_addr_gen",
+      "cycles": 32147,
+      "software": "PASS",
+      "hdl": "PASS",
+      "vector_sha256": "6f23ec47ba42641ff9c9b32fa54762d8c0acab786160a203b2394ee2035cc24b",
+      "coverage": {
+        "burst": 2,
+        "config_matrix": 21,
+        "config_negative_cases": 7
+      }
+    },
+    {
+      "label": "address_b3",
+      "module": "xw_ddr_addr_gen",
+      "cycles": 21647,
+      "software": "PASS",
+      "hdl": "PASS",
+      "vector_sha256": "4c31adfc3db47715c7547c071f61a0340ebd4949442dba2bc25fd178a9602098",
+      "coverage": {
+        "burst": 3,
+        "config_matrix": 21,
+        "config_negative_cases": 7
+      }
+    },
+    {
+      "label": "address_b64",
+      "module": "xw_ddr_addr_gen",
+      "cycles": 1827,
+      "software": "PASS",
+      "hdl": "PASS",
+      "vector_sha256": "88a5f238c3648ddac90d5d02dbe9b5ee406f23ed1d8f0a53d5957af8eb1ba9ce",
+      "coverage": {
+        "burst": 64,
+        "config_matrix": 21,
+        "config_negative_cases": 7
+      }
+    },
+    {
+      "label": "address_b192",
+      "module": "xw_ddr_addr_gen",
+      "cycles": 1192,
+      "software": "PASS",
+      "hdl": "PASS",
+      "vector_sha256": "9031e984c56d6735f188fabff0395e434ccb51ffcbc993ab0fd894bc8029b8c1",
+      "coverage": {
+        "burst": 192,
+        "config_matrix": 21,
+        "config_negative_cases": 7
+      }
+    },
+    {
+      "label": "harness_b1",
+      "module": "xw_stage23_harness",
+      "cycles": 90664,
+      "software": "PASS",
+      "hdl": "PASS",
+      "vector_sha256": "bc960a1826a48ce222bee64ac11390f69166ebcadacbee63541b0c837b306adb",
+      "coverage": {
+        "burst": 1,
+        "static": 0,
+        "legal_jobs": 7,
+        "requests": 5620,
+        "beats": 5620,
+        "valid_axis_jobs": [
+          {
+            "n": 1,
+            "k": 1
+          },
+          {
+            "n": 127,
+            "k": 127
+          },
+          {
+            "n": 128,
+            "k": 128
+          },
+          {
+            "n": 129,
+            "k": 129
+          },
+          {
+            "n": 2,
+            "k": 2048
+          },
+          {
+            "n": 129,
+            "k": 2049
+          },
+          {
+            "n": 2,
+            "k": 12288
+          }
+        ]
+      }
+    },
+    {
+      "label": "harness_b2",
+      "module": "xw_stage23_harness",
+      "cycles": 82986,
+      "software": "PASS",
+      "hdl": "PASS",
+      "vector_sha256": "bb01b520524ab2d4cac35eff153b3b2c1d36911a2270df4b0292e887693af86f",
+      "coverage": {
+        "burst": 2,
+        "static": 0,
+        "legal_jobs": 7,
+        "requests": 2943,
+        "beats": 5620,
+        "valid_axis_jobs": [
+          {
+            "n": 1,
+            "k": 1
+          },
+          {
+            "n": 127,
+            "k": 127
+          },
+          {
+            "n": 128,
+            "k": 128
+          },
+          {
+            "n": 129,
+            "k": 129
+          },
+          {
+            "n": 2,
+            "k": 2048
+          },
+          {
+            "n": 129,
+            "k": 2049
+          },
+          {
+            "n": 2,
+            "k": 12288
+          }
+        ]
+      }
+    },
+    {
+      "label": "harness_b3",
+      "module": "xw_stage23_harness",
+      "cycles": 80260,
+      "software": "PASS",
+      "hdl": "PASS",
+      "vector_sha256": "1c2bc524fe89ba70a92207e89e6d242cb8853a06ae8c2a8dfbb1bf6894462a0d",
+      "coverage": {
+        "burst": 3,
+        "static": 0,
+        "legal_jobs": 7,
+        "requests": 1965,
+        "beats": 5620,
+        "valid_axis_jobs": [
+          {
+            "n": 1,
+            "k": 1
+          },
+          {
+            "n": 127,
+            "k": 127
+          },
+          {
+            "n": 128,
+            "k": 128
+          },
+          {
+            "n": 129,
+            "k": 129
+          },
+          {
+            "n": 2,
+            "k": 2048
+          },
+          {
+            "n": 129,
+            "k": 2049
+          },
+          {
+            "n": 2,
+            "k": 12288
+          }
+        ]
+      },
+      "actual_event_trace": {
+        "records": 17469,
+        "external_event_edges": 8822,
+        "result": "PASS",
+        "source": "actual HDL $fdisplay"
+      }
+    },
+    {
+      "label": "harness_b64",
+      "module": "xw_stage23_harness",
+      "cycles": 76219,
+      "software": "PASS",
+      "hdl": "PASS",
+      "vector_sha256": "378ec39146ddd7a02f3334e6651f640bc414d74a4b8f7f65d5efb4c36f0b3f3c",
+      "coverage": {
+        "burst": 64,
+        "static": 0,
+        "legal_jobs": 7,
+        "requests": 532,
+        "beats": 5620,
+        "valid_axis_jobs": [
+          {
+            "n": 1,
+            "k": 1
+          },
+          {
+            "n": 127,
+            "k": 127
+          },
+          {
+            "n": 128,
+            "k": 128
+          },
+          {
+            "n": 129,
+            "k": 129
+          },
+          {
+            "n": 2,
+            "k": 2048
+          },
+          {
+            "n": 129,
+            "k": 2049
+          },
+          {
+            "n": 2,
+            "k": 12288
+          }
+        ]
+      }
+    },
+    {
+      "label": "harness_b192",
+      "module": "xw_stage23_harness",
+      "cycles": 76284,
+      "software": "PASS",
+      "hdl": "PASS",
+      "vector_sha256": "bdb6ea253100ab417640a15cdacf89279dc7e1c99c002f65b665b756a1238311",
+      "coverage": {
+        "burst": 192,
+        "static": 0,
+        "legal_jobs": 7,
+        "requests": 528,
+        "beats": 5620,
+        "valid_axis_jobs": [
+          {
+            "n": 1,
+            "k": 1
+          },
+          {
+            "n": 127,
+            "k": 127
+          },
+          {
+            "n": 128,
+            "k": 128
+          },
+          {
+            "n": 129,
+            "k": 129
+          },
+          {
+            "n": 2,
+            "k": 2048
+          },
+          {
+            "n": 129,
+            "k": 2049
+          },
+          {
+            "n": 2,
+            "k": 12288
+          }
+        ]
+      }
+    },
+    {
+      "label": "harness_static",
+      "module": "xw_stage23_harness",
+      "cycles": 250,
+      "software": "PASS",
+      "hdl": "PASS",
+      "vector_sha256": "4f70096bfebc06c87c6a64cfcfa14d0d35034dd7b7c29538231937692591a75b",
+      "coverage": {
+        "burst": 3,
+        "static": 1,
+        "legal_jobs": 1,
+        "requests": 3,
+        "beats": 7,
+        "valid_axis_jobs": [
+          {
+            "n": 2,
+            "k": 129
+          }
+        ]
+      }
+    },
+    {
+      "label": "stage1_rx_cycle",
+      "module": "xw_ddr_range_rx",
+      "cycles": 1115,
+      "software": "PASS",
+      "hdl": "PASS",
+      "vector_sha256": "2aa6c69365739018e25e8cf0878760a2e98e15c2ef7607ded40e5e76a67d12ac",
+      "coverage": {}
+    },
+    {
+      "label": "stage1_scale_cycle",
+      "module": "xw_scale_group_cache",
+      "cycles": 1251,
+      "software": "PASS",
+      "hdl": "PASS",
+      "vector_sha256": "fac6a23b1694ecf2a45a509f19db0929b1ccf7cfd24bc49d30fa601657ba2238",
+      "coverage": {}
+    }
+  ],
+  "tools": {
+    "iverilog": "Icarus Verilog version 12.0 (stable) ()",
+    "vvp": "Icarus Verilog runtime version 12.0 (stable) ()"
+  },
+  "synthesis": "PASS_GENERIC_STRUCTURE_ONLY",
+  "vivado_2023_2": "PENDING",
+  "platform_ddr_spec": "PENDING",
+  "negative_elaboration": [
+    {
+      "name": "parser_params",
+      "result": "PASS"
+    },
+    {
+      "name": "activation_params",
+      "result": "PASS"
+    },
+    {
+      "name": "weight_params",
+      "result": "PASS"
+    },
+    {
+      "name": "burst_unspecified",
+      "result": "PASS"
+    },
+    {
+      "name": "burst_large",
+      "result": "PASS"
+    },
+    {
+      "name": "address_max",
+      "result": "PASS"
+    }
+  ],
+  "review_directed_hdl": "PASS",
+  "structural_synthesis_reference": "SYNTHESIS_RESULTS.json"
+}

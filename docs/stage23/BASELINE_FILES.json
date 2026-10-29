@@ -1,0 +1,219 @@
+{
+  "head": "4f3fc68f1f59ab83ae2f657356eec35a41d56e22",
+  "tracked_files": {
+    ".gitignore": {
+      "bytes": 136,
+      "sha256": "a5a6c80b0aa51e77df9bc6db1a94e41f10417631bab06159ec376104aada3b8d"
+    },
+    "GITCODE_SETUP.md": {
+      "bytes": 1696,
+      "sha256": "4c9ca8ddd4dd1085ed2625bce34d8855608f08343ae7de63e42f4792a64d15bc"
+    },
+    "Makefile": {
+      "bytes": 228,
+      "sha256": "66caeea1027bb389209d75ae1e8826829b398e224589edc2313d3da2578414c1"
+    },
+    "README.md": {
+      "bytes": 5837,
+      "sha256": "bd0a0f1530a585bcab9ffa975ce8ff71cadcf35c37f03941c7d1747ac3c1c383"
+    },
+    "cycle_model.py": {
+      "bytes": 23549,
+      "sha256": "239a82e7c05dbbdb54be2518773e6f6b2bd9e41ee6581c88b488641eedff29fc"
+    },
+    "docs/PROJECT_STATUS.md": {
+      "bytes": 1253,
+      "sha256": "390164d5b6a6aa6319ed7b9cdb2e46773b361ee7f8bfed8c248bc82bc1a33942"
+    },
+    "docs/SOURCE_IMPORT_MANIFEST.json": {
+      "bytes": 6143,
+      "sha256": "a622ceac463f68a56350009951e8675b1b95c71ec0c6cf5fd0bd58fdd3a6c1c7"
+    },
+    "docs/stage1/STAGE1_RTL_CONTRACT_ALIGNMENT.md": {
+      "bytes": 6827,
+      "sha256": "0787fb7c9a352856836ff6eddbb5b59a66adf02132330512fd5a61a0669409bd"
+    },
+    "docs/standards/Linear_xW_9Phase_Development_Standard_V1.0.md": {
+      "bytes": 13957,
+      "sha256": "6914461bf984fa5ad19fa732feb92dbb446b459f03ab04143f33839cad8c70b2"
+    },
+    "docs/standards/Linear_xW_Stage0_Interface_Verification_Contract_V1.0.docx": {
+      "bytes": 57683,
+      "sha256": "b9d2d6f447bdbd7b037230168230d0868cc3287032efcdbbc7bf63474bb8f4af"
+    },
+    "docs/standards/Linear_xW_Stage0_Interface_Verification_Contract_V1.0.md": {
+      "bytes": 28179,
+      "sha256": "3a46f7c6e4c11703fead1d5d9b6d6fc1bc2889a99cfd6e11a246f45f7e0a1eec"
+    },
+    "docs/standards/Linear_xW_Standards_Freeze_Record_V1.0.md": {
+      "bytes": 2412,
+      "sha256": "479692b645a2d5ef85d4c7d4acfe35946c12d4132a19e5f6c26af4c6c144a182"
+    },
+    "docs/standards/Linear_xW_Standards_Release_Manifest_V1.0.json": {
+      "bytes": 1121,
+      "sha256": "d8e9d19ef8a4f76b94c4365c749ee2f5b88f492afd17924930845d2431880621"
+    },
+    "docs/verification/history/fp32_v0_2/cycle_trace.jsonl": {
+      "bytes": 15324,
+      "sha256": "5efc2478167c82bd1bba58c25e9772631f9171c6239a35b3fbee549e98d845e6"
+    },
+    "docs/verification/history/fp32_v0_2/ddr_image.bin": {
+      "bytes": 1024,
+      "sha256": "8da426b1f27ee878bb10a532a29d9ba87c48deb83de4e253f5d4cb5c5a4d87e8"
+    },
+    "docs/verification/history/fp32_v0_2/ddr_manifest.json": {
+      "bytes": 344,
+      "sha256": "65718ebd834427d15db9ea0caa0d480607797ef35faaa2481cad60116195576e"
+    },
+    "docs/verification/history/fp32_v0_2/element_errors.csv": {
+      "bytes": 1335,
+      "sha256": "a899ff4b85bca13af9191cfd5cf9a8f67f39979a459d942b281c5af7925c036b"
+    },
+    "docs/verification/history/fp32_v0_2/input_axis_v2.jsonl": {
+      "bytes": 2489,
+      "sha256": "fd68a733bfdaa0f79a864a2bbfe0f393dc776168521f34e4fee21802cd9ed07c"
+    },
+    "docs/verification/history/fp32_v0_2/metrics.json": {
+      "bytes": 1052,
+      "sha256": "1e413aeba303c40850a1c5e21b8fcf6847b9d90983ef232a1d7d886cde3a3f12"
+    },
+    "docs/verification/history/fp32_v0_2/output_axis_v2.jsonl": {
+      "bytes": 220,
+      "sha256": "64f26ae7db77eda22c8e29f2d7436dfd11f2ecf430e1b0403d87f224285a45f3"
+    },
+    "docs/verification/history/fp32_v0_2/output_numeric.json": {
+      "bytes": 123,
+      "sha256": "c83662ea319cc11c3748fe62730a72a6354dbc9241cba418851a3b831f18f070"
+    },
+    "examples/fp32_demo_case.json": {
+      "bytes": 11980,
+      "sha256": "54427dcc295e8f5bb7c411af112db71a690b7cc49775a86b06cb402678da00cb"
+    },
+    "linear_stream_model/__init__.py": {
+      "bytes": 112,
+      "sha256": "5c3ee30bf0a8bf9fa41571cc7287fc7fdbd45024395ed8c87ded4ebe3ad80e27"
+    },
+    "linear_stream_model/numeric.py": {
+      "bytes": 8054,
+      "sha256": "a9c6333d91dec40e324df84d241f27f2181714c9a877a02a2a410d90342c735d"
+    },
+    "rtl/RTL_DESIGN_STATUS.md": {
+      "bytes": 2240,
+      "sha256": "ef4fb73bb11f5bd7811fc67f81c0ea8550ddac8862a0f8b9c44887ce29677b17"
+    },
+    "rtl/xw_ddr_range_rx.v": {
+      "bytes": 6308,
+      "sha256": "d9c15c65250dfd4c30e263e78607add68d0efffb20ba162d479aac84e70b96d6"
+    },
+    "rtl/xw_fp32_scale_b2.v": {
+      "bytes": 2173,
+      "sha256": "ed5ce3a375474ecf01801b8886390129089ebdbf669c90172c140ae39c5911e3"
+    },
+    "rtl/xw_job_dim_cfg.v": {
+      "bytes": 3960,
+      "sha256": "ea7ba6381ff4b8455d3e34f7b2d1ff106316d8e2e7abdab3057252c890eca3a4"
+    },
+    "rtl/xw_scale_group_cache.v": {
+      "bytes": 5720,
+      "sha256": "68eccd681fa7dfc7b50b1ac0feca36d2af48cd9be8d288db694902776037974d"
+    },
+    "rtl_sources.f": {
+      "bytes": 93,
+      "sha256": "df150e66bf8017b3c82b1daae652f7436e1b3528d52830b2853f560b29138001"
+    },
+    "run_modelsim_tb.sh": {
+      "bytes": 2101,
+      "sha256": "c6be4a30a0687f940ca7026809ad9d1fdbb831598cc9727064965573b3dd8db9"
+    },
+    "run_rtl_tb.sh": {
+      "bytes": 2156,
+      "sha256": "a8295be0849c1ef95b4697998bf7ec058f256b75542ca2eae3d83b1449f75a90"
+    },
+    "run_stage1_software.sh": {
+      "bytes": 186,
+      "sha256": "946cc1a8003b61251ccba801428464395175bbfe6ef1bf9009060d57df9e721d"
+    },
+    "stage1_contract_model.py": {
+      "bytes": 9871,
+      "sha256": "0809e208588e80bee7c68b1de6ce2eb6b624692d67526795c29c5cd9b332d804"
+    },
+    "stage1_source_manifest.json": {
+      "bytes": 5065,
+      "sha256": "863717500147328cec7fbd8239c85cca45be874c57b38b506ee4e9f6993faf33"
+    },
+    "stage1_verification.json": {
+      "bytes": 3890,
+      "sha256": "5c99bd5f48e7464a4618a3d3d9d2c7aceb6d96ac64ba900d93d75ca79a54c5fb"
+    },
+    "tb/README_MODELSIM.md": {
+      "bytes": 1693,
+      "sha256": "17233e81969f73753555cc519c46eed06dc193409391bdbc350fccebf400277e"
+    },
+    "tb/negative/tb_xw_invalid_cache_params.v": {
+      "bytes": 225,
+      "sha256": "2d675f2ced98c0d92c74b134ca80f9998617af17cec06192970e7aad941a6c8d"
+    },
+    "tb/negative/tb_xw_invalid_job_params.v": {
+      "bytes": 261,
+      "sha256": "88ccd1ebaf55537eb86d2a871c30c261f695cebc8437b6ac6bb1c8a1c2b3f4cc"
+    },
+    "tb/tb_xw_ddr_range_rx.v": {
+      "bytes": 6313,
+      "sha256": "469dbb91683324205d12ce4a8007f7f243169116229f884653ebe88a49de886f"
+    },
+    "tb/tb_xw_fp32_scale_b2.v": {
+      "bytes": 1826,
+      "sha256": "ac4963ca9ad06d1fd63decfdfe9517e223275d8eff7690f9f8fc8d2f62411792"
+    },
+    "tb/tb_xw_job_dim_cfg.v": {
+      "bytes": 3579,
+      "sha256": "457abd15b46e7ede9e5e078aa5decda76c18f2746b32c53396ede2158e6a84ca"
+    },
+    "tb/tb_xw_scale_group_cache.v": {
+      "bytes": 4987,
+      "sha256": "c48f35b02af13ef41bf3957311fdd035e3f909a3beaccd8affee852b4a3a781f"
+    },
+    "tb/vectors/b2_fp32_vectors.mem": {
+      "bytes": 23040,
+      "sha256": "74907c4d5eb6ca6c3f1f1fdff4813b5e2c085fa2ded3ecee1e23fa9351218e42"
+    },
+    "test_cycle.py": {
+      "bytes": 1435,
+      "sha256": "b14e85f00d6296e0afc8a9b5afd0d35dc8ffd45faf7532385a4bcf49fa5ea8c4"
+    },
+    "test_fp32.py": {
+      "bytes": 8709,
+      "sha256": "395901a3aae94cb7aa69b9866bce1fc059cd30aff4c4ebb76a50096a459d0953"
+    },
+    "test_stage1_contract.py": {
+      "bytes": 13412,
+      "sha256": "0e88745bfb68bbfd226b42f53f5bcd3f85e4679f84c52c66bcdb0cbf4ce19460"
+    },
+    "tools/check_stage1_static.py": {
+      "bytes": 4863,
+      "sha256": "f343b4f86462e05ac1bab4a4505a5b5d2e6c555ed98778dce3be95aef83a86a2"
+    },
+    "tools/gen_b2_vectors.py": {
+      "bytes": 3270,
+      "sha256": "fa6098880e77d1f038bed1162d9662d6a484bce81b86ca4d0d0ad2ca96e7bfa4"
+    },
+    "verification_report.json": {
+      "bytes": 3729,
+      "sha256": "e771cb99ce5ae9603524980e5ca9da8645f6c97bbcbccdfa375daf0e9906c1ce"
+    }
+  },
+  "directories": [
+    ".",
+    "docs",
+    "docs/stage1",
+    "docs/standards",
+    "docs/verification/history/fp32_v0_2",
+    "examples",
+    "linear_stream_model",
+    "rtl",
+    "tb",
+    "tb/negative",
+    "tb/vectors",
+    "tools"
+  ]
+}

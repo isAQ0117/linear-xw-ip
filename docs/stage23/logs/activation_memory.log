@@ -1,0 +1,297 @@
+
+-- Running command `read_verilog rtl/xw_activation_buffer.v; hierarchy -check -top xw_activation_buffer; proc; opt; memory_dff; memory_collect; opt_clean; check -assert; stat; write_json sim_build/stage23/activation_memory.json' --
+
+1. Executing Verilog-2005 frontend: rtl/xw_activation_buffer.v
+Parsing Verilog input from `rtl/xw_activation_buffer.v' to AST representation.
+Generating RTLIL representation for module `\xw_activation_buffer'.
+Successfully finished Verilog frontend.
+
+2. Executing HIERARCHY pass (managing design hierarchy).
+
+2.1. Analyzing design hierarchy..
+Top module:  \xw_activation_buffer
+
+2.2. Analyzing design hierarchy..
+Top module:  \xw_activation_buffer
+Removed 0 unused modules.
+
+3. Executing PROC pass (convert processes to netlists).
+
+3.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+3.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 6 switch rules as full_case in process $proc$rtl/xw_activation_buffer.v:96$118 in module xw_activation_buffer.
+Marked 2 switch rules as full_case in process $proc$rtl/xw_activation_buffer.v:83$97 in module xw_activation_buffer.
+Removed a total of 0 dead cases.
+
+3.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 1 redundant assignment.
+Promoted 6 assignments to connections.
+
+3.4. Executing PROC_INIT pass (extract init attributes).
+
+3.5. Executing PROC_ARST pass (detect async resets in processes).
+Found async reset \rst_n in `\xw_activation_buffer.$proc$rtl/xw_activation_buffer.v:96$118'.
+
+3.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~12 debug messages>
+
+3.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\xw_activation_buffer.$proc$rtl/xw_activation_buffer.v:96$118'.
+     1/11: $0\read_valid_reg[0:0]
+     2/11: $0\current_exp[7:0]
+     3/11: $0\written[15:0]
+     4/11: $0\total_words[15:0]
+     5/11: $0\active_k[15:0]
+     6/11: $0\loading[0:0]
+     7/11: $0\loaded_reg[0:0]
+     8/11: $0\read_seen[0:0]
+     9/11: $0\rd_mask[7:0]
+    10/11: $0\error_code[7:0]
+    11/11: $0\fault[0:0]
+Creating decoders for process `\xw_activation_buffer.$proc$rtl/xw_activation_buffer.v:83$97'.
+     1/11: $2$memwr$\exponents$rtl/xw_activation_buffer.v:87$2_EN[7:0]$113
+     2/11: $2$memwr$\exponents$rtl/xw_activation_buffer.v:87$2_DATA[7:0]$112
+     3/11: $2$memwr$\exponents$rtl/xw_activation_buffer.v:87$2_ADDR[15:0]$111
+     4/11: $1$memwr$\exponents$rtl/xw_activation_buffer.v:87$2_EN[7:0]$109
+     5/11: $1$memwr$\exponents$rtl/xw_activation_buffer.v:87$2_DATA[7:0]$108
+     6/11: $1$memwr$\exponents$rtl/xw_activation_buffer.v:87$2_ADDR[15:0]$107
+     7/11: $1$memwr$\words$rtl/xw_activation_buffer.v:85$1_EN[143:0]$106
+     8/11: $1$memwr$\words$rtl/xw_activation_buffer.v:85$1_DATA[143:0]$105
+     9/11: $1$memwr$\words$rtl/xw_activation_buffer.v:85$1_ADDR[15:0]$104
+    10/11: $0\ram_read_exp[7:0]
+    11/11: $0\ram_read_data[143:0]
+
+3.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+3.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\xw_activation_buffer.\fault' using process `\xw_activation_buffer.$proc$rtl/xw_activation_buffer.v:96$118'.
+  created $adff cell `$procdff$326' with positive edge clock and negative level reset.
+Creating register for signal `\xw_activation_buffer.\error_code' using process `\xw_activation_buffer.$proc$rtl/xw_activation_buffer.v:96$118'.
+  created $adff cell `$procdff$327' with positive edge clock and negative level reset.
+Creating register for signal `\xw_activation_buffer.\rd_mask' using process `\xw_activation_buffer.$proc$rtl/xw_activation_buffer.v:96$118'.
+  created $adff cell `$procdff$328' with positive edge clock and negative level reset.
+Creating register for signal `\xw_activation_buffer.\read_seen' using process `\xw_activation_buffer.$proc$rtl/xw_activation_buffer.v:96$118'.
+  created $adff cell `$procdff$329' with positive edge clock and negative level reset.
+Creating register for signal `\xw_activation_buffer.\loaded_reg' using process `\xw_activation_buffer.$proc$rtl/xw_activation_buffer.v:96$118'.
+  created $adff cell `$procdff$330' with positive edge clock and negative level reset.
+Creating register for signal `\xw_activation_buffer.\read_valid_reg' using process `\xw_activation_buffer.$proc$rtl/xw_activation_buffer.v:96$118'.
+  created $adff cell `$procdff$331' with positive edge clock and negative level reset.
+Creating register for signal `\xw_activation_buffer.\loading' using process `\xw_activation_buffer.$proc$rtl/xw_activation_buffer.v:96$118'.
+  created $adff cell `$procdff$332' with positive edge clock and negative level reset.
+Creating register for signal `\xw_activation_buffer.\active_k' using process `\xw_activation_buffer.$proc$rtl/xw_activation_buffer.v:96$118'.
+  created $adff cell `$procdff$333' with positive edge clock and negative level reset.
+Creating register for signal `\xw_activation_buffer.\total_words' using process `\xw_activation_buffer.$proc$rtl/xw_activation_buffer.v:96$118'.
+  created $adff cell `$procdff$334' with positive edge clock and negative level reset.
+Creating register for signal `\xw_activation_buffer.\written' using process `\xw_activation_buffer.$proc$rtl/xw_activation_buffer.v:96$118'.
+  created $adff cell `$procdff$335' with positive edge clock and negative level reset.
+Creating register for signal `\xw_activation_buffer.\current_exp' using process `\xw_activation_buffer.$proc$rtl/xw_activation_buffer.v:96$118'.
+  created $adff cell `$procdff$336' with positive edge clock and negative level reset.
+Creating register for signal `\xw_activation_buffer.\ram_read_data' using process `\xw_activation_buffer.$proc$rtl/xw_activation_buffer.v:83$97'.
+  created $dff cell `$procdff$337' with positive edge clock.
+Creating register for signal `\xw_activation_buffer.\ram_read_exp' using process `\xw_activation_buffer.$proc$rtl/xw_activation_buffer.v:83$97'.
+  created $dff cell `$procdff$338' with positive edge clock.
+Creating register for signal `\xw_activation_buffer.$memwr$\words$rtl/xw_activation_buffer.v:85$1_ADDR' using process `\xw_activation_buffer.$proc$rtl/xw_activation_buffer.v:83$97'.
+  created $dff cell `$procdff$339' with positive edge clock.
+Creating register for signal `\xw_activation_buffer.$memwr$\words$rtl/xw_activation_buffer.v:85$1_DATA' using process `\xw_activation_buffer.$proc$rtl/xw_activation_buffer.v:83$97'.
+  created $dff cell `$procdff$340' with positive edge clock.
+Creating register for signal `\xw_activation_buffer.$memwr$\words$rtl/xw_activation_buffer.v:85$1_EN' using process `\xw_activation_buffer.$proc$rtl/xw_activation_buffer.v:83$97'.
+  created $dff cell `$procdff$341' with positive edge clock.
+Creating register for signal `\xw_activation_buffer.$memwr$\exponents$rtl/xw_activation_buffer.v:87$2_ADDR' using process `\xw_activation_buffer.$proc$rtl/xw_activation_buffer.v:83$97'.
+  created $dff cell `$procdff$342' with positive edge clock.
+Creating register for signal `\xw_activation_buffer.$memwr$\exponents$rtl/xw_activation_buffer.v:87$2_DATA' using process `\xw_activation_buffer.$proc$rtl/xw_activation_buffer.v:83$97'.
+  created $dff cell `$procdff$343' with positive edge clock.
+Creating register for signal `\xw_activation_buffer.$memwr$\exponents$rtl/xw_activation_buffer.v:87$2_EN' using process `\xw_activation_buffer.$proc$rtl/xw_activation_buffer.v:83$97'.
+  created $dff cell `$procdff$344' with positive edge clock.
+
+3.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+3.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 9 empty switches in `\xw_activation_buffer.$proc$rtl/xw_activation_buffer.v:96$118'.
+Removing empty process `xw_activation_buffer.$proc$rtl/xw_activation_buffer.v:96$118'.
+Found and cleaned up 3 empty switches in `\xw_activation_buffer.$proc$rtl/xw_activation_buffer.v:83$97'.
+Removing empty process `xw_activation_buffer.$proc$rtl/xw_activation_buffer.v:83$97'.
+Cleaned up 12 empty switches.
+
+3.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module xw_activation_buffer.
+<suppressed ~13 debug messages>
+
+4. Executing OPT pass (performing simple optimizations).
+
+4.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module xw_activation_buffer.
+<suppressed ~1 debug messages>
+
+4.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\xw_activation_buffer'.
+<suppressed ~87 debug messages>
+Removed a total of 29 cells.
+
+4.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \xw_activation_buffer..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+      Replacing known input bits on port B of cell $procmux$282: \fault -> 1'1
+  Analyzing evaluation results.
+    dead port 2/2 on $mux $procmux$290.
+    dead port 2/2 on $mux $procmux$296.
+    dead port 2/2 on $mux $procmux$302.
+Removed 3 multiplexer ports.
+<suppressed ~22 debug messages>
+
+4.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \xw_activation_buffer.
+    Consolidated identical input bits for $mux cell $procmux$288:
+      Old ports: A=8'00000000, B=8'11111111, Y=$procmux$288_Y
+      New ports: A=1'0, B=1'1, Y=$procmux$288_Y [0]
+      New connections: $procmux$288_Y [7:1] = { $procmux$288_Y [0] $procmux$288_Y [0] $procmux$288_Y [0] $procmux$288_Y [0] $procmux$288_Y [0] $procmux$288_Y [0] $procmux$288_Y [0] }
+    Consolidated identical input bits for $mux cell $procmux$314:
+      Old ports: A=144'000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000, B=144'111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111, Y=$procmux$314_Y
+      New ports: A=1'0, B=1'1, Y=$procmux$314_Y [0]
+      New connections: $procmux$314_Y [143:1] = { $procmux$314_Y [0] $procmux$314_Y [0] $procmux$314_Y [0] $procmux$314_Y [0] $procmux$314_Y [0] $procmux$314_Y [0] $procmux$314_Y [0] $procmux$314_Y [0] $procmux$314_Y [0] $procmux$314_Y [0] $procmux$314_Y [0] $procmux$314_Y [0] $procmux$314_Y [0] $procmux$314_Y [0] $procmux$314_Y [0] $procmux$314_Y [0] $procmux$314_Y [0] $procmux$314_Y [0] $procmux$314_Y [0] $procmux$314_Y [0] $procmux$314_Y [0] $procmux$314_Y [0] $procmux$314_Y [0] $procmux$314_Y [0] $procmux$314_Y [0] $procmux$314_Y [0] $procmux$314_Y [0] $procmux$314_Y [0] $procmux$314_Y [0] $procmux$314_Y [0] $procmux$314_Y [0] $procmux$314_Y [0] $procmux$314_Y [0] $procmux$314_Y [0] $procmux$314_Y [0] $procmux$314_Y [0] $procmux$314_Y [0] $procmux$314_Y [0] $procmux$314_Y [0] $procmux$314_Y [0] $procmux$314_Y [0] $procmux$314_Y [0] $procmux$314_Y [0] $procmux$314_Y [0] $procmux$314_Y [0] $procmux$314_Y [0] $procmux$314_Y [0] $procmux$314_Y [0] $procmux$314_Y [0] $procmux$314_Y [0] $procmux$314_Y [0] $procmux$314_Y [0] $procmux$314_Y [0] $procmux$314_Y [0] $procmux$314_Y [0] $procmux$314_Y [0] $procmux$314_Y [0] $procmux$314_Y [0] $procmux$314_Y [0] $procmux$314_Y [0] $procmux$314_Y [0] $procmux$314_Y [0] $procmux$314_Y [0] $procmux$314_Y [0] $procmux$314_Y [0] $procmux$314_Y [0] $procmux$314_Y [0] $procmux$314_Y [0] $procmux$314_Y [0] $procmux$314_Y [0] $procmux$314_Y [0] $procmux$314_Y [0] $procmux$314_Y [0] $procmux$314_Y [0] $procmux$314_Y [0] $procmux$314_Y [0] $procmux$314_Y [0] $procmux$314_Y [0] $procmux$314_Y [0] $procmux$314_Y [0] $procmux$314_Y [0] $procmux$314_Y [0] $procmux$314_Y [0] $procmux$314_Y [0] $procmux$314_Y [0] $procmux$314_Y [0] $procmux$314_Y [0] $procmux$314_Y [0] $procmux$314_Y [0] $procmux$314_Y [0] $procmux$314_Y [0] $procmux$314_Y [0] $procmux$314_Y [0] $procmux$314_Y [0] $procmux$314_Y [0] $procmux$314_Y [0] $procmux$314_Y [0] $procmux$314_Y [0] $procmux$314_Y [0] $procmux$314_Y [0] $procmux$314_Y [0] $procmux$314_Y [0] $procmux$314_Y [0] $procmux$314_Y [0] $procmux$314_Y [0] $procmux$314_Y [0] $procmux$314_Y [0] $procmux$314_Y [0] $procmux$314_Y [0] $procmux$314_Y [0] $procmux$314_Y [0] $procmux$314_Y [0] $procmux$314_Y [0] $procmux$314_Y [0] $procmux$314_Y [0] $procmux$314_Y [0] $procmux$314_Y [0] $procmux$314_Y [0] $procmux$314_Y [0] $procmux$314_Y [0] $procmux$314_Y [0] $procmux$314_Y [0] $procmux$314_Y [0] $procmux$314_Y [0] $procmux$314_Y [0] $procmux$314_Y [0] $procmux$314_Y [0] $procmux$314_Y [0] $procmux$314_Y [0] $procmux$314_Y [0] $procmux$314_Y [0] $procmux$314_Y [0] $procmux$314_Y [0] $procmux$314_Y [0] $procmux$314_Y [0] $procmux$314_Y [0] $procmux$314_Y [0] $procmux$314_Y [0] $procmux$314_Y [0] $procmux$314_Y [0] $procmux$314_Y [0] $procmux$314_Y [0] $procmux$314_Y [0] }
+  Optimizing cells in module \xw_activation_buffer.
+    Consolidated identical input bits for $mux cell $procmux$305:
+      Old ports: A=8'00000000, B=$2$memwr$\exponents$rtl/xw_activation_buffer.v:87$2_EN[7:0]$113, Y=$procmux$305_Y
+      New ports: A=1'0, B=$procmux$288_Y [0], Y=$procmux$305_Y [0]
+      New connections: $procmux$305_Y [7:1] = { $procmux$305_Y [0] $procmux$305_Y [0] $procmux$305_Y [0] $procmux$305_Y [0] $procmux$305_Y [0] $procmux$305_Y [0] $procmux$305_Y [0] }
+  Optimizing cells in module \xw_activation_buffer.
+Performed a total of 4 changes.
+
+4.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\xw_activation_buffer'.
+Removed a total of 0 cells.
+
+4.6. Executing OPT_DFF pass (perform DFF optimizations).
+Adding EN signal on $procdff$327 ($adff) from module xw_activation_buffer (D = $procmux$267_Y, Q = \error_code).
+Adding EN signal on $procdff$328 ($adff) from module xw_activation_buffer (D = $ternary$rtl/xw_activation_buffer.v:60$16_Y, Q = \rd_mask).
+Adding EN signal on $procdff$329 ($adff) from module xw_activation_buffer (D = 1'1, Q = \read_seen).
+Adding EN signal on $procdff$330 ($adff) from module xw_activation_buffer (D = $procmux$222_Y, Q = \loaded_reg).
+Adding EN signal on $procdff$332 ($adff) from module xw_activation_buffer (D = $procmux$205_Y, Q = \loading).
+Adding EN signal on $procdff$333 ($adff) from module xw_activation_buffer (D = \load_k, Q = \active_k).
+Adding EN signal on $procdff$334 ($adff) from module xw_activation_buffer (D = $shr$rtl/xw_activation_buffer.v:127$123_Y [15:0], Q = \total_words).
+Adding EN signal on $procdff$335 ($adff) from module xw_activation_buffer (D = $procmux$164_Y, Q = \written).
+Adding EN signal on $procdff$336 ($adff) from module xw_activation_buffer (D = \wr_exp, Q = \current_exp).
+Adding EN signal on $procdff$337 ($dff) from module xw_activation_buffer (D = $memrd$\words$rtl/xw_activation_buffer.v:90$115_DATA, Q = \ram_read_data).
+Adding EN signal on $procdff$338 ($dff) from module xw_activation_buffer (D = $memrd$\exponents$rtl/xw_activation_buffer.v:91$116_DATA, Q = \ram_read_exp).
+Adding EN signal on $procdff$326 ($adff) from module xw_activation_buffer (D = $procmux$284_Y, Q = \fault).
+
+4.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \xw_activation_buffer..
+Removed 33 unused cells and 179 unused wires.
+<suppressed ~34 debug messages>
+
+4.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module xw_activation_buffer.
+<suppressed ~5 debug messages>
+
+4.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+4.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \xw_activation_buffer..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~16 debug messages>
+
+4.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \xw_activation_buffer.
+Performed a total of 0 changes.
+
+4.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\xw_activation_buffer'.
+<suppressed ~66 debug messages>
+Removed a total of 22 cells.
+
+4.13. Executing OPT_DFF pass (perform DFF optimizations).
+Setting constant 0-bit at position 14 on $auto$ff.cc:266:slice$401 ($adffe) from module xw_activation_buffer.
+Setting constant 0-bit at position 15 on $auto$ff.cc:266:slice$401 ($adffe) from module xw_activation_buffer.
+
+4.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \xw_activation_buffer..
+Removed 0 unused cells and 22 unused wires.
+<suppressed ~1 debug messages>
+
+4.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module xw_activation_buffer.
+
+4.16. Rerunning OPT passes. (Maybe there is more to do..)
+
+4.17. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \xw_activation_buffer..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~16 debug messages>
+
+4.18. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \xw_activation_buffer.
+Performed a total of 0 changes.
+
+4.19. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\xw_activation_buffer'.
+Removed a total of 0 cells.
+
+4.20. Executing OPT_DFF pass (perform DFF optimizations).
+
+4.21. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \xw_activation_buffer..
+
+4.22. Executing OPT_EXPR pass (perform const folding).
+Optimizing module xw_activation_buffer.
+
+4.23. Finished OPT passes. (There is nothing left to do.)
+
+5. Executing MEMORY_DFF pass (merging $dff cells to $memrd).
+Checking read port `\exponents'[0] in module `\xw_activation_buffer': merging output FF to cell.
+    Write port 0: don't care on collision.
+Checking read port `\words'[0] in module `\xw_activation_buffer': merging output FF to cell.
+    Write port 0: don't care on collision.
+
+6. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \xw_activation_buffer..
+Removed 2 unused cells and 154 unused wires.
+<suppressed ~3 debug messages>
+
+8. Executing CHECK pass (checking for obvious problems).
+Checking module xw_activation_buffer...
+Found and reported 0 problems.
+
+9. Printing statistics.
+
+=== xw_activation_buffer ===
+
+   Number of wires:                156
+   Number of wire bits:           1442
+   Number of public wires:          38
+   Number of public wire bits:     620
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                143
+     $add                            3
+     $adff                           1
+     $adffe                         10
+     $eq                             2
+     $ge                             3
+     $gt                             1
+     $logic_and                     21
+     $logic_not                     11
+     $logic_or                      15
+     $mem_v2                         2
+     $mul                            1
+     $mux                           44
+     $ne                             9
+     $not                            5
+     $reduce_and                     7
+     $reduce_bool                    5
+     $shr                            2
+     $sub                            1
+
+10. Executing JSON backend.

@@ -1,0 +1,297 @@
+COMMAND yosys -p read_verilog rtl/xw_ddr_addr_gen.v; hierarchy -check -top xw_ddr_addr_gen -chparam DDR_MAX_BURST_BEATS 3; proc; opt; memory_dff; memory_collect; opt_clean; check -assert; stat; write_json /workspace/scratch/5f8e1b5d92cf/linear-xw-ip/sim_build/stage23/xw_ddr_addr_gen_netlist.json
+
+-- Running command `read_verilog rtl/xw_ddr_addr_gen.v; hierarchy -check -top xw_ddr_addr_gen -chparam DDR_MAX_BURST_BEATS 3; proc; opt; memory_dff; memory_collect; opt_clean; check -assert; stat; write_json /workspace/scratch/5f8e1b5d92cf/linear-xw-ip/sim_build/stage23/xw_ddr_addr_gen_netlist.json' --
+
+1. Executing Verilog-2005 frontend: rtl/xw_ddr_addr_gen.v
+Parsing Verilog input from `rtl/xw_ddr_addr_gen.v' to AST representation.
+Generating RTLIL representation for module `\xw_ddr_addr_gen'.
+Successfully finished Verilog frontend.
+
+2. Executing HIERARCHY pass (managing design hierarchy).
+Parameter \DDR_MAX_BURST_BEATS = 3
+
+3. Executing AST frontend in derive mode using pre-parsed AST for module `\xw_ddr_addr_gen'.
+Parameter \DDR_MAX_BURST_BEATS = 3
+Generating RTLIL representation for module `$paramod\xw_ddr_addr_gen\DDR_MAX_BURST_BEATS=32'00000000000000000000000000000011'.
+
+3.1. Analyzing design hierarchy..
+Top module:  \xw_ddr_addr_gen
+
+3.2. Analyzing design hierarchy..
+Top module:  \xw_ddr_addr_gen
+Removing unused module `$paramod\xw_ddr_addr_gen\DDR_MAX_BURST_BEATS=32'00000000000000000000000000000011'.
+Removed 1 unused modules.
+
+4. Executing PROC pass (convert processes to netlists).
+
+4.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+4.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 11 switch rules as full_case in process $proc$rtl/xw_ddr_addr_gen.v:111$161 in module xw_ddr_addr_gen.
+Removed a total of 0 dead cases.
+
+4.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 2 redundant assignments.
+Promoted 0 assignments to connections.
+
+4.4. Executing PROC_INIT pass (extract init attributes).
+
+4.5. Executing PROC_ARST pass (detect async resets in processes).
+Found async reset \rst_n in `\xw_ddr_addr_gen.$proc$rtl/xw_ddr_addr_gen.v:111$161'.
+
+4.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~14 debug messages>
+
+4.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\xw_ddr_addr_gen.$proc$rtl/xw_ddr_addr_gen.v:111$161'.
+     1/20: $0\load_done_reg[0:0]
+     2/20: $0\cfg_done[0:0]
+     3/20: $0\offset[15:0]
+     4/20: $0\total_words[15:0]
+     5/20: $0\object_base[28:0]
+     6/20: $0\kind[0:0]
+     7/20: $0\k_blocks[15:0]
+     8/20: $0\n_groups[15:0]
+     9/20: $0\scale_words[15:0]
+    10/20: $0\weight_words[15:0]
+    11/20: $0\scale_base[28:0]
+    12/20: $0\weight_base[28:0]
+    13/20: $0\active_k[15:0]
+    14/20: $0\active_n[15:0]
+    15/20: $0\configured[0:0]
+    16/20: $0\state[2:0]
+    17/20: $0\error_code[7:0]
+    18/20: $0\fault[0:0]
+    19/20: $0\cfg_error_code[7:0]
+    20/20: $0\cfg_error[0:0]
+
+4.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+4.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\xw_ddr_addr_gen.\cfg_done' using process `\xw_ddr_addr_gen.$proc$rtl/xw_ddr_addr_gen.v:111$161'.
+  created $adff cell `$procdff$627' with positive edge clock and negative level reset.
+Creating register for signal `\xw_ddr_addr_gen.\cfg_error' using process `\xw_ddr_addr_gen.$proc$rtl/xw_ddr_addr_gen.v:111$161'.
+  created $adff cell `$procdff$628' with positive edge clock and negative level reset.
+Creating register for signal `\xw_ddr_addr_gen.\cfg_error_code' using process `\xw_ddr_addr_gen.$proc$rtl/xw_ddr_addr_gen.v:111$161'.
+  created $adff cell `$procdff$629' with positive edge clock and negative level reset.
+Creating register for signal `\xw_ddr_addr_gen.\fault' using process `\xw_ddr_addr_gen.$proc$rtl/xw_ddr_addr_gen.v:111$161'.
+  created $adff cell `$procdff$630' with positive edge clock and negative level reset.
+Creating register for signal `\xw_ddr_addr_gen.\error_code' using process `\xw_ddr_addr_gen.$proc$rtl/xw_ddr_addr_gen.v:111$161'.
+  created $adff cell `$procdff$631' with positive edge clock and negative level reset.
+Creating register for signal `\xw_ddr_addr_gen.\load_done_reg' using process `\xw_ddr_addr_gen.$proc$rtl/xw_ddr_addr_gen.v:111$161'.
+  created $adff cell `$procdff$632' with positive edge clock and negative level reset.
+Creating register for signal `\xw_ddr_addr_gen.\state' using process `\xw_ddr_addr_gen.$proc$rtl/xw_ddr_addr_gen.v:111$161'.
+  created $adff cell `$procdff$633' with positive edge clock and negative level reset.
+Creating register for signal `\xw_ddr_addr_gen.\configured' using process `\xw_ddr_addr_gen.$proc$rtl/xw_ddr_addr_gen.v:111$161'.
+  created $adff cell `$procdff$634' with positive edge clock and negative level reset.
+Creating register for signal `\xw_ddr_addr_gen.\active_n' using process `\xw_ddr_addr_gen.$proc$rtl/xw_ddr_addr_gen.v:111$161'.
+  created $adff cell `$procdff$635' with positive edge clock and negative level reset.
+Creating register for signal `\xw_ddr_addr_gen.\active_k' using process `\xw_ddr_addr_gen.$proc$rtl/xw_ddr_addr_gen.v:111$161'.
+  created $adff cell `$procdff$636' with positive edge clock and negative level reset.
+Creating register for signal `\xw_ddr_addr_gen.\weight_base' using process `\xw_ddr_addr_gen.$proc$rtl/xw_ddr_addr_gen.v:111$161'.
+  created $adff cell `$procdff$637' with positive edge clock and negative level reset.
+Creating register for signal `\xw_ddr_addr_gen.\scale_base' using process `\xw_ddr_addr_gen.$proc$rtl/xw_ddr_addr_gen.v:111$161'.
+  created $adff cell `$procdff$638' with positive edge clock and negative level reset.
+Creating register for signal `\xw_ddr_addr_gen.\weight_words' using process `\xw_ddr_addr_gen.$proc$rtl/xw_ddr_addr_gen.v:111$161'.
+  created $adff cell `$procdff$639' with positive edge clock and negative level reset.
+Creating register for signal `\xw_ddr_addr_gen.\scale_words' using process `\xw_ddr_addr_gen.$proc$rtl/xw_ddr_addr_gen.v:111$161'.
+  created $adff cell `$procdff$640' with positive edge clock and negative level reset.
+Creating register for signal `\xw_ddr_addr_gen.\n_groups' using process `\xw_ddr_addr_gen.$proc$rtl/xw_ddr_addr_gen.v:111$161'.
+  created $adff cell `$procdff$641' with positive edge clock and negative level reset.
+Creating register for signal `\xw_ddr_addr_gen.\k_blocks' using process `\xw_ddr_addr_gen.$proc$rtl/xw_ddr_addr_gen.v:111$161'.
+  created $adff cell `$procdff$642' with positive edge clock and negative level reset.
+Creating register for signal `\xw_ddr_addr_gen.\kind' using process `\xw_ddr_addr_gen.$proc$rtl/xw_ddr_addr_gen.v:111$161'.
+  created $adff cell `$procdff$643' with positive edge clock and negative level reset.
+Creating register for signal `\xw_ddr_addr_gen.\object_base' using process `\xw_ddr_addr_gen.$proc$rtl/xw_ddr_addr_gen.v:111$161'.
+  created $adff cell `$procdff$644' with positive edge clock and negative level reset.
+Creating register for signal `\xw_ddr_addr_gen.\total_words' using process `\xw_ddr_addr_gen.$proc$rtl/xw_ddr_addr_gen.v:111$161'.
+  created $adff cell `$procdff$645' with positive edge clock and negative level reset.
+Creating register for signal `\xw_ddr_addr_gen.\offset' using process `\xw_ddr_addr_gen.$proc$rtl/xw_ddr_addr_gen.v:111$161'.
+  created $adff cell `$procdff$646' with positive edge clock and negative level reset.
+
+4.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+4.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 14 empty switches in `\xw_ddr_addr_gen.$proc$rtl/xw_ddr_addr_gen.v:111$161'.
+Removing empty process `xw_ddr_addr_gen.$proc$rtl/xw_ddr_addr_gen.v:111$161'.
+Cleaned up 14 empty switches.
+
+4.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module xw_ddr_addr_gen.
+<suppressed ~19 debug messages>
+
+5. Executing OPT pass (performing simple optimizations).
+
+5.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module xw_ddr_addr_gen.
+<suppressed ~16 debug messages>
+
+5.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\xw_ddr_addr_gen'.
+<suppressed ~87 debug messages>
+Removed a total of 29 cells.
+
+5.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \xw_ddr_addr_gen..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+      Replacing known input bits on port B of cell $procmux$589: \fault -> 1'1
+      Replacing known input bits on port B of cell $procmux$580: \fault -> 1'0
+      Replacing known input bits on port B of cell $procmux$564: { $procmux$576_Y \fault $procmux$569_Y \fault \fault \fault } -> { $procmux$576_Y 1'0 $procmux$569_Y 3'000 }
+      Replacing known input bits on port A of cell $procmux$569: \fault -> 1'0
+      Replacing known input bits on port A of cell $procmux$576: \fault -> 1'0
+      Replacing known input bits on port A of cell $procmux$574: \fault -> 1'0
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~22 debug messages>
+
+5.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \xw_ddr_addr_gen.
+    New ctrl vector for $pmux cell $procmux$564: { $procmux$578_CMP $procmux$571_CMP $auto$opt_reduce.cc:134:opt_pmux$648 }
+    New ctrl vector for $pmux cell $procmux$536: { $procmux$578_CMP $procmux$571_CMP $auto$opt_reduce.cc:134:opt_pmux$650 }
+  Optimizing cells in module \xw_ddr_addr_gen.
+Performed a total of 2 changes.
+
+5.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\xw_ddr_addr_gen'.
+<suppressed ~3 debug messages>
+Removed a total of 1 cells.
+
+5.6. Executing OPT_DFF pass (perform DFF optimizations).
+Adding EN signal on $procdff$643 ($adff) from module xw_ddr_addr_gen (D = \load_kind, Q = \kind).
+Adding EN signal on $procdff$637 ($adff) from module xw_ddr_addr_gen (D = \cfg_weight_base, Q = \weight_base).
+Adding EN signal on $procdff$638 ($adff) from module xw_ddr_addr_gen (D = \cfg_scale_base, Q = \scale_base).
+Adding EN signal on $procdff$639 ($adff) from module xw_ddr_addr_gen (D = $shr$rtl/xw_ddr_addr_gen.v:82$105_Y [15:0], Q = \weight_words).
+Adding EN signal on $procdff$640 ($adff) from module xw_ddr_addr_gen (D = $shr$rtl/xw_ddr_addr_gen.v:83$107_Y [15:0], Q = \scale_words).
+Adding EN signal on $procdff$641 ($adff) from module xw_ddr_addr_gen (D = $shr$rtl/xw_ddr_addr_gen.v:84$109_Y [15:0], Q = \n_groups).
+Adding EN signal on $procdff$642 ($adff) from module xw_ddr_addr_gen (D = $shr$rtl/xw_ddr_addr_gen.v:170$190_Y [15:0], Q = \k_blocks).
+Adding EN signal on $procdff$644 ($adff) from module xw_ddr_addr_gen (D = $ternary$rtl/xw_ddr_addr_gen.v:87$122_Y [28:0], Q = \object_base).
+Adding EN signal on $procdff$645 ($adff) from module xw_ddr_addr_gen (D = $ternary$rtl/xw_ddr_addr_gen.v:184$200_Y, Q = \total_words).
+Adding EN signal on $procdff$646 ($adff) from module xw_ddr_addr_gen (D = $procmux$241_Y, Q = \offset).
+Adding EN signal on $procdff$628 ($adff) from module xw_ddr_addr_gen (D = $procmux$614_Y, Q = \cfg_error).
+Adding EN signal on $procdff$629 ($adff) from module xw_ddr_addr_gen (D = $procmux$596_Y, Q = \cfg_error_code).
+Adding EN signal on $procdff$631 ($adff) from module xw_ddr_addr_gen (D = $procmux$558_Y, Q = \error_code).
+Adding EN signal on $procdff$633 ($adff) from module xw_ddr_addr_gen (D = $procmux$501_Y, Q = \state).
+Adding EN signal on $procdff$634 ($adff) from module xw_ddr_addr_gen (D = $procmux$496_Y, Q = \configured).
+Adding EN signal on $procdff$635 ($adff) from module xw_ddr_addr_gen (D = \cfg_n, Q = \active_n).
+Adding EN signal on $procdff$636 ($adff) from module xw_ddr_addr_gen (D = \cfg_k, Q = \active_k).
+
+5.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \xw_ddr_addr_gen..
+Removed 86 unused cells and 283 unused wires.
+<suppressed ~88 debug messages>
+
+5.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module xw_ddr_addr_gen.
+<suppressed ~3 debug messages>
+
+5.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+5.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \xw_ddr_addr_gen..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~12 debug messages>
+
+5.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \xw_ddr_addr_gen.
+Performed a total of 0 changes.
+
+5.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\xw_ddr_addr_gen'.
+<suppressed ~225 debug messages>
+Removed a total of 75 cells.
+
+5.13. Executing OPT_DFF pass (perform DFF optimizations).
+Setting constant 0-bit at position 10 on $auto$ff.cc:266:slice$729 ($adffe) from module xw_ddr_addr_gen.
+Setting constant 0-bit at position 11 on $auto$ff.cc:266:slice$729 ($adffe) from module xw_ddr_addr_gen.
+Setting constant 0-bit at position 12 on $auto$ff.cc:266:slice$729 ($adffe) from module xw_ddr_addr_gen.
+Setting constant 0-bit at position 13 on $auto$ff.cc:266:slice$729 ($adffe) from module xw_ddr_addr_gen.
+Setting constant 0-bit at position 14 on $auto$ff.cc:266:slice$729 ($adffe) from module xw_ddr_addr_gen.
+Setting constant 0-bit at position 15 on $auto$ff.cc:266:slice$729 ($adffe) from module xw_ddr_addr_gen.
+
+5.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \xw_ddr_addr_gen..
+Removed 0 unused cells and 75 unused wires.
+<suppressed ~1 debug messages>
+
+5.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module xw_ddr_addr_gen.
+
+5.16. Rerunning OPT passes. (Maybe there is more to do..)
+
+5.17. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \xw_ddr_addr_gen..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~12 debug messages>
+
+5.18. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \xw_ddr_addr_gen.
+Performed a total of 0 changes.
+
+5.19. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\xw_ddr_addr_gen'.
+Removed a total of 0 cells.
+
+5.20. Executing OPT_DFF pass (perform DFF optimizations).
+
+5.21. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \xw_ddr_addr_gen..
+
+5.22. Executing OPT_EXPR pass (perform const folding).
+Optimizing module xw_ddr_addr_gen.
+
+5.23. Finished OPT passes. (There is nothing left to do.)
+
+6. Executing MEMORY_DFF pass (merging $dff cells to $memrd).
+
+7. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+8. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \xw_ddr_addr_gen..
+
+9. Executing CHECK pass (checking for obvious problems).
+Checking module xw_ddr_addr_gen...
+Found and reported 0 problems.
+
+10. Printing statistics.
+
+=== xw_ddr_addr_gen ===
+
+   Number of wires:                212
+   Number of wire bits:           2120
+   Number of public wires:          61
+   Number of public wire bits:    1046
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                182
+     $add                           11
+     $adff                           3
+     $adffe                         17
+     $eq                             6
+     $ge                             4
+     $gt                             5
+     $le                             2
+     $logic_and                     14
+     $logic_not                     10
+     $logic_or                      18
+     $lt                             1
+     $mul                            4
+     $mux                           48
+     $ne                            12
+     $not                            7
+     $pmux                           4
+     $reduce_and                     6
+     $reduce_bool                    7
+     $reduce_or                      1
+     $sub                            2
+
+11. Executing JSON backend.

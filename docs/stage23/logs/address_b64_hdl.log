@@ -1,0 +1,7 @@
+COMMAND iverilog -g2001 -Wall -s tb_xw_ddr_addr_gen_cycle -o /workspace/scratch/5f8e1b5d92cf/linear-xw-ip/sim_build/stage23/address_b64.vvp -P tb_xw_ddr_addr_gen_cycle.BURST=64 /workspace/scratch/5f8e1b5d92cf/linear-xw-ip/rtl/xw_ddr_addr_gen.v /workspace/scratch/5f8e1b5d92cf/linear-xw-ip/tb/tb_xw_ddr_addr_gen_cycle.v
+warning: Some modules have no timescale. This may cause
+       : confusing timing results.	Affected modules are:
+       :   -- module xw_ddr_addr_gen declared here: /workspace/scratch/5f8e1b5d92cf/linear-xw-ip/rtl/xw_ddr_addr_gen.v:3
+COMMAND vvp /workspace/scratch/5f8e1b5d92cf/linear-xw-ip/sim_build/stage23/address_b64.vvp +VECTORS=/workspace/scratch/5f8e1b5d92cf/linear-xw-ip/sim_build/stage23/address_b64.vec
+PASS tb_xw_ddr_addr_gen_cycle cycles=1827
+/workspace/scratch/5f8e1b5d92cf/linear-xw-ip/tb/tb_xw_ddr_addr_gen_cycle.v:123: $finish called at 18276000 (1ps)

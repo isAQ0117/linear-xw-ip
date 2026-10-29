@@ -1,0 +1,27 @@
+Running xw_job_dim_cfg
+warning: Some modules have no timescale. This may cause
+       : confusing timing results.	Affected modules are:
+       :   -- module xw_job_dim_cfg declared here: rtl/xw_job_dim_cfg.v:3
+PASS tb_xw_job_dim_cfg
+tb/tb_xw_job_dim_cfg.v:97: $finish called at 61000 (1ps)
+Running xw_ddr_range_rx
+warning: Some modules have no timescale. This may cause
+       : confusing timing results.	Affected modules are:
+       :   -- module xw_ddr_range_rx declared here: rtl/xw_ddr_range_rx.v:4
+PASS tb_xw_ddr_range_rx
+tb/tb_xw_ddr_range_rx.v:158: $finish called at 246000 (1ps)
+Running xw_scale_group_cache
+warning: Some modules have no timescale. This may cause
+       : confusing timing results.	Affected modules are:
+       :   -- module xw_scale_group_cache declared here: rtl/xw_scale_group_cache.v:4
+PASS tb_xw_scale_group_cache
+tb/tb_xw_scale_group_cache.v:131: $finish called at 256000 (1ps)
+Running xw_fp32_scale_b2
+warning: Some modules have no timescale. This may cause
+       : confusing timing results.	Affected modules are:
+       :   -- module xw_fp32_scale_b2 declared here: rtl/xw_fp32_scale_b2.v:4
+PASS tb_xw_fp32_scale_b2 vectors=512
+tb/tb_xw_fp32_scale_b2.v:48: $finish called at 1024000 (1ps)
+PASS invalid parameter elaboration rejected: job_params
+PASS invalid parameter elaboration rejected: cache_params
+PASS Stage-1 four-module RTL regression and 2 negative elaborations

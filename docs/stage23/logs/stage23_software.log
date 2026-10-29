@@ -1,0 +1,13 @@
+test_activation (test_stage23.Stage23SoftwareTests.test_activation) ... ok
+test_address_matrix (test_stage23.Stage23SoftwareTests.test_address_matrix) ... ok
+test_harness_matrix (test_stage23.Stage23SoftwareTests.test_harness_matrix) ... ok
+test_harness_static (test_stage23.Stage23SoftwareTests.test_harness_static) ... ok
+test_independent_oracle_fixed_patterns (test_stage23.Stage23SoftwareTests.test_independent_oracle_fixed_patterns) ... ok
+test_parser (test_stage23.Stage23SoftwareTests.test_parser) ... ok
+test_stage1_actual_cycle_vectors (test_stage23.Stage23SoftwareTests.test_stage1_actual_cycle_vectors) ... ok
+test_weight (test_stage23.Stage23SoftwareTests.test_weight) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 75.217s
+
+OK
