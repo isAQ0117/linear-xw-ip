@@ -1,0 +1,270 @@
+{
+  "status": "PASS",
+  "head": "ab17a13b42ce4e17512e339c8d9b90088adc6002",
+  "head_provenance": "actual Git HEAD",
+  "skill_provenance": "actual attached Skill ZIP",
+  "uploaded_worktree_used": true,
+  "initial_status": [
+    " M .gitignore",
+    " M GITCODE_SETUP.md",
+    " M cycle_model.py",
+    " M docs/SOURCE_IMPORT_MANIFEST.json",
+    " M docs/standards/Linear_xW_9Phase_Development_Standard_V1.0.md",
+    " M docs/standards/Linear_xW_Stage0_Interface_Verification_Contract_V1.0.md",
+    " M docs/standards/Linear_xW_Standards_Freeze_Record_V1.0.md",
+    " M docs/standards/Linear_xW_Standards_Release_Manifest_V1.0.json",
+    " M docs/verification/history/fp32_v0_2/cycle_trace.jsonl",
+    " M docs/verification/history/fp32_v0_2/ddr_manifest.json",
+    " M docs/verification/history/fp32_v0_2/element_errors.csv",
+    " M docs/verification/history/fp32_v0_2/input_axis_v2.jsonl",
+    " M docs/verification/history/fp32_v0_2/metrics.json",
+    " M docs/verification/history/fp32_v0_2/output_axis_v2.jsonl",
+    " M examples/fp32_demo_case.json",
+    " M linear_stream_model/__init__.py",
+    " M linear_stream_model/numeric.py",
+    " M test_cycle.py",
+    " M test_fp32.py",
+    " M verification_report.json",
+    "?? docs/stage67/"
+  ],
+  "protected_files": [
+    "docs/standards/Linear_xW_9Phase_Development_Standard_V1.0.md",
+    "docs/standards/Linear_xW_Stage0_Interface_Verification_Contract_V1.0.docx",
+    "docs/standards/Linear_xW_Stage0_Interface_Verification_Contract_V1.0.md",
+    "docs/standards/Linear_xW_Standards_Freeze_Record_V1.0.md",
+    "docs/standards/Linear_xW_Standards_Release_Manifest_V1.0.json",
+    "linear_stream_model/numeric.py",
+    "rtl/xw_a2_accum48.v",
+    "rtl/xw_activation_buffer.v",
+    "rtl/xw_axis_bfp18_input.v",
+    "rtl/xw_b1_dot128.v",
+    "rtl/xw_b2_fp32_pipe.v",
+    "rtl/xw_b3b_compute_ctrl.v",
+    "rtl/xw_bfp18_requant.v",
+    "rtl/xw_ddr_addr_gen.v",
+    "rtl/xw_ddr_range_rx.v",
+    "rtl/xw_fp32_scale_b2.v",
+    "rtl/xw_job_dim_cfg.v",
+    "rtl/xw_output_group_buffer.v",
+    "rtl/xw_result_buffer.v",
+    "rtl/xw_scale_group_cache.v",
+    "rtl/xw_stage5_ctrl.v",
+    "rtl/xw_weight_row_buffer.v"
+  ],
+  "protected_unchanged": 22,
+  "top_parameters": [
+    "STATIC_DIM_MODE",
+    "N_DIM",
+    "K_DIM",
+    "MAX_N",
+    "MAX_K",
+    "MAX_M",
+    "MAX_M_TILE",
+    "P_N",
+    "P_K",
+    "AXIS_DATA_W"
+  ],
+  "top_ports": {
+    "clk": [
+      "input",
+      1
+    ],
+    "rst_n": [
+      "input",
+      1
+    ],
+    "job_valid": [
+      "input",
+      1
+    ],
+    "job_ready": [
+      "output",
+      1
+    ],
+    "job_id": [
+      "input",
+      32
+    ],
+    "job_m": [
+      "input",
+      16
+    ],
+    "job_n": [
+      "input",
+      16
+    ],
+    "job_k": [
+      "input",
+      16
+    ],
+    "job_m_tile": [
+      "input",
+      8
+    ],
+    "job_weight_base": [
+      "input",
+      29
+    ],
+    "job_scale_base": [
+      "input",
+      29
+    ],
+    "busy": [
+      "output",
+      1
+    ],
+    "status_valid": [
+      "output",
+      1
+    ],
+    "status_ready": [
+      "input",
+      1
+    ],
+    "status_job_id": [
+      "output",
+      32
+    ],
+    "status_ok": [
+      "output",
+      1
+    ],
+    "status_error_code": [
+      "output",
+      8
+    ],
+    "s_axis_tdata": [
+      "input",
+      512
+    ],
+    "s_axis_tvalid": [
+      "input",
+      1
+    ],
+    "s_axis_tready": [
+      "output",
+      1
+    ],
+    "s_axis_tkeep": [
+      "input",
+      64
+    ],
+    "s_axis_tlast": [
+      "input",
+      1
+    ],
+    "s_axis_tuser": [
+      "input",
+      128
+    ],
+    "m_axis_tdata": [
+      "output",
+      512
+    ],
+    "m_axis_tvalid": [
+      "output",
+      1
+    ],
+    "m_axis_tready": [
+      "input",
+      1
+    ],
+    "m_axis_tkeep": [
+      "output",
+      64
+    ],
+    "m_axis_tlast": [
+      "output",
+      1
+    ],
+    "m_axis_tuser": [
+      "output",
+      128
+    ],
+    "ddr_rd_req": [
+      "output",
+      1
+    ],
+    "ddr_rd_addra": [
+      "output",
+      29
+    ],
+    "ddr_rd_addrb": [
+      "output",
+      29
+    ],
+    "ddr_rd_rdy": [
+      "input",
+      1
+    ],
+    "ddr_rd_data": [
+      "input",
+      512
+    ],
+    "ddr_rd_vld": [
+      "input",
+      1
+    ]
+  },
+  "source_count": 20,
+  "standards": [
+    {
+      "file": "Linear_xW_9Phase_Development_Standard_V1.0.md",
+      "raw_matches": false,
+      "LF_matches": true,
+      "actual_sha256": "b095671deddb198b2e2ef0e3cec76533ee2a216b9fd7e476895a4f52c87bc629"
+    },
+    {
+      "file": "Linear_xW_Stage0_Interface_Verification_Contract_V1.0.md",
+      "raw_matches": false,
+      "LF_matches": true,
+      "actual_sha256": "266a38fda7b038c9df8f719e7b85dbb10fbec2680edd5534d6eb69ea84459082"
+    },
+    {
+      "file": "Linear_xW_Stage0_Interface_Verification_Contract_V1.0.docx",
+      "raw_matches": true,
+      "LF_matches": false,
+      "actual_sha256": "b9d2d6f447bdbd7b037230168230d0868cc3287032efcdbbc7bf63474bb8f4af"
+    },
+    {
+      "file": "Linear_xW_Standards_Freeze_Record_V1.0.md",
+      "raw_matches": false,
+      "LF_matches": true,
+      "actual_sha256": "7a178e7421e997f366823b670246fe6ab3d911cd93053b1207383eedeb9b505b"
+    }
+  ],
+  "skill": [
+    {
+      "file": "verilog-rtl-house-style/SKILL.md",
+      "sha256": "210fd4645bb1f4cf23bf4eb643102b33d8e0665491aeb06290bce2e7d1324fd6",
+      "repository_copy_equal": true
+    },
+    {
+      "file": "verilog-rtl-house-style/references/rtl_style_examples.md",
+      "sha256": "9de79cb63b25fcf9d1ae78add333778c4ecf543ccd7d007b999ee65a818f5d48",
+      "repository_copy_equal": true
+    },
+    {
+      "file": "verilog-rtl-house-style/agents/openai.yaml",
+      "sha256": "ce09abe773e05b432b7de746e5301e626313d38f79e201d1b232220a335c69ba",
+      "repository_copy_equal": true
+    },
+    {
+      "file": "verilog-rtl-house-style/scripts/check_rtl_style.py",
+      "sha256": "4aa50c5fb7330864ebbabd33ec1cc705051c9e71d37f781bb6448d01bf45dd93",
+      "repository_copy_equal": true
+    },
+    {
+      "file": "verilog-rtl-house-style/scripts/test_check_rtl_style.py",
+      "sha256": "6ba110e3ffc94eedce39f5dc2b976110961c80179cf96c2124ce0858986262da",
+      "repository_copy_equal": true
+    },
+    {
+      "file": "verilog-rtl-house-style/assets/verilog2001_module_template.v",
+      "sha256": "4d014d64339ac68cb27284b72ddc8228c121ceb0813996bf2c037416348e7347",
+      "repository_copy_equal": true
+    }
+  ],
+  "semantic_diff_numstat": "35\t0\tMakefile\n18\t0\tREADME.md\n6\t0\tdocs/PROJECT_STATUS.md\n2\t0\trtl/RTL_DESIGN_STATUS.md\n4\t0\trtl_sources.f\n",
+  "dependencies": "Python standard library; actual Icarus 11.0, Yosys 0.23; optional Vivado2023.2 pending"
+}

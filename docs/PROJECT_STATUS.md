@@ -26,3 +26,9 @@ Yosys结构检查不等于Vivado综合/布局布线/上板通过。DDR真实Burs
 Stage4最新证据见[stage4/DELIVERY_REPORT.md](stage4/DELIVERY_REPORT.md)。旧Stage23报告的Stage4未实现为历史快照。未修改任何冻结标准或Stage0–3生产RTL。
 
 Stage5最新证据见[stage5/DELIVERY_REPORT.md](stage5/DELIVERY_REPORT.md)。整个Job完成才开放同步读取；group_done不是Job成功Status。冻结数值/标准及原12个RTL逐字节未改。
+
+## Stage 6/7 当前实现更新
+
+正式生产 `linear_xw_ip` 已接通完整M=1链路。Stage6/7本地三层验证通过；20个生产RTL包含原16个字节不变模块及4个新增模块。Stage6/7真实向量回归共692651拍，44个正常全链路Job、35项全局异常/恢复场景，另有独立手写unity常量与最早Status接受测试。完整证据和限制见 [stage67/DELIVERY_REPORT.md](stage67/DELIVERY_REPORT.md)。
+
+Stage8未实现。Vivado2023.2具体器件综合/布线时序、外部DDR规格和事务域清理保证仍Pending，不将Yosys泛化/xc7探索替代平台签核。

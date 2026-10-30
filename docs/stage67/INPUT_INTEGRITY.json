@@ -1,0 +1,163 @@
+{
+  "zip": [
+    {
+      "name": "01-linear-xw-ip-stage012345.zip",
+      "sha256": "7c2c24393f8876603d98cb2be7c1638bbf8a8c352e9b8514c72b5cd5de770a81",
+      "entries": 722,
+      "crc_bad": null
+    },
+    {
+      "name": "02-skill.zip",
+      "sha256": "9e364a43d7450b8ef1ff5d9c1cf8fa002a7d294948d5a28cb1e24b59dd52cdc3",
+      "entries": 6,
+      "crc_bad": null
+    }
+  ],
+  "historical_formats": [
+    {
+      "path": "docs/verification/history/fp32_v0_2/output_axis_v2.jsonl",
+      "bytes": 222,
+      "sha256": "4950f7030259662c6955b19766c29d3f57ba14ef2207af8fef7bac99af4cea9f",
+      "records": 2
+    },
+    {
+      "path": "docs/verification/history/fp32_v0_2/input_axis_v2.jsonl",
+      "bytes": 2501,
+      "sha256": "538dc0674a59a29a5c78e112256fb74df4342a32317f1b75c84d57b0a999d309",
+      "records": 12
+    },
+    {
+      "path": "docs/verification/history/fp32_v0_2/ddr_image.bin",
+      "bytes": 1024,
+      "sha256": "8da426b1f27ee878bb10a532a29d9ba87c48deb83de4e253f5d4cb5c5a4d87e8"
+    },
+    {
+      "path": "docs/verification/history/fp32_v0_2/cycle_trace.jsonl",
+      "bytes": 15437,
+      "sha256": "407ff55fa7b442d9892eb58a32a5b2c085efd83f54de374272daec7763e65e1d",
+      "records": 113
+    },
+    {
+      "path": "docs/verification/history/fp32_v0_2/metrics.json",
+      "bytes": 1090,
+      "sha256": "bb64ada8bd3f540951c6076fa24db795a49f8bea7508b20298a7f0e562ac3d40",
+      "type": "dict"
+    },
+    {
+      "path": "docs/verification/history/fp32_v0_2/element_errors.csv",
+      "bytes": 1346,
+      "sha256": "59bb982a6312afc2d61c3501cf143654d11e474fe59f0d3b8176f4bfeda0cd97",
+      "rows": 11,
+      "fields": [
+        "row",
+        "n",
+        "mantissa",
+        "shared_exp",
+        "b3b_value",
+        "quantized_input_ideal",
+        "error",
+        "abs_error",
+        "rel_error"
+      ]
+    },
+    {
+      "path": "docs/verification/history/fp32_v0_2/ddr_manifest.json",
+      "bytes": 356,
+      "sha256": "dfa55542f54ffd92f7f165dc3d492dae37bb25971af5497ba3bc083309ef1711",
+      "type": "dict"
+    },
+    {
+      "path": "docs/verification/history/fp32_v0_2/output_numeric.json",
+      "bytes": 123,
+      "sha256": "c83662ea319cc11c3748fe62730a72a6354dbc9241cba418851a3b831f18f070",
+      "type": "dict"
+    }
+  ],
+  "initial_changes": [
+    {
+      "path": ".gitignore",
+      "only_line_endings": true
+    },
+    {
+      "path": "GITCODE_SETUP.md",
+      "only_line_endings": true
+    },
+    {
+      "path": "cycle_model.py",
+      "only_line_endings": true
+    },
+    {
+      "path": "docs/SOURCE_IMPORT_MANIFEST.json",
+      "only_line_endings": true
+    },
+    {
+      "path": "docs/standards/Linear_xW_9Phase_Development_Standard_V1.0.md",
+      "only_line_endings": true
+    },
+    {
+      "path": "docs/standards/Linear_xW_Stage0_Interface_Verification_Contract_V1.0.md",
+      "only_line_endings": true
+    },
+    {
+      "path": "docs/standards/Linear_xW_Standards_Freeze_Record_V1.0.md",
+      "only_line_endings": true
+    },
+    {
+      "path": "docs/standards/Linear_xW_Standards_Release_Manifest_V1.0.json",
+      "only_line_endings": true
+    },
+    {
+      "path": "docs/verification/history/fp32_v0_2/cycle_trace.jsonl",
+      "only_line_endings": true
+    },
+    {
+      "path": "docs/verification/history/fp32_v0_2/ddr_manifest.json",
+      "only_line_endings": true
+    },
+    {
+      "path": "docs/verification/history/fp32_v0_2/element_errors.csv",
+      "only_line_endings": true
+    },
+    {
+      "path": "docs/verification/history/fp32_v0_2/input_axis_v2.jsonl",
+      "only_line_endings": true
+    },
+    {
+      "path": "docs/verification/history/fp32_v0_2/metrics.json",
+      "only_line_endings": true
+    },
+    {
+      "path": "docs/verification/history/fp32_v0_2/output_axis_v2.jsonl",
+      "only_line_endings": true
+    },
+    {
+      "path": "examples/fp32_demo_case.json",
+      "only_line_endings": true
+    },
+    {
+      "path": "linear_stream_model/__init__.py",
+      "only_line_endings": true
+    },
+    {
+      "path": "linear_stream_model/numeric.py",
+      "only_line_endings": true
+    },
+    {
+      "path": "test_cycle.py",
+      "only_line_endings": true
+    },
+    {
+      "path": "test_fp32.py",
+      "only_line_endings": true
+    },
+    {
+      "path": "verification_report.json",
+      "only_line_endings": true
+    }
+  ],
+  "head": "ab17a13b42ce4e17512e339c8d9b90088adc6002",
+  "git_fsck": "PASS",
+  "tracked_files": 225,
+  "historical_ddr_image_rebuilt_equal": true,
+  "docx_container": "PASS"
+}

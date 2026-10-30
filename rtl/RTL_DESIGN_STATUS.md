@@ -38,3 +38,5 @@ Stage4 B1/B2 Pipe/A2/局部Controller已实现并通过本地数值、HDL、周�
 | xw_stage5_ctrl | 局部收集/提交/完成/首错及恢复 | 整Job/故障竞争/真实Stage4+5通过 |
 
 完整证据见docs/stage5/DELIVERY_REPORT.md。xc7家族探索映射不等于Vivado实际器件时序通过；Stage6/7未提前实现。
+
+Stage6/7：新增xw_axis_bfp18_output、xw_job_status、xw_linear_scheduler及正式linear_xw_ip。完整M1全链路/反压/错误/局部恢复真实Icarus验证通过，接口/证据见docs/stage67；原16个生产RTL字节不变。Vivado目标时序、实际DDR平台仍Pending，Stage8不在本轮范围。

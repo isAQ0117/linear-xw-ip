@@ -1,0 +1,14 @@
+{
+  "contract": "XW-CONTRACT-STD-001 V1.0",
+  "simulation": {"define": "XW_SIM_DDR_BURST", "tested_beats": [1,2,3,64]},
+  "production": {"define": "XW_PLATFORM_DDR_BURST", "max_burst_beats": null, "controller": null, "approval_evidence": null},
+  "ddr_response_max_latency": null,
+  "ddr_response_max_gap": null,
+  "ddr_old_response_clear_guarantee": null,
+  "hardware_timeout_enabled": false,
+  "fpga_part": null,
+  "clock_period_ns": null,
+  "vivado_version_requested": "2023.2",
+  "deployment_status": "Pending platform definition and actual Vivado execution",
+  "configuration_policy": "Exactly one simulation or production define is required; missing or ambiguous selection fails elaboration"
+}

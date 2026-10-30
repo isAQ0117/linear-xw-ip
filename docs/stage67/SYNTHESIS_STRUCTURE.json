@@ -1,0 +1,118 @@
+{
+  "status": "PASS",
+  "tool": "Yosys 0.23",
+  "scope": "generic structural synthesis, actual top default capacities",
+  "latches": [],
+  "cells": {
+    "$add": 130,
+    "$eq": 150,
+    "$logic_not": 159,
+    "$ge": 47,
+    "$logic_and": 394,
+    "$logic_or": 262,
+    "$lt": 47,
+    "$reduce_bool": 196,
+    "$ne": 205,
+    "$adff": 32,
+    "$mux": 1010,
+    "$adffe": 255,
+    "$not": 59,
+    "$reduce_and": 138,
+    "$gt": 32,
+    "$mul": 19,
+    "$shr": 17,
+    "$sub": 80,
+    "$mem_v2": 8,
+    "$reduce_or": 5,
+    "$le": 10,
+    "$pmux": 50,
+    "$and": 30,
+    "$neg": 16,
+    "$shiftx": 2,
+    "$shl": 13,
+    "$sshl": 2,
+    "$sdffce": 8,
+    "$dffe": 13,
+    "$or": 1,
+    "$shift": 2
+  },
+  "memories": [
+    {
+      "path": "linear_xw_ip/activation/exponents",
+      "width": 8,
+      "depth": 96,
+      "read_ports": 1,
+      "write_ports": 1,
+      "read_clock": "1",
+      "write_clock": "1"
+    },
+    {
+      "path": "linear_xw_ip/activation/words",
+      "width": 144,
+      "depth": 1536,
+      "read_ports": 1,
+      "write_ports": 1,
+      "read_clock": "1",
+      "write_clock": "1"
+    },
+    {
+      "path": "linear_xw_ip/compute/responses",
+      "width": 253,
+      "depth": 4,
+      "read_ports": 1,
+      "write_ports": 1,
+      "read_clock": "0",
+      "write_clock": "1"
+    },
+    {
+      "path": "linear_xw_ip/output_sender/fifo",
+      "width": 152,
+      "depth": 4,
+      "read_ports": 1,
+      "write_ports": 1,
+      "read_clock": "0",
+      "write_clock": "1"
+    },
+    {
+      "path": "linear_xw_ip/stage5/group_buffer/states",
+      "width": 64,
+      "depth": 128,
+      "read_ports": 1,
+      "write_ports": 1,
+      "read_clock": "1",
+      "write_clock": "1"
+    },
+    {
+      "path": "linear_xw_ip/stage5/result_buffer/exponents",
+      "width": 8,
+      "depth": 96,
+      "read_ports": 1,
+      "write_ports": 1,
+      "read_clock": "1",
+      "write_clock": "1"
+    },
+    {
+      "path": "linear_xw_ip/stage5/result_buffer/words",
+      "width": 144,
+      "depth": 1536,
+      "read_ports": 1,
+      "write_ports": 1,
+      "read_clock": "1",
+      "write_clock": "1"
+    },
+    {
+      "path": "linear_xw_ip/weight_buffer/words",
+      "width": 512,
+      "depth": 192,
+      "read_ports": 1,
+      "write_ports": 1,
+      "read_clock": "1",
+      "write_clock": "1"
+    }
+  ],
+  "memory_bits": 552020,
+  "combinational_loops": "PASS check -assert",
+  "vivado_2023_2": "Pending: not installed",
+  "part": "Pending: user has not specified FPGA part",
+  "timing": "Pending: no part/clock/IO constraints"
+}

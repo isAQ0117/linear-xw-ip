@@ -1,0 +1,99 @@
+{
+  "status": "PASS",
+  "known_answer": "PASS actual RTL 1x1 unity, no cycle model expected answer",
+  "guards": [
+    {
+      "label": "missing_profile",
+      "status": "EXPECTED_ELABORATION_REJECTION",
+      "exit_code": 2
+    },
+    {
+      "label": "ambiguous",
+      "status": "EXPECTED_ELABORATION_REJECTION",
+      "exit_code": 2
+    },
+    {
+      "label": "zero_burst",
+      "status": "EXPECTED_ELABORATION_REJECTION",
+      "exit_code": 2
+    },
+    {
+      "label": "large_burst",
+      "status": "EXPECTED_ELABORATION_REJECTION",
+      "exit_code": 2
+    },
+    {
+      "label": "bad_pk",
+      "status": "EXPECTED_ELABORATION_REJECTION",
+      "exit_code": 1
+    },
+    {
+      "label": "bad_pn",
+      "status": "EXPECTED_ELABORATION_REJECTION",
+      "exit_code": 1
+    },
+    {
+      "label": "bad_axis",
+      "status": "EXPECTED_ELABORATION_REJECTION",
+      "exit_code": 1
+    },
+    {
+      "label": "bad_mode",
+      "status": "EXPECTED_ELABORATION_REJECTION",
+      "exit_code": 1
+    },
+    {
+      "label": "bad_output_capacity",
+      "status": "EXPECTED_ELABORATION_REJECTION",
+      "exit_code": 1
+    }
+  ],
+  "mutations": [
+    {
+      "label": "output_overwrite",
+      "status": "MUTANT_REJECTED",
+      "exit_code": 1
+    },
+    {
+      "label": "early_done",
+      "status": "MUTANT_REJECTED",
+      "exit_code": 1
+    },
+    {
+      "label": "always_last",
+      "status": "MUTANT_REJECTED",
+      "exit_code": 1
+    },
+    {
+      "label": "wrong_offset",
+      "status": "MUTANT_REJECTED",
+      "exit_code": 1
+    },
+    {
+      "label": "ignore_result_ready",
+      "status": "MUTANT_REJECTED",
+      "exit_code": 1
+    },
+    {
+      "label": "skip_group_commit",
+      "status": "MUTANT_REJECTED",
+      "exit_code": 1
+    },
+    {
+      "label": "ignore_stage5_ready",
+      "status": "MUTANT_REJECTED",
+      "exit_code": 1
+    },
+    {
+      "label": "overwrite_first_error",
+      "status": "MUTANT_REJECTED",
+      "exit_code": 1
+    },
+    {
+      "label": "status_drop_stall",
+      "status": "MUTANT_REJECTED",
+      "exit_code": 1
+    }
+  ],
+  "house_style": "PASS"
+}

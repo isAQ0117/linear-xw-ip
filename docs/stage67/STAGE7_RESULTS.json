@@ -1,0 +1,772 @@
+[
+  {
+    "label": "scheduler",
+    "cycles": 129867,
+    "coverage": {
+      "traversal_jobs": 4,
+      "max_n": 12288,
+      "max_k": 12288,
+      "faults": 20,
+      "stage5_ready_stall": 14,
+      "result_stall": 3,
+      "group_stall": 7,
+      "status_stall": 70
+    },
+    "status": "PASS",
+    "sha256": "8ef1825d538b78a96a1aac527a711ba7e354fa6368c23640a41d651d2d68ee5e"
+  },
+  {
+    "label": "integration_s0_b3",
+    "cycles": 48319,
+    "coverage": {
+      "static": 0,
+      "burst": 3,
+      "jobs": 10,
+      "measurements": [
+        {
+          "job_id": 100,
+          "n": 2,
+          "k": 129,
+          "job_accept": 6,
+          "last_output": 310,
+          "status_first": 312,
+          "status_accept": 351,
+          "end_to_end_cycles": 346,
+          "ddr_beats": 7,
+          "ddr_requests": 3,
+          "output_beats": 1,
+          "exponents": [
+            11
+          ]
+        },
+        {
+          "job_id": 101,
+          "n": 129,
+          "k": 1,
+          "job_accept": 354,
+          "last_output": 4143,
+          "status_first": 4145,
+          "status_accept": 4184,
+          "end_to_end_cycles": 3831,
+          "ddr_beats": 131,
+          "ddr_requests": 131,
+          "output_beats": 6,
+          "exponents": [
+            12,
+            23
+          ]
+        },
+        {
+          "job_id": 102,
+          "n": 1,
+          "k": 127,
+          "job_accept": 4187,
+          "last_output": 4406,
+          "status_first": 4408,
+          "status_accept": 4447,
+          "end_to_end_cycles": 261,
+          "ddr_beats": 3,
+          "ddr_requests": 2,
+          "output_beats": 1,
+          "exponents": [
+            13
+          ]
+        },
+        {
+          "job_id": 103,
+          "n": 2,
+          "k": 128,
+          "job_accept": 4450,
+          "last_output": 4722,
+          "status_first": 4724,
+          "status_accept": 4763,
+          "end_to_end_cycles": 314,
+          "ddr_beats": 5,
+          "ddr_requests": 3,
+          "output_beats": 1,
+          "exponents": [
+            12
+          ]
+        },
+        {
+          "job_id": 104,
+          "n": 3,
+          "k": 129,
+          "job_accept": 4766,
+          "last_output": 5134,
+          "status_first": 5136,
+          "status_accept": 5175,
+          "end_to_end_cycles": 410,
+          "ddr_beats": 10,
+          "ddr_requests": 4,
+          "output_beats": 1,
+          "exponents": [
+            13
+          ]
+        },
+        {
+          "job_id": 105,
+          "n": 1,
+          "k": 2048,
+          "job_accept": 5178,
+          "last_output": 8214,
+          "status_first": 8216,
+          "status_accept": 8255,
+          "end_to_end_cycles": 3078,
+          "ddr_beats": 33,
+          "ddr_requests": 12,
+          "output_beats": 1,
+          "exponents": [
+            16
+          ]
+        },
+        {
+          "job_id": 106,
+          "n": 2,
+          "k": 2049,
+          "job_accept": 8258,
+          "last_output": 11883,
+          "status_first": 11885,
+          "status_accept": 11924,
+          "end_to_end_cycles": 3667,
+          "ddr_beats": 68,
+          "ddr_requests": 23,
+          "output_beats": 1,
+          "exponents": [
+            17
+          ]
+        },
+        {
+          "job_id": 107,
+          "n": 2,
+          "k": 4096,
+          "job_accept": 11927,
+          "last_output": 19203,
+          "status_first": 19205,
+          "status_accept": 19244,
+          "end_to_end_cycles": 7318,
+          "ddr_beats": 130,
+          "ddr_requests": 45,
+          "output_beats": 1,
+          "exponents": [
+            16
+          ]
+        },
+        {
+          "job_id": 108,
+          "n": 2,
+          "k": 12288,
+          "job_accept": 19247,
+          "last_output": 40575,
+          "status_first": 40577,
+          "status_accept": 40616,
+          "end_to_end_cycles": 21370,
+          "ddr_beats": 390,
+          "ddr_requests": 130,
+          "output_beats": 1,
+          "exponents": [
+            17
+          ]
+        },
+        {
+          "job_id": 109,
+          "n": 257,
+          "k": 7,
+          "job_accept": 40619,
+          "last_output": 48275,
+          "status_first": 48277,
+          "status_accept": 48316,
+          "end_to_end_cycles": 7698,
+          "ddr_beats": 260,
+          "ddr_requests": 260,
+          "output_beats": 11,
+          "exponents": [
+            9,
+            30,
+            42
+          ]
+        }
+      ],
+      "seed": "0x6717"
+    },
+    "status": "PASS",
+    "sha256": "ad934b903e55983cb0056357223cb0e5020194d852aaeaf40a68f89d4e72fecd"
+  },
+  {
+    "label": "integration_s1_b3",
+    "cycles": 703,
+    "coverage": {
+      "static": 1,
+      "burst": 3,
+      "jobs": 2,
+      "measurements": [
+        {
+          "job_id": 100,
+          "n": 2,
+          "k": 129,
+          "job_accept": 6,
+          "last_output": 310,
+          "status_first": 312,
+          "status_accept": 351,
+          "end_to_end_cycles": 346,
+          "ddr_beats": 7,
+          "ddr_requests": 3,
+          "output_beats": 1,
+          "exponents": [
+            11
+          ]
+        },
+        {
+          "job_id": 101,
+          "n": 2,
+          "k": 129,
+          "job_accept": 354,
+          "last_output": 659,
+          "status_first": 661,
+          "status_accept": 700,
+          "end_to_end_cycles": 347,
+          "ddr_beats": 7,
+          "ddr_requests": 3,
+          "output_beats": 1,
+          "exponents": [
+            11
+          ]
+        }
+      ],
+      "seed": "0x6717"
+    },
+    "status": "PASS",
+    "sha256": "912614aebe00606075ddb2594a5d7c45222a97a23fd643a3660ae0da5e0deeb3"
+  },
+  {
+    "label": "integration_s0_b1",
+    "cycles": 49263,
+    "coverage": {
+      "static": 0,
+      "burst": 1,
+      "jobs": 10,
+      "measurements": [
+        {
+          "job_id": 100,
+          "n": 2,
+          "k": 129,
+          "job_accept": 6,
+          "last_output": 318,
+          "status_first": 320,
+          "status_accept": 359,
+          "end_to_end_cycles": 354,
+          "ddr_beats": 7,
+          "ddr_requests": 7,
+          "output_beats": 1,
+          "exponents": [
+            11
+          ]
+        },
+        {
+          "job_id": 101,
+          "n": 129,
+          "k": 1,
+          "job_accept": 362,
+          "last_output": 4151,
+          "status_first": 4153,
+          "status_accept": 4192,
+          "end_to_end_cycles": 3831,
+          "ddr_beats": 131,
+          "ddr_requests": 131,
+          "output_beats": 6,
+          "exponents": [
+            12,
+            23
+          ]
+        },
+        {
+          "job_id": 102,
+          "n": 1,
+          "k": 127,
+          "job_accept": 4195,
+          "last_output": 4416,
+          "status_first": 4418,
+          "status_accept": 4457,
+          "end_to_end_cycles": 263,
+          "ddr_beats": 3,
+          "ddr_requests": 3,
+          "output_beats": 1,
+          "exponents": [
+            13
+          ]
+        },
+        {
+          "job_id": 103,
+          "n": 2,
+          "k": 128,
+          "job_accept": 4460,
+          "last_output": 4734,
+          "status_first": 4736,
+          "status_accept": 4775,
+          "end_to_end_cycles": 316,
+          "ddr_beats": 5,
+          "ddr_requests": 5,
+          "output_beats": 1,
+          "exponents": [
+            12
+          ]
+        },
+        {
+          "job_id": 104,
+          "n": 3,
+          "k": 129,
+          "job_accept": 4778,
+          "last_output": 5158,
+          "status_first": 5160,
+          "status_accept": 5199,
+          "end_to_end_cycles": 422,
+          "ddr_beats": 10,
+          "ddr_requests": 10,
+          "output_beats": 1,
+          "exponents": [
+            13
+          ]
+        },
+        {
+          "job_id": 105,
+          "n": 1,
+          "k": 2048,
+          "job_accept": 5202,
+          "last_output": 8303,
+          "status_first": 8305,
+          "status_accept": 8344,
+          "end_to_end_cycles": 3143,
+          "ddr_beats": 33,
+          "ddr_requests": 33,
+          "output_beats": 1,
+          "exponents": [
+            16
+          ]
+        },
+        {
+          "job_id": 106,
+          "n": 2,
+          "k": 2049,
+          "job_accept": 8347,
+          "last_output": 12062,
+          "status_first": 12064,
+          "status_accept": 12103,
+          "end_to_end_cycles": 3757,
+          "ddr_beats": 68,
+          "ddr_requests": 68,
+          "output_beats": 1,
+          "exponents": [
+            17
+          ]
+        },
+        {
+          "job_id": 107,
+          "n": 2,
+          "k": 4096,
+          "job_accept": 12106,
+          "last_output": 19639,
+          "status_first": 19641,
+          "status_accept": 19680,
+          "end_to_end_cycles": 7575,
+          "ddr_beats": 130,
+          "ddr_requests": 130,
+          "output_beats": 1,
+          "exponents": [
+            16
+          ]
+        },
+        {
+          "job_id": 108,
+          "n": 2,
+          "k": 12288,
+          "job_accept": 19683,
+          "last_output": 41531,
+          "status_first": 41533,
+          "status_accept": 41572,
+          "end_to_end_cycles": 21890,
+          "ddr_beats": 390,
+          "ddr_requests": 390,
+          "output_beats": 1,
+          "exponents": [
+            17
+          ]
+        },
+        {
+          "job_id": 109,
+          "n": 257,
+          "k": 7,
+          "job_accept": 41575,
+          "last_output": 49219,
+          "status_first": 49221,
+          "status_accept": 49260,
+          "end_to_end_cycles": 7686,
+          "ddr_beats": 260,
+          "ddr_requests": 260,
+          "output_beats": 11,
+          "exponents": [
+            9,
+            30,
+            42
+          ]
+        }
+      ],
+      "seed": "0x6717"
+    },
+    "status": "PASS",
+    "sha256": "d3509e8a4e2e82a3cf524c5641a94b2540981cfcf01278aef067797e7dbe4354"
+  },
+  {
+    "label": "integration_s0_b2",
+    "cycles": 48574,
+    "coverage": {
+      "static": 0,
+      "burst": 2,
+      "jobs": 10,
+      "measurements": [
+        {
+          "job_id": 100,
+          "n": 2,
+          "k": 129,
+          "job_accept": 6,
+          "last_output": 314,
+          "status_first": 316,
+          "status_accept": 355,
+          "end_to_end_cycles": 350,
+          "ddr_beats": 7,
+          "ddr_requests": 5,
+          "output_beats": 1,
+          "exponents": [
+            11
+          ]
+        },
+        {
+          "job_id": 101,
+          "n": 129,
+          "k": 1,
+          "job_accept": 358,
+          "last_output": 4147,
+          "status_first": 4149,
+          "status_accept": 4188,
+          "end_to_end_cycles": 3831,
+          "ddr_beats": 131,
+          "ddr_requests": 131,
+          "output_beats": 6,
+          "exponents": [
+            12,
+            23
+          ]
+        },
+        {
+          "job_id": 102,
+          "n": 1,
+          "k": 127,
+          "job_accept": 4191,
+          "last_output": 4410,
+          "status_first": 4412,
+          "status_accept": 4451,
+          "end_to_end_cycles": 261,
+          "ddr_beats": 3,
+          "ddr_requests": 2,
+          "output_beats": 1,
+          "exponents": [
+            13
+          ]
+        },
+        {
+          "job_id": 103,
+          "n": 2,
+          "k": 128,
+          "job_accept": 4454,
+          "last_output": 4726,
+          "status_first": 4728,
+          "status_accept": 4767,
+          "end_to_end_cycles": 314,
+          "ddr_beats": 5,
+          "ddr_requests": 3,
+          "output_beats": 1,
+          "exponents": [
+            12
+          ]
+        },
+        {
+          "job_id": 104,
+          "n": 3,
+          "k": 129,
+          "job_accept": 4770,
+          "last_output": 5144,
+          "status_first": 5146,
+          "status_accept": 5185,
+          "end_to_end_cycles": 416,
+          "ddr_beats": 10,
+          "ddr_requests": 7,
+          "output_beats": 1,
+          "exponents": [
+            13
+          ]
+        },
+        {
+          "job_id": 105,
+          "n": 1,
+          "k": 2048,
+          "job_accept": 5188,
+          "last_output": 8246,
+          "status_first": 8248,
+          "status_accept": 8287,
+          "end_to_end_cycles": 3100,
+          "ddr_beats": 33,
+          "ddr_requests": 17,
+          "output_beats": 1,
+          "exponents": [
+            16
+          ]
+        },
+        {
+          "job_id": 106,
+          "n": 2,
+          "k": 2049,
+          "job_accept": 8290,
+          "last_output": 11939,
+          "status_first": 11941,
+          "status_accept": 11980,
+          "end_to_end_cycles": 3691,
+          "ddr_beats": 68,
+          "ddr_requests": 35,
+          "output_beats": 1,
+          "exponents": [
+            17
+          ]
+        },
+        {
+          "job_id": 107,
+          "n": 2,
+          "k": 4096,
+          "job_accept": 11983,
+          "last_output": 19336,
+          "status_first": 19338,
+          "status_accept": 19377,
+          "end_to_end_cycles": 7395,
+          "ddr_beats": 130,
+          "ddr_requests": 65,
+          "output_beats": 1,
+          "exponents": [
+            16
+          ]
+        },
+        {
+          "job_id": 108,
+          "n": 2,
+          "k": 12288,
+          "job_accept": 19380,
+          "last_output": 40838,
+          "status_first": 40840,
+          "status_accept": 40879,
+          "end_to_end_cycles": 21500,
+          "ddr_beats": 390,
+          "ddr_requests": 195,
+          "output_beats": 1,
+          "exponents": [
+            17
+          ]
+        },
+        {
+          "job_id": 109,
+          "n": 257,
+          "k": 7,
+          "job_accept": 40882,
+          "last_output": 48530,
+          "status_first": 48532,
+          "status_accept": 48571,
+          "end_to_end_cycles": 7690,
+          "ddr_beats": 260,
+          "ddr_requests": 260,
+          "output_beats": 11,
+          "exponents": [
+            9,
+            30,
+            42
+          ]
+        }
+      ],
+      "seed": "0x6717"
+    },
+    "status": "PASS",
+    "sha256": "e1949a83bf72de6144c4cdba571eee560dbee70c528e04a790d9d5648abd04d1"
+  },
+  {
+    "label": "integration_s0_b64",
+    "cycles": 47839,
+    "coverage": {
+      "static": 0,
+      "burst": 64,
+      "jobs": 10,
+      "measurements": [
+        {
+          "job_id": 100,
+          "n": 2,
+          "k": 129,
+          "job_accept": 6,
+          "last_output": 310,
+          "status_first": 312,
+          "status_accept": 351,
+          "end_to_end_cycles": 346,
+          "ddr_beats": 7,
+          "ddr_requests": 3,
+          "output_beats": 1,
+          "exponents": [
+            11
+          ]
+        },
+        {
+          "job_id": 101,
+          "n": 129,
+          "k": 1,
+          "job_accept": 354,
+          "last_output": 4143,
+          "status_first": 4145,
+          "status_accept": 4184,
+          "end_to_end_cycles": 3831,
+          "ddr_beats": 131,
+          "ddr_requests": 131,
+          "output_beats": 6,
+          "exponents": [
+            12,
+            23
+          ]
+        },
+        {
+          "job_id": 102,
+          "n": 1,
+          "k": 127,
+          "job_accept": 4187,
+          "last_output": 4406,
+          "status_first": 4408,
+          "status_accept": 4447,
+          "end_to_end_cycles": 261,
+          "ddr_beats": 3,
+          "ddr_requests": 2,
+          "output_beats": 1,
+          "exponents": [
+            13
+          ]
+        },
+        {
+          "job_id": 103,
+          "n": 2,
+          "k": 128,
+          "job_accept": 4450,
+          "last_output": 4722,
+          "status_first": 4724,
+          "status_accept": 4763,
+          "end_to_end_cycles": 314,
+          "ddr_beats": 5,
+          "ddr_requests": 3,
+          "output_beats": 1,
+          "exponents": [
+            12
+          ]
+        },
+        {
+          "job_id": 104,
+          "n": 3,
+          "k": 129,
+          "job_accept": 4766,
+          "last_output": 5134,
+          "status_first": 5136,
+          "status_accept": 5175,
+          "end_to_end_cycles": 410,
+          "ddr_beats": 10,
+          "ddr_requests": 4,
+          "output_beats": 1,
+          "exponents": [
+            13
+          ]
+        },
+        {
+          "job_id": 105,
+          "n": 1,
+          "k": 2048,
+          "job_accept": 5178,
+          "last_output": 8182,
+          "status_first": 8184,
+          "status_accept": 8223,
+          "end_to_end_cycles": 3046,
+          "ddr_beats": 33,
+          "ddr_requests": 2,
+          "output_beats": 1,
+          "exponents": [
+            16
+          ]
+        },
+        {
+          "job_id": 106,
+          "n": 2,
+          "k": 2049,
+          "job_accept": 8226,
+          "last_output": 11811,
+          "status_first": 11813,
+          "status_accept": 11852,
+          "end_to_end_cycles": 3627,
+          "ddr_beats": 68,
+          "ddr_requests": 3,
+          "output_beats": 1,
+          "exponents": [
+            17
+          ]
+        },
+        {
+          "job_id": 107,
+          "n": 2,
+          "k": 4096,
+          "job_accept": 11855,
+          "last_output": 18973,
+          "status_first": 18975,
+          "status_accept": 19014,
+          "end_to_end_cycles": 7160,
+          "ddr_beats": 130,
+          "ddr_requests": 3,
+          "output_beats": 1,
+          "exponents": [
+            16
+          ]
+        },
+        {
+          "job_id": 108,
+          "n": 2,
+          "k": 12288,
+          "job_accept": 19017,
+          "last_output": 40099,
+          "status_first": 40101,
+          "status_accept": 40140,
+          "end_to_end_cycles": 21124,
+          "ddr_beats": 390,
+          "ddr_requests": 7,
+          "output_beats": 1,
+          "exponents": [
+            17
+          ]
+        },
+        {
+          "job_id": 109,
+          "n": 257,
+          "k": 7,
+          "job_accept": 40143,
+          "last_output": 47795,
+          "status_first": 47797,
+          "status_accept": 47836,
+          "end_to_end_cycles": 7694,
+          "ddr_beats": 260,
+          "ddr_requests": 260,
+          "output_beats": 11,
+          "exponents": [
+            9,
+            30,
+            42
+          ]
+        }
+      ],
+      "seed": "0x6717"
+    },
+    "status": "PASS",
+    "sha256": "38d1f3a090251c0ea7470faee2b70ff910a54d5821ec053f453a2eed82849798"
+  }
+]

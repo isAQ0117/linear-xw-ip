@@ -1,0 +1,32 @@
+{
+  "head": "ab17a13b42ce4e17512e339c8d9b90088adc6002",
+  "files": 225,
+  "rtl": 16,
+  "untracked": [
+    "docs/stage67/BASELINE_SHA256.json",
+    "docs/stage67/BASELINE_WORKTREE.patch"
+  ],
+  "status": [
+    " M .gitignore",
+    " M GITCODE_SETUP.md",
+    " M cycle_model.py",
+    " M docs/SOURCE_IMPORT_MANIFEST.json",
+    " M docs/standards/Linear_xW_9Phase_Development_Standard_V1.0.md",
+    " M docs/standards/Linear_xW_Stage0_Interface_Verification_Contract_V1.0.md",
+    " M docs/standards/Linear_xW_Standards_Freeze_Record_V1.0.md",
+    " M docs/standards/Linear_xW_Standards_Release_Manifest_V1.0.json",
+    " M docs/verification/history/fp32_v0_2/cycle_trace.jsonl",
+    " M docs/verification/history/fp32_v0_2/ddr_manifest.json",
+    " M docs/verification/history/fp32_v0_2/element_errors.csv",
+    " M docs/verification/history/fp32_v0_2/input_axis_v2.jsonl",
+    " M docs/verification/history/fp32_v0_2/metrics.json",
+    " M docs/verification/history/fp32_v0_2/output_axis_v2.jsonl",
+    " M examples/fp32_demo_case.json",
+    " M linear_stream_model/__init__.py",
+    " M linear_stream_model/numeric.py",
+    " M test_cycle.py",
+    " M test_fp32.py",
+    " M verification_report.json",
+    "?? docs/stage67/"
+  ]
+}

@@ -38,3 +38,38 @@ stage5-synthesis-check:
 
 stage5-audit:
 	$(PYTHON) tools/audit_stage5.py
+
+.PHONY: stage6-test stage7-test stage67-fault-test stage67-extended-test stage67-synthesis-check
+
+stage6-test:
+	$(PYTHON) tools/run_stage67.py --stage 6
+
+stage7-test:
+	$(PYTHON) tools/run_stage67.py --stage 7
+
+stage67-fault-test:
+	$(PYTHON) tools/run_stage67.py --stage fault
+
+stage67-extended-test:
+	$(PYTHON) tools/run_stage67.py --stage extended
+
+stage67-synthesis-check:
+	$(PYTHON) tools/check_stage67_synthesis.py --map
+
+all-tests: stage6-test stage7-test stage67-fault-test stage67-extended-test
+
+.NOTPARALLEL:
+.PHONY: stage67-review
+stage67-review: stage6-test stage7-test
+	$(PYTHON) tools/review_stage67.py
+	$(PYTHON) tools/report_stage67.py
+	$(PYTHON) tools/audit_stage67.py
+
+all-tests: stage67-review
+
+.PHONY: stage67-retry-test
+stage67-retry-test:
+	$(PYTHON) tools/run_stage67.py --stage retry
+
+stage67-review: stage67-retry-test stage67-fault-test stage67-extended-test
+all-tests: stage67-retry-test

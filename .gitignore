@@ -30,3 +30,13 @@ docs/stage5/BASELINE_DOCX_EXTRACT.txt
 docs/stage5/DELIVERY_MANIFEST.json
 docs/stage5/SOURCE_CHANGES.patch
 docs/stage5/RESULTS_*.json
+
+# Stage 6/7 full-review outputs: regenerate/retain in the original TAR
+docs/stage67/baseline_retest_snapshot/
+docs/stage67/logs/
+docs/stage67/*.log
+docs/stage67/DELIVERY_MANIFEST.json
+docs/stage67/SHA256SUMS
+docs/stage67/BASELINE_WORKTREE.patch
+docs/stage67/SOURCE_CHANGES.patch
+docs/stage67/CONTRACT_DOCX_EXTRACT.txt

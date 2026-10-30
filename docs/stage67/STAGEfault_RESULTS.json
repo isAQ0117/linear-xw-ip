@@ -1,0 +1,185 @@
+[
+  {
+    "label": "integration_fault",
+    "cycles": 7902,
+    "coverage": {
+      "cases": [
+        {
+          "label": "n_zero",
+          "code": 1,
+          "recoverable": true
+        },
+        {
+          "label": "k_zero",
+          "code": 1,
+          "recoverable": true
+        },
+        {
+          "label": "n_capacity",
+          "code": 1,
+          "recoverable": true
+        },
+        {
+          "label": "k_capacity",
+          "code": 1,
+          "recoverable": true
+        },
+        {
+          "label": "m_zero",
+          "code": 2,
+          "recoverable": true
+        },
+        {
+          "label": "m_two",
+          "code": 2,
+          "recoverable": true
+        },
+        {
+          "label": "tile_zero",
+          "code": 2,
+          "recoverable": true
+        },
+        {
+          "label": "tile_two",
+          "code": 2,
+          "recoverable": true
+        },
+        {
+          "label": "unaligned_w",
+          "code": 3,
+          "recoverable": true
+        },
+        {
+          "label": "unaligned_s",
+          "code": 3,
+          "recoverable": true
+        },
+        {
+          "label": "overlap",
+          "code": 3,
+          "recoverable": true
+        },
+        {
+          "label": "overflow",
+          "code": 3,
+          "recoverable": true
+        },
+        {
+          "label": "real_parser",
+          "code": 16,
+          "recoverable": false
+        },
+        {
+          "label": "real_parser",
+          "code": 17,
+          "recoverable": false
+        },
+        {
+          "label": "real_parser",
+          "code": 18,
+          "recoverable": false
+        },
+        {
+          "label": "real_parser",
+          "code": 19,
+          "recoverable": false
+        },
+        {
+          "label": "same_edge_axis_ddr_priority",
+          "code": 16
+        },
+        {
+          "label": "scale_zero",
+          "code": 48,
+          "recoverable": true
+        },
+        {
+          "label": "scale_negative",
+          "code": 48,
+          "recoverable": true
+        },
+        {
+          "label": "fp8_nan",
+          "code": 49,
+          "recoverable": true
+        },
+        {
+          "label": "both",
+          "code": 48,
+          "recoverable": true
+        },
+        {
+          "label": "bfp_exp",
+          "code": 51,
+          "recoverable": true
+        },
+        {
+          "label": "diagnostic_injection",
+          "source": 0,
+          "code": 50
+        },
+        {
+          "label": "diagnostic_injection",
+          "source": 0,
+          "code": 64
+        },
+        {
+          "label": "diagnostic_injection",
+          "source": 3,
+          "code": 35
+        },
+        {
+          "label": "diagnostic_injection",
+          "source": 4,
+          "code": 32
+        },
+        {
+          "label": "first30_late21",
+          "code": 48,
+          "lock": true
+        },
+        {
+          "label": "published_success_immutable_late_platform_fault",
+          "code": 0,
+          "lock": true
+        },
+        {
+          "label": "idle_unowned",
+          "code": 33
+        },
+        {
+          "label": "missing_response_environment_incomplete",
+          "watchdog_cycles": 1000,
+          "rtl_timeout": false
+        },
+        {
+          "label": "numeric_during_outstanding",
+          "code": 48,
+          "lock": true,
+          "receiver_still_busy": true
+        },
+        {
+          "label": "held_output",
+          "code": 33
+        },
+        {
+          "label": "after_first_output",
+          "code": 33
+        },
+        {
+          "label": "last_eot_error",
+          "code": 33
+        },
+        {
+          "label": "reset_last_eot",
+          "code": 0
+        }
+      ],
+      "jobs": 35,
+      "cycle_definition": "pre-edge handshakes, registered producer events after edge",
+      "diagnostic_injection": "TB-only force of internal diagnostic nets; no production ports"
+    },
+    "status": "PASS",
+    "sha256": "2f7a4cac0a9c5b3012e4d1614f1fbe0e371bb5bc4bfe466e7efa85137758b453"
+  }
+]

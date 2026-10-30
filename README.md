@@ -170,3 +170,21 @@ timing closure, and external transaction cleanup guarantees remain unverified.
 ## Stage 4计算核心
 
 已实现B1/B2 Pipe/A2及局部Controller，完整复审入口见[REVIEW_STAGE4.md](REVIEW_STAGE4.md)。Stage4数值/真实Icarus/周期/通用结构检查通过，Vivado与目标时序仍Pending。执行`make stage4-test`或`make all-tests`，不要将局部result当作完整Linear Job输出。
+
+## Stage 6/7 正式 M=1 顶层
+
+新增 `linear_xw_ip.v`，保持10个Parameter/35个端口；完整顺序执行Input、Scale Group、Weight Row、B1/B2/A2、Group Requant、全Job AXIS Output及Status。独立复核入口见 [REVIEW_STAGE67.md](REVIEW_STAGE67.md)，实测结论见 [Stage67交付报告](docs/stage67/DELIVERY_REPORT.md)。原Stage0–5生产RTL和数值规则不变。
+
+```
+make stage6-test
+make stage7-test
+make stage67-fault-test
+make stage67-retry-test
+make stage67-extended-test
+make stage67-review
+make stage67-synthesis-check
+```
+
+HDL依赖Icarus/vvp；综合探索依赖Yosys/ABC。无系统工具时可运行仓库固定SHA的 `python3 tools/bootstrap_stage4_hdl.py --with-yosys` 并按输出设置PATH。原回归用工作区可写TMPDIR，避免环境缺少/tmp。
+
+顶层编译必须显式选择仿真宏 `XW_SIM_DDR_BURST` 或经平台审核的 `XW_PLATFORM_DDR_BURST`；二者不能同时定义。不新增顶层parameter，不默认假定硬件DDR burst。无默认硬件Timeout，缺失响应由独立TB Watchdog界定环境不可完成。真实FPGA Part、平台DDR清理保证、Vivado2023.2时序仍Pending。

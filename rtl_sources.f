@@ -14,3 +14,7 @@ rtl/xw_output_group_buffer.v
 rtl/xw_bfp18_requant.v
 rtl/xw_result_buffer.v
 rtl/xw_stage5_ctrl.v
+rtl/xw_axis_bfp18_output.v
+rtl/xw_job_status.v
+rtl/xw_linear_scheduler.v
+rtl/linear_xw_ip.v

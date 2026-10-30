@@ -1,0 +1,23 @@
+{
+  "contract": "XW-CONTRACT-STD-001 V1.0",
+  "development": "XW-DEV-STD-001 V1.0",
+  "baseline_head": "ab17a13b42ce4e17512e339c8d9b90088adc6002",
+  "Stage6": "PASS_LOCAL_ACCEPTANCE",
+  "Stage7": "PASS_LOCAL_M1_ACCEPTANCE",
+  "Implemented": "PASS",
+  "Python_Numeric": "PASS",
+  "Python_Cycle": "PASS",
+  "RTL_Module_Simulation": "PASS",
+  "Full_RTL_Integration": "PASS",
+  "Synthesis_Structure": "PASS_YOSYS",
+  "XC7_Resource_Exploration": "PASS_YOSYS",
+  "Vivado_Timing": "Pending",
+  "real_DDR_platform": "Pending",
+  "Stage8": "Not implemented (out of scope)",
+  "vector_cycles": 692651,
+  "normal_integration_jobs": 44,
+  "global_fault_scenarios": 35,
+  "independent_known_answer": "PASS two real top jobs, stalled and immediately-ready Status",
+  "limitation": "Finite deterministic directed/random verification, no formal exhaustive proof; exact N=MAX_N,K=MAX_K Cartesian workload not simulated together; each default boundary exercised in complete RTL jobs",
+  "full_job_group_retry": "PASS actual RTL N129/K1 with group0 retry and distinct tail exponent"
+}

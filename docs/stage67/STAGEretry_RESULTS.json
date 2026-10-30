@@ -1,0 +1,22 @@
+[
+  {
+    "label": "integration_retry",
+    "cycles": 3834,
+    "coverage": {
+      "static": 0,
+      "burst": 3,
+      "jobs": 1,
+      "group0_retry": true,
+      "tail_independent_exp": true,
+      "measurements": [
+        {
+          "job_id": 900,
+          "n": 129,
+          "k": 1
+        }
+      ]
+    },
+    "status": "PASS",
+    "sha256": "a638256508478ed845fe401beca02e87370a52cfd65c7c1c516b3768736198a8"
+  }
+]
